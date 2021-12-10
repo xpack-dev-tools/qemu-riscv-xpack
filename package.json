@@ -1,0 +1,112 @@
+{
+  "name": "@xpack-dev-tools/qemu-riscv",
+  "version": "2.8.0-13.1",
+  "description": "A binary xPack with QEMU RISC-V executables",
+  "main": "",
+  "scripts": {
+    "npm-install": "npm install",
+    "pack": "npm pack",
+    "git-log": "git log --pretty='%cd * %h %s' --date=short",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "liquidjs": "liquidjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xpack-dev-tool/qemu-riscv-xpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xpack-dev-tool/qemu-riscv-xpack/issues/"
+  },
+  "homepage": "https://github.com/xpack-dev-tool/qemu-riscv-xpack#readme",
+  "keywords": [
+    "xpack",
+    "qemu",
+    "arm"
+  ],
+  "author": {
+    "name": "Liviu Ionescu",
+    "email": "ilg@livius.net",
+    "url": "https://github.com/ilg-ul/"
+  },
+  "license": "MIT",
+  "xpack": {
+    "minimumXpmRequired": "0.10.2",
+    "binaries": {
+      "destination": "./.content",
+      "baseUrl": "https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/download/v2.8.0-13",
+      "skip": 1,
+      "platforms": {
+        "darwin-x64": {
+          "fileName": "xpack-qemu-riscv-2.8.0-13-darwin-x64.tar.gz",
+          "sha256": "9001c6befdd791f814d9c64b903915ab10983d9c80659a6d4e811290759159b7"
+        },
+        "linux-arm64": {
+          "fileName": "xpack-qemu-riscv-2.8.0-13-linux-arm64.tar.gz",
+          "sha256": "386abf59c78b3b840314ddcbdad42086ef88e9d3197c44201460c0e78b094a3e"
+        },
+        "linux-arm": {
+          "fileName": "xpack-qemu-riscv-2.8.0-13-linux-arm.tar.gz",
+          "sha256": "b1b1046365ecd0d72cbb1c7d18df1451595347f454bfc6ed9fc99d3ced133ac3"
+        },
+        "linux-ia32": {
+          "fileName": "xpack-qemu-riscv-2.8.0-13-linux-ia32.tar.gz",
+          "sha256": "a83921f994e6062abdfef49c1fd13f3aa898e85bbaeabc18b443f1176656c285"
+        },
+        "linux-x64": {
+          "fileName": "xpack-qemu-riscv-2.8.0-13-linux-x64.tar.gz",
+          "sha256": "b99b87541f13e594f09f6a8ce656d84e0c0ac9623227ee6f2ba2a46c7e67a350"
+        },
+        "win32-ia32": {
+          "fileName": "xpack-qemu-riscv-2.8.0-13-win32-ia32.zip",
+          "sha256": "710f0ba1a90eb8fa60d88e1a3160b8e57bf8ccb8f8232d0a036090ea0dcea9c0"
+        },
+        "win32-x64": {
+          "fileName": "xpack-qemu-riscv-2.8.0-13-win32-x64.zip",
+          "sha256": "c7c35e03a3c861b5f21d8564074cb928f1478eeb2c8a2e8ee53e7513c39e2750"
+        }
+      }
+    },
+    "bin": {
+      "qemu-system-gnuarmeclipse": "./.content/bin/qemu-system-gnuarmeclipse"
+    },
+    "properties": {
+      "appName": "QEMU",
+      "appLCName": "qemu-riscv",
+      "platforms": "all",
+      "LIQUIDJS": "liquidjs '{ \"APP_NAME\": \"{{ properties.appName }}\", \"APP_LC_NAME\": \"{{ properties.appLCName }}\", \"platforms\": \"{{ properties.platforms }}\" }'"
+    },
+    "actions": {
+      "generate-workflows": [
+        "mkdir -p .github/workflows/",
+        "cp scripts/helper/templates/body-github-pre-releases-test.md .github/workflows/",
+        "cat scripts/helper/templates/build-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-all.yml",
+        "cat scripts/helper/templates/build-xbbli-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbli.yml",
+        "cat scripts/helper/templates/build-xbbla-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbla.yml",
+        "cat scripts/helper/templates/build-xbbmi-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbmi.yml",
+        "cat scripts/helper/templates/build-xbbma-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/build-xbbma.yml",
+        "cat scripts/helper/templates/test-prime-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/test-prime.yml",
+        "cat scripts/helper/templates/test-docker-linux-intel-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/test-docker-linux-intel.yml",
+        "cat scripts/helper/templates/test-docker-linux-arm-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/test-docker-linux-arm.yml",
+        "cat scripts/helper/templates/publish-release-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/publish-release.yml",
+        "cat scripts/helper/templates/test-xpm-liquid.yml | {{ properties.LIQUIDJS }} > .github/workflows/test-xpm.yml"
+      ],
+      "trigger-workflow-build-all": "bash scripts/helper/trigger-workflow-build.sh",
+      "trigger-workflow-build-xbbli": "bash scripts/helper/trigger-workflow-build.sh --machine xbbli",
+      "trigger-workflow-build-xbbla": "bash scripts/helper/trigger-workflow-build.sh --machine xbbla",
+      "trigger-workflow-build-xbbmi": "bash scripts/helper/trigger-workflow-build.sh --machine xbbmi",
+      "trigger-workflow-build-xbbma": "bash scripts/helper/trigger-workflow-build.sh --machine xbbma",
+      "trigger-workflow-test-prime": "bash scripts/helper/tests/trigger-workflow-test-prime.sh",
+      "trigger-workflow-test-docker-linux-intel": "bash scripts/helper/tests/trigger-workflow-test-docker-linux-intel.sh",
+      "trigger-workflow-test-docker-linux-arm": "bash scripts/helper/tests/trigger-workflow-test-docker-linux-arm.sh",
+      "trigger-travis-macos": "bash scripts/helper/tests/trigger-travis-macos.sh",
+      "trigger-workflow-publish-release": "bash scripts/helper/trigger-workflow-publish-release.sh",
+      "generate-jekyll-post": "bash scripts/helper/generate-jekyll-post.sh",
+      "update-package-binaries": "bash scripts/helper/update-package-binaries.sh",
+      "trigger-workflow-test-xpm": "bash scripts/helper/tests/trigger-workflow-test-xpm.sh"
+    }
+  },
+  "bundleDependencies": [],
+  "devDependencies": {
+    "liquidjs": "^9.25.1"
+  }
+}
