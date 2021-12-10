@@ -2,7 +2,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/xpack-dev-tools/qemu-riscv-xpack)](https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases)
 [![npm (scoped)](https://img.shields.io/npm/v/@xpack-dev-tools/qemu-riscv.svg)](https://www.npmjs.com/package/@xpack-dev-tools/qemu-riscv)
 
-# The xPack QEMU RISC-V
+# The xPack QEMU RISC-V - not yet released!
 
 A standalone cross-platform (Windows/macOS/Linux) **QEMU RISC-V Cortex-M**
 binary distribution, intended for reproducible builds.
