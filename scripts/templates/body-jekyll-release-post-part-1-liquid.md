@@ -121,7 +121,7 @@ with major changes.
 
 The current version is based on:
 
-- QEMU version 2.8.0, commit [0737f32](https://github.com/xpack-dev-tools/qemu/commit/0737f32daf35f3730ed2461ddfaaf034c2ec7ff0) from Dec 20th, 2016.
+- QEMU version 6.1.0, commit [0737f32](https://github.com/xpack-dev-tools/qemu/commit/0737f32daf35f3730ed2461ddfaaf034c2ec7ff0) from Dec 20th, 2016.
 
 ## Changes
 
@@ -132,38 +132,12 @@ devices were removed and replaced by several Cortex-M devices.
 The supported boards are:
 
 ```console
-xPack 64-bit QEMU v2.8.0 (qemu-system-gnuarmeclipse).
+xPack 64-bit QEMU v6.1.0 (qemu-system-riscv32).
 
 Supported boards:
-  BluePill             BluePill STM32F103C8T6
-  Maple                LeafLab Arduino-style STM32 microcontroller board (r5)
-  NUCLEO-F072RB        ST Nucleo Development Board for STM32 F072 devices
-  NUCLEO-F103RB        ST Nucleo Development Board for STM32 F1 series
-  NUCLEO-F411RE        ST Nucleo Development Board for STM32 F4 series
-  NetduinoGo           Netduino GoBus Development Board with STM32F4
-  NetduinoPlus2        Netduino Development Board with STM32F4
-  OLIMEXINO-STM32      Olimex Maple (Arduino-like) Development Board
-  STM32-E407           Olimex Development Board for STM32F407ZGT6
-  STM32-H103           Olimex Header Board for STM32F103RBT6
-  STM32-P103           Olimex Prototype Board for STM32F103RBT6
-  STM32-P107           Olimex Prototype Board for STM32F107VCT6
-  STM32F0-Discovery    ST Discovery kit for STM32F051 line
-  STM32F051-Discovery  ST Discovery kit for STM32F051 line
-  STM32F4-Discovery    ST Discovery kit for STM32F407/417 lines
-  STM32F429I-Discovery ST Discovery kit for STM32F429/439 lines
-  generic              Generic Cortex-M board; use -mcu to define the device
-
+...
 Supported MCUs:
-  STM32F051R8
-  STM32F103RB
-  STM32F107VC
-  STM32F405RG
-  STM32F407VG
-  STM32F407VGTx <- new
-  STM32F407ZG
-  STM32F411RE
-  STM32F429ZI
-  STM32F429ZITx <- new>
+...
 ```
 
 Warning: support for hardware floating point on Cortex-M4 devices is not
@@ -255,28 +229,9 @@ tested by manually starting the
 blinky test on the emulated STM32F4DISCOVERY board.
 
 ```console
-.../xpack-qemu-riscv-2.8.0-13/bin/qemu-system-gnuarmeclipse --version
-xPack 64-bit QEMU emulator version 2.8.0-11 (v2.8.0-12-4-gb1ab9f0b32-dirty)
-Copyright (c) 2003-2016 Fabrice Bellard and the QEMU Project developers
+.../xpack-qemu-riscv-6.1.0-1/bin/qemu-system-gnuarmeclipse --version
+...
 
-mkdir -p ~/Downloads
-(cd ~/Downloads; curl -L --fail -o f407-disc-blink-tutorial.elf \
-https://github.com/xpack-dev-tools/qemu-eclipse-test-projects/raw/master/f407-disc-blink-tutorial/Debug/f407-disc-blink-tutorial.elf)
-
-.../xpack-qemu-riscv-2.8.0-13/bin/qemu-system-gnuarmeclipse \
---board STM32F4-Discovery \
--d unimp,guest_errors \
---nographic \
---image ~/Downloads/f407-disc-blink-tutorial.elf \
---semihosting-config enable=on,target=native \
---semihosting-cmdline test 6
-
-DISPLAY=:1.0 .../xpack-qemu-riscv-2.8.0-13/bin/qemu-system-gnuarmeclipse \
---board STM32F4-Discovery \
--d unimp,guest_errors \
---image ~/Downloads/f407-disc-blink-tutorial.elf \
---semihosting-config enable=on,target=native \
---semihosting-cmdline test 6
 
 ```
 

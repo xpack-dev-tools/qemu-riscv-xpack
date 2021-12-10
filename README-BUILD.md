@@ -117,7 +117,7 @@ not be accepted by bash.
 
 ## Versioning
 
-The version string is an extension to semver, the format looks like `2.8.0-13`.
+The version string is an extension to semver, the format looks like `6.1.0-1`.
 It includes the three digits with the original QEMU version and a fourth
 digit with the xPack release number.
 
@@ -221,14 +221,14 @@ archives and their SHA signatures, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 37100
--rw-rw-r-- 1 ilg ilg  9034583 Oct 14 21:50 xpack-qemu-riscv-2.8.0-13-linux-x32.tar.gz
--rw-rw-r-- 1 ilg ilg      107 Oct 14 21:50 xpack-qemu-riscv-2.8.0-13-linux-x32.tar.gz.sha
--rw-rw-r-- 1 ilg ilg  8796275 Oct 14 21:38 xpack-qemu-riscv-2.8.0-13-linux-x64.tar.gz
--rw-rw-r-- 1 ilg ilg      107 Oct 14 21:38 xpack-qemu-riscv-2.8.0-13-linux-x64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg  9743272 Oct 14 21:56 xpack-qemu-riscv-2.8.0-13-win32-x32.zip
--rw-rw-r-- 1 ilg ilg      104 Oct 14 21:56 xpack-qemu-riscv-2.8.0-13-win32-x32.zip.sha
--rw-rw-r-- 1 ilg ilg 10393964 Oct 14 21:44 xpack-qemu-riscv-2.8.0-13-win32-x64.zip
--rw-rw-r-- 1 ilg ilg      104 Oct 14 21:44 xpack-qemu-riscv-2.8.0-13-win32-x64.zip.sha
+-rw-rw-r-- 1 ilg ilg  9034583 Oct 14 21:50 xpack-qemu-riscv-6.1.0-1-linux-x32.tar.gz
+-rw-rw-r-- 1 ilg ilg      107 Oct 14 21:50 xpack-qemu-riscv-6.1.0-1-linux-x32.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg  8796275 Oct 14 21:38 xpack-qemu-riscv-6.1.0-1-linux-x64.tar.gz
+-rw-rw-r-- 1 ilg ilg      107 Oct 14 21:38 xpack-qemu-riscv-6.1.0-1-linux-x64.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg  9743272 Oct 14 21:56 xpack-qemu-riscv-6.1.0-1-win32-x32.zip
+-rw-rw-r-- 1 ilg ilg      104 Oct 14 21:56 xpack-qemu-riscv-6.1.0-1-win32-x32.zip.sha
+-rw-rw-r-- 1 ilg ilg 10393964 Oct 14 21:44 xpack-qemu-riscv-6.1.0-1-win32-x64.zip
+-rw-rw-r-- 1 ilg ilg      104 Oct 14 21:44 xpack-qemu-riscv-6.1.0-1-win32-x64.zip.sha
 ```
 
 ### Build the Arm GNU/Linux binaries
@@ -295,10 +295,10 @@ archives and their SHA signatures, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 16856
--rw-rw-r-- 1 ilg ilg 8777442 Oct 14 18:58 xpack-qemu-riscv-2.8.0-13-linux-arm64.tar.gz
--rw-rw-r-- 1 ilg ilg     109 Oct 14 18:58 xpack-qemu-riscv-2.8.0-13-linux-arm64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 8472838 Oct 14 19:22 xpack-qemu-riscv-2.8.0-13-linux-arm.tar.gz
--rw-rw-r-- 1 ilg ilg     107 Oct 14 19:22 xpack-qemu-riscv-2.8.0-13-linux-arm.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 8777442 Oct 14 18:58 xpack-qemu-riscv-6.1.0-1-linux-arm64.tar.gz
+-rw-rw-r-- 1 ilg ilg     109 Oct 14 18:58 xpack-qemu-riscv-6.1.0-1-linux-arm64.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 8472838 Oct 14 19:22 xpack-qemu-riscv-6.1.0-1-linux-arm.tar.gz
+-rw-rw-r-- 1 ilg ilg     107 Oct 14 19:22 xpack-qemu-riscv-6.1.0-1-linux-arm.tar.gz.sha
 ```
 
 ### Build the macOS binaries
@@ -338,8 +338,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 15120
--rw-r--r--  1 ilg  staff  7735782 Oct 14 20:24 xpack-qemu-riscv-2.8.0-13-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff      108 Oct 14 20:24 xpack-qemu-riscv-2.8.0-13-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  7735782 Oct 14 20:24 xpack-qemu-riscv-6.1.0-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff      108 Oct 14 20:24 xpack-qemu-riscv-6.1.0-1-darwin-x64.tar.gz.sha
 ```
 
 ## Subsequent runs
