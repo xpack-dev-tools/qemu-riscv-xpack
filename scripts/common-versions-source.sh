@@ -15,56 +15,93 @@
 
 function build_versions()
 {
-  QEMU_PROJECT_NAME="qemu"
-
-  QEMU_GIT_COMMIT=${QEMU_GIT_COMMIT:-""}
-  QEMU_GIT_PATCH=""
-
-  USE_TAR_GZ="y"
-
-  QEMU_SRC_FOLDER_NAME=${QEMU_SRC_FOLDER_NAME:-"${QEMU_PROJECT_NAME}.git"}
-  QEMU_SRC_FOLDER_PATH=${QEMU_SRC_FOLDER_PATH:-"${WORK_FOLDER_PATH}/${TARGET_FOLDER_NAME}/${QEMU_SRC_FOLDER_NAME}"}
-  QEMU_GIT_URL=${QEMU_GIT_URL:-"https://github.com/xpack-dev-tools/qemu.git"}
-
   if [ "${TARGET_PLATFORM}" == "win32" ]
   then
     prepare_gcc_env "${CROSS_COMPILE_PREFIX}-"
+  elif [ "${TARGET_PLATFORM}" == "darwin" ]
+  then
+    # Otherwise it fails with:
+    # error: 'macOS' undeclared (first use in this function)
+    # if (__builtin_available(macOS 11.0, *)) {
+    prepare_clang_env ""
   fi
 
   export QEMU_VERSION="$(echo "${RELEASE_VERSION}" | sed -e 's|-.*||')"
 
   # Keep them in sync with combo archive content.
-  if [[ "${RELEASE_VERSION}" =~ 6\.1\.0-* ]]
+  if [[ "${RELEASE_VERSION}" =~ 6\.1\.*-* ]]
   then
 
     # -------------------------------------------------------------------------
 
-    if [[ "${RELEASE_VERSION}" =~ 6\.1\.0-1 ]]
+    if [[ "${RELEASE_VERSION}" =~ 6\.1\.94-1 ]]
     then
       (
         xbb_activate
 
-        QEMU_GIT_BRANCH=${QEMU_GIT_BRANCH:-"xpack"}
-        # QEMU_GIT_BRANCH=${QEMU_GIT_BRANCH:-"xpack-develop"}
-        QEMU_GIT_COMMIT=${QEMU_GIT_COMMIT:-"b1ab9f0b322a905f8c5983692e800472a6556323"}
-
         build_zlib "1.2.11"
 
-        build_libpng "1.6.36"
-        build_jpeg "9b"
-        build_libiconv "1.15"
+        build_bzip2 "1.0.8"
 
-        build_sdl2 "2.0.9"
-        build_sdl2_image "2.0.4"
+        build_zstd "1.5.0"
 
-        build_libffi "3.2.1"
+        # required by nettle
+        build_gmp "6.2.1"
 
-        # in certain configurations it requires libxml2 on windows
-        build_gettext "0.21" # "0.19.8.1"
-        build_glib "2.56.4"
-        build_pixman "0.40.0" # "0.38.0"
+        build_libpng "1.6.37"
+        build_jpeg "9d"
 
-        build_qemu
+        build_libxml2 "2.9.11"
+
+        # required by glib
+        build_libiconv "1.16"
+
+        build_sdl2 "2.0.18"
+        build_sdl2_image "2.0.5"
+
+        # required by glib
+        build_libffi "3.4.2"
+
+        # required by glib
+        build_gettext "0.21"
+
+        # TODO "2.70.2" (meson)
+        build_glib "2.56.4" #
+
+        # Not toghether with nettle.
+        # build_libgpg_error "1.43"
+        # build_libgcrypt "1.9.4"
+
+        # https://github.com/Homebrew/homebrew-core/blob/master/Formula/gnutls.rb
+        # gnutls
+
+        # libslirp
+
+        # libcurl
+
+        # required by libssh
+        build_openssl "1.1.1l"
+
+        build_libssh "0.9.6"
+
+        build_libusb "1.0.24"
+
+        build_lzo "2.10"
+
+        build_ncurses "6.3"
+
+        build_nettle "3.7.3"
+
+        build_pixman "0.40.0"
+
+        # https://github.com/Homebrew/homebrew-core/blob/master/Formula/snappy.rb
+        # snappy - Compression/decompression library aiming for high speed
+
+        # required by vde
+        build_libpcap "1.10.1"
+        build_vde "2.3.2"
+
+        build_qemu "${QEMU_VERSION}"
       )
 
     # -------------------------------------------------------------------------
