@@ -14,15 +14,15 @@
 
 # -----------------------------------------------------------------------------
 
-function build_qemu()
+function build_qemu_()
 {
-  if [ ! -d "${QEMU_SRC_FOLDER_PATH}" ]
+  if [ ! -d "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}" ]
   then
     (
       git_clone "${QEMU_GIT_URL}" "${QEMU_GIT_BRANCH}" \
-          "${QEMU_GIT_COMMIT}" "${QEMU_SRC_FOLDER_PATH}"
+          "${QEMU_GIT_COMMIT}" "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}"
 
-      cd "${QEMU_SRC_FOLDER_PATH}"
+      cd "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}"
 
       # git submodule update --init --recursive --remote
       # Do not bring all submodules; for better control,
@@ -38,17 +38,42 @@ function build_qemu()
       fi
     )
   fi
+}
 
-  local qemu_folder_name="qemu"
+function build_qemu()
+{
+  # https://github.com/xpack-dev-tools/qemu
+  # https://github.com/xpack-dev-tools/qemu/archive/refs/tags/v6.1.94-xpack-riscv.tar.gz
+
+  # https://github.com/Homebrew/homebrew-core/blob/master/Formula/qemu.rb
+
+  local qemu_version="$1"
+
+  qemu_src_folder_name="qemu-${qemu_version}.git"
+
+  QEMU_GIT_URL=${QEMU_GIT_URL:-"https://github.com/xpack-dev-tools/qemu.git"}
+  QEMU_GIT_BRANCH=${QEMU_GIT_BRANCH:-"xpack-riscv-develop"}
+  QEMU_GIT_COMMIT=${QEMU_GIT_COMMIT:-"v${qemu_version}-xpack-riscv"}
+
+  local qemu_folder_name="qemu-${qemu_version}"
 
   mkdir -pv "${LOGS_FOLDER_PATH}/${qemu_folder_name}/"
 
-  local qemu_stamp_file_path="${INSTALL_FOLDER_PATH}/stamp-qemu-installed"
+  local qemu_stamp_file_path="${INSTALL_FOLDER_PATH}/stamp-${qemu_folder_name}-installed"
   if [ ! -f "${qemu_stamp_file_path}" ] || [ "${IS_DEBUG}" == "y" ]
   then
+
+    cd "${SOURCES_FOLDER_PATH}"
+
+    if [ ! -d "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}" ]
+    then
+      git_clone "${QEMU_GIT_URL}" "${QEMU_GIT_BRANCH}" \
+          "${QEMU_GIT_COMMIT}" "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}"
+    fi
+
     (
-      mkdir -pv "${APP_BUILD_FOLDER_PATH}"
-      cd "${APP_BUILD_FOLDER_PATH}"
+      mkdir -p "${BUILD_FOLDER_PATH}/${qemu_folder_name}"
+      cd "${BUILD_FOLDER_PATH}/${qemu_folder_name}"
 
       xbb_activate_installed_dev
 
@@ -83,17 +108,12 @@ function build_qemu()
           fi
 
           echo
-          echo "Overriding version..."
-          cp -v "${BUILD_GIT_PATH}/scripts/VERSION" "${QEMU_SRC_FOLDER_PATH}"
-
-          echo
           echo "Running qemu configure..."
 
           if [ "${IS_DEVELOP}" == "y" ]
           then
             # Although it shouldn't, the script checks python before --help.
-            run_verbose bash "${QEMU_SRC_FOLDER_PATH}/configure" \
-              --python=python2 \
+            run_verbose bash "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}/configure" \
               --help
           fi
 
@@ -114,73 +134,74 @@ function build_qemu()
           config_options+=("--cxx=${CXX}")
 
           config_options+=("--extra-cflags=${CFLAGS} ${CPPFLAGS}")
+          config_options+=("--extra-cxxflags=${CXXFLAGS} ${CPPFLAGS}")
           config_options+=("--extra-ldflags=${LDFLAGS}")
 
-          config_options+=("--target-list=gnuarmeclipse-softmmu")
-
-          config_options+=("--with-sdlabi=2.0")
-          config_options+=("--python=python2")
+          config_options+=("--target-list=riscv32-softmmu,riscv64-softmmu")
 
           if [ "${IS_DEBUG}" == "y" ]
           then
             config_options+=("--enable-debug")
           fi
 
-          config_options+=("--disable-werror")
+          config_options+=("--enable-nettle")
+          config_options+=("--enable-libssh")
+          config_options+=("--enable-lzo")
 
-          config_options+=("--disable-linux-aio")
-          config_options+=("--disable-libnfs")
-          config_options+=("--disable-snappy")
-          config_options+=("--disable-libssh2")
-          config_options+=("--disable-gnutls")
-          config_options+=("--disable-nettle")
-          config_options+=("--disable-lzo")
-          config_options+=("--disable-seccomp")
-          config_options+=("--disable-bluez")
-          config_options+=("--disable-gcrypt")
+          # Not toghether with nettle.
+          # config_options+=("--enable-gcrypt")
+
+          config_options+=("--enable-curses")
+          config_options+=("--enable-curses")
+          config_options+=("--enable-vde")
+
+          if [ "${TARGET_PLATFORM}" == "darwin" ]
+          then
+            if true
+            then
+              config_options+=("--disable-cocoa")
+              config_options+=("--enable-sdl")
+            else
+              config_options+=("--enable-cocoa")
+              config_options+=("--disable-sdl")
+            fi
+          else
+            config_options+=("--enable-sdl")
+          fi
+
+          config_options+=("--disable-bsd-user")
+          config_options+=("--disable-guest-agent")
+          config_options+=("--disable-gtk")
 
           if [ "${WITH_STRIP}" != "y" ]
           then
             config_options+=("--disable-strip")
           fi
 
-          run_verbose bash ${DEBUG} "${QEMU_SRC_FOLDER_PATH}/configure" \
+          config_options+=("--disable-werror")
+
+          run_verbose bash ${DEBUG} "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}/configure" \
             ${config_options[@]}
 
         fi
-        cp "config.log" "${LOGS_FOLDER_PATH}/${qemu_folder_name}/configure-log.txt"
-      ) 2>&1 | tee "${LOGS_FOLDER_PATH}/${qemu_folder_name}/configure-output.txt"
+        cp "config.log" "${LOGS_FOLDER_PATH}/${qemu_folder_name}/configure-log-$(ndate).txt"
+      ) 2>&1 | tee "${LOGS_FOLDER_PATH}/${qemu_folder_name}/configure-output-$(ndate).txt"
 
       (
         echo
         echo "Running qemu make..."
 
         # Build.
-        run_verbose make -j ${JOBS}
+        run_verbose make V=1 -j ${JOBS}
 
         run_verbose make install
-        run_verbose make install-gme
 
-        (
-          xbb_activate_tex
+        show_libs "${APP_PREFIX}/bin/qemu-img"
 
-          if [ "${WITH_PDF}" == "y" ]
-          then
-            make pdf
-            make install-pdf
-          fi
-
-          if [ "${WITH_HTML}" == "y" ]
-          then
-            make html
-            make install-html
-          fi
-        )
-
-      ) 2>&1 | tee "${LOGS_FOLDER_PATH}/${qemu_folder_name}/make-output.txt"
+      ) 2>&1 | tee "${LOGS_FOLDER_PATH}/${qemu_folder_name}/make-output-$(ndate).txt"
 
       copy_license \
-        "${QEMU_SRC_FOLDER_PATH}" \
+        "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}" \
         "qemu-${QEMU_VERSION}"
     )
 
@@ -194,26 +215,34 @@ function build_qemu()
 
 function test_qemu()
 {
-  if [ -d "xpacks/.bin" ]
-  then
-    QEMU="xpacks/.bin/qemu-system-gnuarmeclipse"
-  elif [ -d "${APP_PREFIX}/bin" ]
-  then
-    QEMU="${APP_PREFIX}/bin/qemu-system-gnuarmeclipse"
-  else
-    echo "Wrong folder."
-    exit 1
-  fi
+    if [ -d "xpacks/.bin" ]
+    then
+      TEST_BIN_PATH="$(pwd)/xpacks/.bin"
+    elif [ -d "${APP_PREFIX}/bin" ]
+    then
+      TEST_BIN_PATH="${APP_PREFIX}/bin"
+    else
+      echo "Wrong folder."
+      exit 1
+    fi
 
   echo
   echo "Checking the qemu shared libraries..."
-  show_libs "${QEMU}"
+  show_libs "${TEST_BIN_PATH}/qemu-system-riscv32"
+  show_libs "${TEST_BIN_PATH}/qemu-system-riscv64"
+  show_libs "${TEST_BIN_PATH}/qemu-img"
+  show_libs "${TEST_BIN_PATH}/qemu-nbd"
+  show_libs "${TEST_BIN_PATH}/qemu-io"
 
   echo
   echo "Checking if qemu starts..."
-  run_app "${QEMU}" --version
-  run_app "${QEMU}" --help
+  run_app "${TEST_BIN_PATH}/qemu-system-riscv32" --version
+  run_app "${TEST_BIN_PATH}/qemu-system-riscv64" --version
+  run_app "${TEST_BIN_PATH}/qemu-img" --version
+  run_app "${TEST_BIN_PATH}/qemu-nbd" --version
+  run_app "${TEST_BIN_PATH}/qemu-io" --version
 
+  run_app "${TEST_BIN_PATH}/qemu-system-riscv32" --help
 }
 
 # -----------------------------------------------------------------------------
