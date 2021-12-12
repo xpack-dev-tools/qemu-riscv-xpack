@@ -45,6 +45,9 @@ function build_qemu()
   # https://github.com/xpack-dev-tools/qemu
   # https://github.com/xpack-dev-tools/qemu/archive/refs/tags/v6.1.94-xpack-riscv.tar.gz
 
+  # https://github.com/archlinux/svntogit-packages/blob/packages/qemu/trunk/PKGBUILD
+  # https://github.com/archlinux/svntogit-community/blob/packages/libvirt/trunk/PKGBUILD
+
   # https://github.com/Homebrew/homebrew-core/blob/master/Formula/qemu.rb
 
   local qemu_version="$1"
