@@ -89,7 +89,7 @@ function build_qemu()
       CFLAGS="${XBB_CFLAGS_NO_W}"
       CXXFLAGS="${XBB_CXXFLAGS_NO_W}"
 
-      LDFLAGS="${XBB_LDFLAGS_APP_STATIC_GCC}"
+      LDFLAGS="${XBB_LDFLAGS_APP}"
       if [ "${TARGET_PLATFORM}" == "linux" ]
       then
         LDFLAGS+=" -Wl,-rpath,${LD_LIBRARY_PATH}"
