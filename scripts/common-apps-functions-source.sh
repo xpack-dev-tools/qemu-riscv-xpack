@@ -139,9 +139,9 @@ function build_qemu()
           config_options+=("--cc=${CC}")
           config_options+=("--cxx=${CXX}")
 
-          config_options+=("--extra-cflags=${CFLAGS} ${CPPFLAGS}")
-          config_options+=("--extra-cxxflags=${CXXFLAGS} ${CPPFLAGS}")
-          config_options+=("--extra-ldflags=${LDFLAGS}")
+          # CFLAGS, CXXFLAGS and LDFLAGS are used directly.
+          config_options+=("--extra-cflags=${CPPFLAGS}")
+          config_options+=("--extra-cxxflags=${CPPFLAGS}")
 
           config_options+=("--target-list=riscv32-softmmu,riscv64-softmmu")
 
