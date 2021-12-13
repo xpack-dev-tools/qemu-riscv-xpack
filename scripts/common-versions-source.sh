@@ -41,7 +41,10 @@ function build_versions()
 
         build_zlib "1.2.11"
 
-        build_bzip2 "1.0.8"
+        if [ "${TARGET_PLATFORM}" != "win32" ]
+        then
+          build_bzip2 "1.0.8"
+        fi
 
         build_zstd "1.5.0"
 
@@ -51,7 +54,10 @@ function build_versions()
         build_libpng "1.6.37"
         build_jpeg "9d"
 
-        build_libxml2 "2.9.11"
+        if [ "${TARGET_PLATFORM}" != "win32" ]
+        then
+          build_libxml2 "2.9.11"
+        fi
 
         # required by glib
         build_libiconv "1.16"
@@ -79,16 +85,27 @@ function build_versions()
 
         # libcurl
 
-        # required by libssh
-        build_openssl "1.1.1l"
 
-        build_libssh "0.9.6"
+        if [ "${TARGET_PLATFORM}" != "win32" ]
+        then
+          # required by libssh
+          build_openssl "1.1.1l"
 
-        build_libusb "1.0.24"
+          build_libssh "0.9.6"
+
+
+          build_ncurses "6.3"
+        fi
+
+        if [ "${TARGET_PLATFORM}" == "win32" ]
+        then
+          # TODO: check if QEMU can use it or something else is needed.
+          build_libusb_w32 "1.2.6.0"
+        else
+          build_libusb "1.0.24"
+        fi
 
         build_lzo "2.10"
-
-        build_ncurses "6.3"
 
         build_nettle "3.7.3"
 
@@ -97,9 +114,12 @@ function build_versions()
         # https://github.com/Homebrew/homebrew-core/blob/master/Formula/snappy.rb
         # snappy - Compression/decompression library aiming for high speed
 
-        # required by vde
-        build_libpcap "1.10.1"
-        build_vde "2.3.2"
+        if [ "${TARGET_PLATFORM}" != "win32" ]
+        then
+          # required by vde
+          build_libpcap "1.10.1"
+          build_vde "2.3.2"
+        fi
 
         build_qemu "${QEMU_VERSION}"
       )
