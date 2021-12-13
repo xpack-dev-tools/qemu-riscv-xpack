@@ -93,6 +93,9 @@ function build_qemu()
       if [ "${TARGET_PLATFORM}" == "linux" ]
       then
         LDFLAGS+=" -Wl,-rpath,${LD_LIBRARY_PATH}"
+      elif [ "${TARGET_PLATFORM}" == "win32" ]
+      then
+        LDFLAGS+=" -fstack-protector"
       fi
 
       export CPPFLAGS
