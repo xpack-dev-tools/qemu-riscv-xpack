@@ -50,6 +50,8 @@ function build_qemu()
 
   # https://github.com/Homebrew/homebrew-core/blob/master/Formula/qemu.rb
 
+  # https://github.com/msys2/MINGW-packages/blob/master/mingw-w64-qemu/PKGBUILD
+
   local qemu_version="$1"
 
   qemu_src_folder_name="qemu-${qemu_version}.git"
