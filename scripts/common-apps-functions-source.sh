@@ -151,15 +151,17 @@ function build_qemu()
           fi
 
           config_options+=("--enable-nettle")
-          config_options+=("--enable-libssh")
           config_options+=("--enable-lzo")
 
           # Not toghether with nettle.
           # config_options+=("--enable-gcrypt")
 
-          config_options+=("--enable-curses")
-          config_options+=("--enable-curses")
-          config_options+=("--enable-vde")
+          if [ "${TARGET_PLATFORM}" != "win32" ]
+          then
+            config_options+=("--enable-libssh")
+            config_options+=("--enable-curses")
+            config_options+=("--enable-vde")
+          fi
 
           if [ "${TARGET_PLATFORM}" == "darwin" ]
           then
