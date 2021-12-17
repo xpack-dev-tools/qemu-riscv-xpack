@@ -24,13 +24,6 @@ function build_qemu_()
 
       cd "${SOURCES_FOLDER_PATH}/${qemu_src_folder_name}"
 
-      # git submodule update --init --recursive --remote
-      # Do not bring all submodules; for better control,
-      # prefer to build separate pixman.
-      run_verbose git submodule update --init dtc
-
-      rm -rf pixman roms
-
       local patch_file="${BUILD_GIT_PATH}/patches/${QEMU_GIT_PATCH}"
       if [ -f "${patch_file}" ]
       then
@@ -225,16 +218,16 @@ function build_qemu()
 
 function test_qemu()
 {
-    if [ -d "xpacks/.bin" ]
-    then
-      TEST_BIN_PATH="$(pwd)/xpacks/.bin"
-    elif [ -d "${APP_PREFIX}/bin" ]
-    then
-      TEST_BIN_PATH="${APP_PREFIX}/bin"
-    else
-      echo "Wrong folder."
-      exit 1
-    fi
+  if [ -d "xpacks/.bin" ]
+  then
+    TEST_BIN_PATH="$(pwd)/xpacks/.bin"
+  elif [ -d "${APP_PREFIX}/bin" ]
+  then
+    TEST_BIN_PATH="${APP_PREFIX}/bin"
+  else
+    echo "Wrong folder."
+    exit 1
+  fi
 
   echo
   echo "Checking the qemu shared libraries..."
