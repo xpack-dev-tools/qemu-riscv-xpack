@@ -44,3 +44,9 @@ docker_linux_arm64_image=${docker_linux_arm64_image:-"ilegeul/ubuntu:arm64v8-18.
 docker_linux_arm32_image=${docker_linux_arm32_image:-"ilegeul/ubuntu:arm32v7-18.04-xbb-v3.4"}
 
 # -----------------------------------------------------------------------------
+
+# Until the defaults will be updated in the helper scripts.
+WITH_PDF="n"
+WITH_HTML="n"
+
+# -----------------------------------------------------------------------------
