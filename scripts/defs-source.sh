@@ -36,17 +36,3 @@ GITHUB_PRE_RELEASES="${GITHUB_PRE_RELEASES:-"pre-releases"}"
 NPM_PACKAGE="${NPM_PACKAGE:-"@xpack-dev-tools/${APP_LC_NAME}@next"}"
 
 # -----------------------------------------------------------------------------
-
-# Until the defaults will be updated in the helper scripts.
-docker_linux64_image=${docker_linux64_image:-"ilegeul/ubuntu:amd64-18.04-xbb-v3.4"}
-docker_linux32_image=${docker_linux32_image:-"none"}
-docker_linux_arm64_image=${docker_linux_arm64_image:-"ilegeul/ubuntu:arm64v8-18.04-xbb-v3.4"}
-docker_linux_arm32_image=${docker_linux_arm32_image:-"ilegeul/ubuntu:arm32v7-18.04-xbb-v3.4"}
-
-# -----------------------------------------------------------------------------
-
-# Until the defaults will be updated in the helper scripts.
-WITH_PDF="n"
-WITH_HTML="n"
-
-# -----------------------------------------------------------------------------
