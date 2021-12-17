@@ -29,12 +29,12 @@ function build_versions()
   export QEMU_VERSION="$(echo "${RELEASE_VERSION}" | sed -e 's|-.*||')"
 
   # Keep them in sync with combo archive content.
-  if [[ "${RELEASE_VERSION}" =~ 6\.1\.*-* ]]
+  if [[ "${RELEASE_VERSION}" =~ 6\.2\.*-* ]]
   then
 
     # -------------------------------------------------------------------------
 
-    if [[ "${RELEASE_VERSION}" =~ 6\.1\.94-1 ]]
+    if [[ "${RELEASE_VERSION}" =~ 6\.2\.0-1 ]]
     then
       (
         xbb_activate
