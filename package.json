@@ -59,6 +59,11 @@
       }
     },
     "bin": {
+      "qemu-edid": "./.content/bin/qemu-edid",
+      "qemu-img": "./.content/bin/qemu-img",
+      "qemu-io": "./.content/bin/qemu-io",
+      "qemu-nbd": "./.content/bin/qemu-nbd",
+      "qemu-storage-daemon": "./.content/bin/qemu-storage-daemon",
       "qemu-system-riscv32": "./.content/bin/qemu-system-riscv32",
       "qemu-system-riscv64": "./.content/bin/qemu-system-riscv64"
     },
