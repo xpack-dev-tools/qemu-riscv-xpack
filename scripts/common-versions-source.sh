@@ -39,6 +39,9 @@ function build_versions()
       (
         xbb_activate
 
+        QEMU_GIT_BRANCH=${QEMU_GIT_BRANCH:-"xpack-riscv-develop"}
+        QEMU_GIT_COMMIT=${QEMU_GIT_COMMIT:-"v${QEMU_VERSION}-xpack-riscv"}
+
         build_zlib "1.2.11"
 
         if [ "${TARGET_PLATFORM}" != "win32" ]

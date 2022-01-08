@@ -50,8 +50,6 @@ function build_qemu()
   qemu_src_folder_name="qemu-${qemu_version}.git"
 
   QEMU_GIT_URL=${QEMU_GIT_URL:-"https://github.com/xpack-dev-tools/qemu.git"}
-  QEMU_GIT_BRANCH=${QEMU_GIT_BRANCH:-"xpack-riscv-develop"}
-  QEMU_GIT_COMMIT=${QEMU_GIT_COMMIT:-"v${qemu_version}-xpack-riscv"}
 
   local qemu_folder_name="qemu-${qemu_version}"
 
