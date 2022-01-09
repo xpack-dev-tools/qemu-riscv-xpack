@@ -129,7 +129,7 @@ function build_versions()
           build_vde "2.3.2"
         fi
 
-        build_qemu "${QEMU_VERSION}"
+        build_qemu "${QEMU_VERSION}" "riscv"
       )
 
     # -------------------------------------------------------------------------
