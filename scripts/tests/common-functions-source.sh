@@ -22,7 +22,7 @@ function run_tests()
   echo
   env | sort
 
-  test_qemu
+  test_qemu_riscv
 
   # TODO: add more, if possible.
 }
