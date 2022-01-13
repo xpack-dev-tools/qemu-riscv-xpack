@@ -173,9 +173,8 @@ The result should look similar to:
 
 ```console
 $ docker images
-REPOSITORY          TAG                    IMAGE ID            CREATED             SIZE
-ilegeul/ubuntu      i386-12.04-xbb-v3.3    35fb0236572c        23 hours ago        5GB
-ilegeul/ubuntu      amd64-12.04-xbb-v3.3   1c4ba2e7e87e        29 hours ago        5.43GB
+REPOSITORY       TAG                    IMAGE ID       CREATED         SIZE
+ilegeul/ubuntu   amd64-18.04-xbb-v3.4   ace5ae2e98e5   4 weeks ago     5.11GB
 ```
 
 It is also recommended to Remove unused Docker space. This is mostly useful
@@ -185,7 +184,7 @@ by Docker.
 To check the content of a Docker image:
 
 ```sh
-docker run --interactive --tty ilegeul/ubuntu:amd64-12.04-xbb-v3.3
+docker run --interactive --tty ilegeul/ubuntu:amd64-18.04-xbb-v3.4
 ```
 
 To remove unused files:
@@ -354,7 +353,7 @@ Instead of `--all`, you can use any combination of:
 --linux64
 ```
 
-On Arm, instead of `--all`, you can use:
+On Arm, instead of `--all`, you can use any combination of:
 
 ```console
 --arm32 --arm64
