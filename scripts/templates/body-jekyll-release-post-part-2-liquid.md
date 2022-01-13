@@ -16,7 +16,7 @@ with Ubuntu 18 and RedHat 8.
 ## Download analytics
 
 - GitHub [xpack-dev-tools/qemu-riscv-xpack](https://github.com/xpack-dev-tools/qemu-riscv-xpack/)
-  - this release [![Github All Releases](https://img.shields.io/github/downloads/xpack-dev-tools/qemu-riscv-xpack/v{{ page.version }}/total.svg)](https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/v{{ page.version }}/)
+  - this release [![Github All Releases](https://img.shields.io/github/downloads/xpack-dev-tools/qemu-riscv-xpack/v{% raw %}{{ page.version }}{% endraw %}/total.svg)](https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/v{% raw %}{{ page.version }}{% endraw %}/)
   - all xPack releases [![Github All Releases](https://img.shields.io/github/downloads/xpack-dev-tools/qemu-riscv-xpack/total.svg)](https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/)
   - all GNU MCU Eclipse releases [![Github All Releases](https://img.shields.io/github/downloads/gnu-mcu-eclipse/qemu/total.svg)](https://github.com/gnu-mcu-eclipse/qemu/releases/)
   - [individual file counters](https://somsubhra.github.io/github-release-stats/?username=xpack-dev-tools&repository=qemu-riscv-xpack) (grouped per release)
