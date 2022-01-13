@@ -1,7 +1,9 @@
 ---
 title:  xPack QEMU RISC-V v{{ RELEASE_VERSION }} released
 
+TODO: select one summary
 summary: "Version **{{ RELEASE_VERSION }}** is a maintenance release; it fixes several bugs."
+summary: "Version **{{ RELEASE_VERSION }}** is a new release; it follows the upstream QEMU release."
 
 version: {{ RELEASE_VERSION }}
 npm_subversion: 1
@@ -18,7 +20,7 @@ tags:
   - qemu
   - emulator
   - arm
-  - cortex-m
+  - risc-v
 
 ---
 
@@ -28,7 +30,8 @@ is a standalone cross-platform binary distribution of
 devices.
 
 There are separate binaries for **Windows** (Intel 64-bit),
-**macOS** (Intel 64-bit, Apple Silicon 64-bit) and **GNU/Linux** (Intel 64-bit, Arm 32/64-bit).
+**macOS** (Intel 64-bit, Apple Silicon 64-bit)
+and **GNU/Linux** (Intel 64-bit, Arm 32/64-bit).
 
 {% raw %}{% include note.html content="The main targets for the Arm binaries
 are the **Raspberry Pi** class devices." %}{% endraw %}
@@ -39,17 +42,17 @@ The binary files are available from GitHub [Releases]({% raw %}{{ page.download_
 
 ## Prerequisites
 
-- Intel GNU/Linux 64-bit: any system with **GLIBC 2.27** or higher
+- GNU/Linux Intel 64-bit: any system with **GLIBC 2.27** or higher
   (like Ubuntu 18 or later, Debian 10 or later, RedHat 8 later,
   Fedora 29 or later, etc)
-- Arm GNU/Linux 32/64-bit: any system with **GLIBC 2.27** or higher
-  (like Ubuntu 16 or later, Debian 9 or later, RedHat/CentOS 8 or later,
-  Fedora 24 or later, etc)
+- GNU/Linux Arm 32/64-bit: any system with **GLIBC 2.27** or higher
+  (like Raspberry Pi OS, Ubuntu 18 or later, Debian 10 or later, RedHat 8 later,
+  Fedora 29 or later, etc)
 - Intel Windows 64-bit: Windows 7 with the Universal C Runtime
   ([UCRT](https://support.microsoft.com/en-us/topic/update-for-universal-c-runtime-in-windows-c0514201-7fe6-95a3-b0a5-287930f3560c)),
   Windows 8, Windows 10
-- Intel macOS 64-bit: 10.13 or later
-- Apple Silicon macOS 64-bit: 11.6 or later
+- macOS Intel 64-bit: 10.13 or later
+- macOS Apple Silicon 64-bit: 11.6 or later
 
 On GNU/Linux, QEMU requires the X11 libraries to be present. On Debian derived
 distribution they are already in the system; on RedHat & Arch derived
@@ -122,11 +125,12 @@ with major changes.
 
 The current version is based on:
 
-- QEMU version 6.2.0, commit [44f28df](https://github.com/xpack-dev-tools/qemu/commit/44f28df24767cf9dca1ddc9b23157737c4cbb645) from Dec 14th, 2021.
+- QEMU version 6.2.0, commit [44f28df](https://github.com/xpack-dev-tools/qemu/commit/44f28df24767cf9dca1ddc9b23157737c4cbb645)
+  from Dec 14th, 2021.
 
 ## Changes
 
-Compared to the master `qemu-system-riscv*`, there should be no changes.
+Compared to the master `qemu-system-riscv*`, there are no major changes.
 
 The supported boards and CPUs are:
 
