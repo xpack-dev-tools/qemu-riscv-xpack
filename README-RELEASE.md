@@ -221,6 +221,19 @@ The test results are available from
 Install the binaries on all supported platforms and check if they are
 functional.
 
+Download the platform specific archive from
+<https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/>.
+
+To test graphical mode, use Thomas Huth's presentation:
+
+```sh
+curl -L https://www.qemu-advent-calendar.org/2018/download/day24.tar.xz \
+  -o ${HOME}/Downloads/day24.tar.xz
+(cd ${HOME}/Downloads; tar xvf day24.tar.xz)
+export PATH=${HOME}/Downloads/xpack-qemu-riscv-6.2.0-1/bin:$PATH
+bash ${HOME}/Downloads/day24/run.sh
+```
+
 ## Create a new GitHub pre-release draft
 
 - in `CHANGELOG.md`, add the release date and a message like _- v6.2.0-1 released_
@@ -263,7 +276,7 @@ If any, refer to closed
 - perform the final edits and check if everything is fine
 - temporarily fill in the _Continue Reading »_ with the URL of the
   web-preview release
-- keep the pre-release button enabled
+- **keep the pre-release button enabled**
 - do not enable Discussions yet
 - publish the release
 
