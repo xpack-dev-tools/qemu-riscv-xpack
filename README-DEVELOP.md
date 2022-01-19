@@ -171,11 +171,11 @@ Git repo.
 To download them, use:
 
 ```sh
-rm -rf ~/Downloads/qemu-riscv-xpack.git; \
+rm -rf ${HOME}/Work/qemu-riscv-xpack.git; \
 git clone \
   https://github.com/xpack-dev-tools/qemu-riscv-xpack.git \
-  ~/Downloads/qemu-riscv-xpack.git; \
-git -C ~/Downloads/qemu-riscv-xpack.git submodule update --init --recursive
+  ${HOME}/Work/qemu-riscv-xpack.git; \
+git -C ${HOME}/Work/qemu-riscv-xpack.git submodule update --init --recursive
 ```
 
 For more details please read the `README-BUILD.md` file.
@@ -193,13 +193,13 @@ To build a binary which is suitable for debug sessions, run the
 ```sh
 rm -rf ~/Work/qemu-riscv-dev
 
-bash ~/Downloads/qemu-riscv-xpack.git/scripts/helper/build-native.sh --debug --develop
+bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build-native.sh --debug --develop
 ```
 
 To build the Windows binaries, use:
 
 ```sh
-bash ~/Downloads/qemu-riscv-xpack.git/scripts/helper/build-native.sh --debug --develop --win
+bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build-native.sh --debug --develop --win
 ```
 
 The result is the `${HOME}/Work/qemu-riscv-dev/${platform}-${arch}` folder. The build
@@ -237,27 +237,27 @@ in preparation for a new build.
 The operation can also be performed manually:
 
 ```sh
-bash ~/Downloads/qemu-riscv-xpack.git/scripts/helper/build-native.sh clean
+bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build-native.sh clean
 ```
 
 To remove the library folders, use:
 
 ```sh
-bash ~/Downloads/qemu-riscv-xpack.git/scripts/helper/build-native.sh cleanlibs
+bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build-native.sh cleanlibs
 ```
 
 To remove all:
 
 ```sh
-bash ~/Downloads/qemu-riscv-xpack.git/scripts/helper/build-native.sh cleanall
+bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build-native.sh cleanall
 ```
 
 To clean the Windows build, the commands are similar:
 
 ```sh
-bash ~/Downloads/qemu-riscv-xpack.git/scripts/helper/build-native.sh --win clean
-bash ~/Downloads/qemu-riscv-xpack.git/scripts/helper/build-native.sh --win cleanlibs
-bash ~/Downloads/qemu-riscv-xpack.git/scripts/helper/build-native.sh --win cleanall
+bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build-native.sh --win clean
+bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build-native.sh --win cleanlibs
+bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build-native.sh --win cleanall
 ```
 
 ### Edit & IntelliSense
