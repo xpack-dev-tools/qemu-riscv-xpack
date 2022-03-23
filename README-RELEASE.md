@@ -78,7 +78,7 @@ In the qemu.git fork:
 
 ### Update helper
 
-With Sourcetree, go to the helper repo and update to the latest master commit.
+With a git client, go to the helper repo and update to the latest master commit.
 
 ## Build
 
