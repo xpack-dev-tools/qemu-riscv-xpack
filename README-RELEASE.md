@@ -88,7 +88,7 @@ Before the real build, run a test build on the development machine (`wks`)
 or the production machines (`xbbma`, `xbbmi`):
 
 ```sh
-sudo rm -rf ~/Work/qemu-riscv-*
+sudo rm -rf ~/Work/qemu-riscv-*-*
 
 caffeinate bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build.sh --develop --macos
 ```

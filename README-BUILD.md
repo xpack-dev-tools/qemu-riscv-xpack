@@ -200,14 +200,14 @@ network connection or a computer entering sleep.
 ```sh
 screen -S qemu
 
-sudo rm -rf ~/Work/qemu-riscv-*
+sudo rm -rf ~/Work/qemu-riscv-*-*
 bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build.sh --develop --all
 ```
 
 or, for development builds:
 
 ```sh
-sudo rm -rf ~/Work/qemu-riscv-*
+sudo rm -rf ~/Work/qemu-riscv-*-*
 bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build.sh --develop--without-pdf --without-html --disable-tests --linux64 --win64
 ```
 
@@ -271,14 +271,14 @@ network connection or a computer entering sleep.
 ```sh
 screen -S qemu
 
-sudo rm -rf ~/Work/qemu-riscv-*
+sudo rm -rf ~/Work/qemu-riscv-*-*
 bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build.sh --develop --all
 ```
 
 or, for development builds:
 
 ```sh
-sudo rm -rf ~/Work/qemu-riscv-*
+sudo rm -rf ~/Work/qemu-riscv-*-*
 bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build.sh --develop --without-pdf --without-html --disable-tests --arm32 --arm64
 ```
 
@@ -319,14 +319,14 @@ network connection or a computer entering sleep.
 ```sh
 screen -S qemu
 
-rm -rf ~/Work/qemu-riscv-*
+rm -rf ~/Work/qemu-riscv-*-*
 caffeinate bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build.sh --develop --macos
 ```
 
 or, for development builds:
 
 ```sh
-rm -rf ~/Work/qemu-riscv-*
+rm -rf ~/Work/qemu-riscv-*-*
 caffeinate bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build.sh --develop --without-pdf --without-html --disable-tests --macos
 ```
 
