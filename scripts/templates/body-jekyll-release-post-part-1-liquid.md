@@ -26,8 +26,7 @@ tags:
 
 [The xPack QEMU RISC-V](https://xpack.github.io/qemu-riscv/)
 is a standalone cross-platform binary distribution of
-[QEMU](http://www.qemu.org), with several extensions for Arm Cortex-M
-devices.
+[QEMU](http://www.qemu.org).
 
 There are separate binaries for **Windows** (Intel 64-bit),
 **macOS** (Intel 64-bit, Apple Silicon 64-bit)
@@ -126,7 +125,7 @@ with major changes.
 
 The current version is based on:
 
-- QEMU version 6.2.0, commit [44f28df](https://github.com/xpack-dev-tools/qemu/commit/44f28df24767cf9dca1ddc9b23157737c4cbb645)
+- QEMU version 7.0.0, commit [44f28df](https://github.com/xpack-dev-tools/qemu/commit/44f28df24767cf9dca1ddc9b23157737c4cbb645)
   from Dec 14th, 2021.
 
 ## Changes
@@ -136,7 +135,7 @@ Compared to the master `qemu-system-riscv*`, there are no major changes.
 The supported boards and CPUs are:
 
 ```console
-$ .../xpack-qemu-riscv-6.2.0-1/bin/qemu-system-riscv32 -machine help
+$ .../xpack-qemu-riscv-7.0.0-1/bin/qemu-system-riscv32 -machine help
 Supported machines are:
 none                 empty machine
 opentitan            RISC-V Board compatible with OpenTitan
@@ -144,7 +143,7 @@ sifive_e             RISC-V Board compatible with SiFive E SDK
 sifive_u             RISC-V Board compatible with SiFive U SDK
 spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
-$ .../xpack-qemu-riscv-6.2.0-1/bin/qemu-system-riscv32 -cpu help
+$ .../xpack-qemu-riscv-7.0.0-1/bin/qemu-system-riscv32 -cpu help
 any
 lowrisc-ibex
 rv32
@@ -152,7 +151,7 @@ sifive-e31
 sifive-e34
 sifive-u34
 
-$ .../xpack-qemu-riscv-6.2.0-1/bin/qemu-system-riscv64 -machine help
+$ .../xpack-qemu-riscv-7.0.0-1/bin/qemu-system-riscv64 -machine help
 Supported machines are:
 microchip-icicle-kit Microchip PolarFire SoC Icicle Kit
 none                 empty machine
@@ -161,7 +160,7 @@ sifive_e             RISC-V Board compatible with SiFive E SDK
 sifive_u             RISC-V Board compatible with SiFive U SDK
 spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
-$ .../xpack-qemu-riscv-6.2.0-1/bin/qemu-system-riscv64 -cpu help
+$ .../xpack-qemu-riscv-7.0.0-1/bin/qemu-system-riscv64 -cpu help
 any
 rv64
 shakti-c

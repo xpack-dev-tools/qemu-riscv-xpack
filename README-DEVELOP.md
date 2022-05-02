@@ -276,19 +276,7 @@ selection window that appears on top, select the desired configuration.
 
 ### The emulated images
 
-There are multiple Cortex-M test projects in the separate GitHub project
-[`xpack-dev-tools/qemu-eclipse-test-projects`](https://github.com/xpack-dev-tools/qemu-eclipse-test-projects.git)
-
-The default one is `f407-disc-blink-tutorial`, the STM32F4-DISCOVERY Blinky,
-as described in the
-[blinky tutorial](https://xpack-dev-tools.github.io/tutorials/blinky-arm/).
-
-Clone the repository in the same `Work` folder:
-
-```sh
-cd ~/Work
-git clone https://github.com/xpack-dev-tools/qemu-eclipse-test-projects.git qemu-eclipse-test-projects.git
-```
+TBD
 
 ### Debug
 
@@ -296,8 +284,8 @@ VSC also provides decent debugging features. The launchers are
 defined in `.vscode/launch.json`.
 
 The executable is started from
-`${env:HOME}/Work/qemu-riscv-dev/${platform}-${arch}/install/qemu/bin/qemu-system-gnuarmeclipse`, or
-`${env:USERPROFILE}/Work/qemu-riscv-dev/win32-x64/install/qemu/bin/qemu-system-gnuarmeclipse.exe` on Windows.
+`${env:HOME}/Work/qemu-riscv-dev/${platform}-${arch}/install/qemu/bin/qemu-system-riscv`, or
+`${env:USERPROFILE}/Work/qemu-riscv-dev/win32-x64/install/qemu/bin/qemu-system-riscv.exe` on Windows.
 
 In addition to a test showing the help message, two more launchers
 are defined for each platform, to start the classical STM32F4DISCOVERY

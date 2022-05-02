@@ -117,7 +117,7 @@ not be accepted by bash.
 
 ## Versioning
 
-The version string is an extension to semver, the format looks like `6.2.0-1`.
+The version string is an extension to semver, the format looks like `7.0.0-1`.
 It includes the three digits with the original QEMU version and a fourth
 digit with the xPack release number.
 
@@ -125,11 +125,8 @@ When publishing on the **npmjs.com** server, a fifth digit is appended.
 
 ## Changes
 
-Compared to the original QEMU distribution, there are major
-changes in the Cortex-M emulation.
-
-The actual changes for each version are documented in the
-release web pages.
+Compared to the original QEMU distribution, there are
+no functional changes in the RISC-V emulation.
 
 ## How to run a local/native build
 
@@ -220,10 +217,10 @@ archives and their SHA signatures, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 37100
--rw-rw-r-- 1 ilg ilg  8796275 Oct 14 21:38 xpack-qemu-riscv-6.2.0-1-linux-x64.tar.gz
--rw-rw-r-- 1 ilg ilg      107 Oct 14 21:38 xpack-qemu-riscv-6.2.0-1-linux-x64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 10393964 Oct 14 21:44 xpack-qemu-riscv-6.2.0-1-win32-x64.zip
--rw-rw-r-- 1 ilg ilg      104 Oct 14 21:44 xpack-qemu-riscv-6.2.0-1-win32-x64.zip.sha
+-rw-rw-r-- 1 ilg ilg  8796275 Oct 14 21:38 xpack-qemu-riscv-7.0.0-1-linux-x64.tar.gz
+-rw-rw-r-- 1 ilg ilg      107 Oct 14 21:38 xpack-qemu-riscv-7.0.0-1-linux-x64.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 10393964 Oct 14 21:44 xpack-qemu-riscv-7.0.0-1-win32-x64.zip
+-rw-rw-r-- 1 ilg ilg      104 Oct 14 21:44 xpack-qemu-riscv-7.0.0-1-win32-x64.zip.sha
 ```
 
 ### Build the Arm GNU/Linux binaries
@@ -292,10 +289,10 @@ archives and their SHA signatures, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 16856
--rw-rw-r-- 1 ilg ilg 8777442 Oct 14 18:58 xpack-qemu-riscv-6.2.0-1-linux-arm64.tar.gz
--rw-rw-r-- 1 ilg ilg     109 Oct 14 18:58 xpack-qemu-riscv-6.2.0-1-linux-arm64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 8472838 Oct 14 19:22 xpack-qemu-riscv-6.2.0-1-linux-arm.tar.gz
--rw-rw-r-- 1 ilg ilg     107 Oct 14 19:22 xpack-qemu-riscv-6.2.0-1-linux-arm.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 8777442 Oct 14 18:58 xpack-qemu-riscv-7.0.0-1-linux-arm64.tar.gz
+-rw-rw-r-- 1 ilg ilg     109 Oct 14 18:58 xpack-qemu-riscv-7.0.0-1-linux-arm64.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 8472838 Oct 14 19:22 xpack-qemu-riscv-7.0.0-1-linux-arm.tar.gz
+-rw-rw-r-- 1 ilg ilg     107 Oct 14 19:22 xpack-qemu-riscv-7.0.0-1-linux-arm.tar.gz.sha
 ```
 
 ### Build the macOS binaries
@@ -339,8 +336,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 15120
--rw-r--r--  1 ilg  staff  7735782 Oct 14 20:24 xpack-qemu-riscv-6.2.0-1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff      108 Oct 14 20:24 xpack-qemu-riscv-6.2.0-1-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  7735782 Oct 14 20:24 xpack-qemu-riscv-7.0.0-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff      108 Oct 14 20:24 xpack-qemu-riscv-7.0.0-1-darwin-x64.tar.gz.sha
 ```
 
 ## Subsequent runs
@@ -422,108 +419,7 @@ The result of the `configure` step on CentOS 6, with most of the
 options disabled, is:
 
 ```console
-Source path       /Host/Work/qemu-riscv-2.8.0-13/qemu.git
-C compiler        gcc
-Host C compiler   cc
-C++ compiler      g++
-Objective-C compiler gcc
-ARFLAGS           rv
-CFLAGS            -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -ffunction-sections -fdata-sections -m64 -pipe -O2 -Wno-format-truncation -Wno-incompatible-pointer-types -Wno-unused-function -Wno-unused-but-set-variable -Wno-unused-result
-QEMU_CFLAGS       -I/Host/Work/qemu-riscv-2.8.0-13/install/centos64/include/pixman-1 -I$(SRC_PATH)/dtc/libfdt -pthread -I/Host/Work/qemu-riscv-2.8.0-13/install/centos64/include/glib-2.0 -I/Host/Work/qemu-riscv-2.8.0-13/install/centos64/lib/glib-2.0/include -fPIE -DPIE -m64 -mcx16 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wall -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv  -ffunction-sections -fdata-sections -m64 -pipe -O2 -Wno-format-truncation -Wno-incompatible-pointer-types -Wno-unused-function -Wno-unused-but-set-variable -Wno-unused-result -I/Host/Work/qemu-riscv-2.8.0-13/install/centos64/include -Wendif-labels -Wno-shift-negative-value -Wmissing-include-dirs -Wempty-body -Wnested-externs -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wold-style-declaration -Wold-style-definition -Wtype-limits -fstack-protector-strong
-LDFLAGS           -Wl,--warn-common -Wl,-z,relro -Wl,-z,now -pie -m64 -g -L/Host/Work/qemu-riscv-2.8.0-13/install/centos64/lib -L/Host/Work/qemu-riscv-2.8.0-13/install/centos64/lib
-make              make
-install           install
-python            python -B
-module support    no
-host CPU          x86_64
-host big endian   no
-target list       gnuarmeclipse-softmmu
-tcg debug enabled yes
-gprof enabled     no
-sparse enabled    no
-strip binaries    no
-profiler          no
-static build      no
-pixman            system
-SDL support       yes (2.0.5)
-GTK support       no
-GTK GL support    no
-VTE support       no
-TLS priority      NORMAL
-GNUTLS support    no
-GNUTLS rnd        no
-libgcrypt         no
-libgcrypt kdf     no
-nettle            no
-nettle kdf        no
-libtasn1          no
-curses support    no
-virgl support     no
-curl support      no
-mingw32 support   no
-Audio drivers
-Block whitelist (rw)
-Block whitelist (ro)
-VirtFS support    no
-VNC support       no
-xen support       no
-brlapi support    no
-bluez  support    no
-Documentation     yes
-PIE               yes
-vde support       no
-netmap support    no
-Linux AIO support no
-ATTR/XATTR support yes
-Install blobs     no
-KVM support       no
-COLO support      yes
-RDMA support      no
-TCG interpreter   no
-fdt support       yes
-preadv support    yes
-fdatasync         yes
-madvise           yes
-posix_madvise     yes
-libcap-ng support no
-vhost-net support yes
-vhost-scsi support yes
-vhost-vsock support yes
-Trace backends    log
-spice support     no
-rbd support       no
-xfsctl support    no
-smartcard support no
-libusb            no
-usb net redir     no
-OpenGL support    no
-OpenGL dmabufs    no
-libiscsi support  no
-libnfs support    no
-build guest agent no
-QGA VSS support   no
-QGA w32 disk info no
-QGA MSI support   no
-seccomp support   no
-coroutine backend ucontext
-coroutine pool    yes
-debug stack usage no
-GlusterFS support no
-Archipelago support no
-gcov              gcov
-gcov enabled      no
-TPM support       no
-libssh2 support   no
-TPM passthrough   no
-QOM debugging     yes
-lzo support       no
-snappy support    no
-bzip2 support     no
-NUMA host support no
-tcmalloc support  no
-jemalloc support  no
-avx2 optimization yes
-replication support yes
+...
 ```
 
 ## Testing
@@ -537,9 +433,7 @@ program from there. For example on macOS the output should
 look like:
 
 ```console
-$ .../xpack-qemu-riscv-2.8.0-13/bin/qemu-system-gnuarmeclipse --version
-xPack 64-bit QEMU emulator version 2.8.0-13 (v2.8.0-12-dirty)
-Copyright (c) 2003-2016 Fabrice Bellard and the QEMU Project developers
+$ ...
 ```
 
 ## Installed folders
@@ -548,34 +442,7 @@ After install, the package should create a structure like this (macOS files;
 only the first two depth levels are shown):
 
 ```console
-$ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/2.8.0-13.1/.content
-/Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/2.8.0-13.1/.content
-├── README.md
-├── bin
-│   └── qemu-system-gnuarmeclipse
-├── distro-info
-│   ├── CHANGELOG.md
-│   ├── licenses
-│   ├── patches
-│   └── scripts
-├── libexec
-│   ├── libSDL2-2.0.0.dylib
-│   ├── libSDL2_image-2.0.0.dylib
-│   ├── libgcc_s.1.dylib
-│   ├── libglib-2.0.0.dylib
-│   ├── libgthread-2.0.0.dylib
-│   ├── libiconv.2.dylib
-│   ├── libintl.8.dylib
-│   ├── libpixman-1.0.dylib
-│   ├── libssp.0.dylib
-│   ├── libstdc++.6.dylib
-│   ├── libz.1.2.11.dylib
-│   └── libz.1.dylib -> libz.1.2.11.dylib
-└── share
-    ├── doc
-    └── qemu
-
-9 directories, 15 files
+$ tree -L 2 ...
 ```
 
 ## Uninstall
