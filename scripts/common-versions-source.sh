@@ -225,7 +225,6 @@ function build_versions()
 
         build_libssh "0.9.6"
 
-
         build_ncurses "6.3"
       fi
 
