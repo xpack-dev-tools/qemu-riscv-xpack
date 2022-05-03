@@ -415,11 +415,244 @@ the build folder, it might be necessary to run a recursive `chown`.
 
 ## Actual configuration
 
-The result of the `configure` step on CentOS 6, with most of the
-options disabled, is:
+The result of the `configure` step, is:
 
 ```console
-...
+
+qemu 7.0.0
+
+  Directories
+    Install prefix               : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv
+    BIOS directory               : share/qemu
+    firmware path                : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/qemu-firmware
+    binary directory             : bin
+    library directory            : lib
+    module directory             : lib/qemu
+    libexec directory            : libexec
+    include directory            : include
+    config directory             : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/etc
+    local state directory        : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/var
+    Manual directory             : share/man
+    Doc directory                : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/doc
+    Build directory              : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/build/qemu-7.0.0
+    Source path                  : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/sources/qemu-7.0.0.git
+    GIT submodules               : ui/keycodemapdb tests/fp/berkeley-testfloat-3 tests/fp/berkeley-softfloat-3 dtc capstone slirp
+
+  Host binaries
+    git                          : git
+    make                         : make
+    python                       : /Users/ilg/.local/xbb/bin/python3 (version: 3.9)
+    sphinx-build                 : /Users/ilg/.local/xbb/bin/sphinx-build
+    iasl                         : NO
+    genisoimage                  :
+    smbd                         : /usr/sbin/smbd
+
+  Configurable features
+    Documentation                : NO
+    system-mode emulation        : YES
+    user-mode emulation          : NO
+    block layer                  : YES
+    Install blobs                : YES
+    module support               : NO
+    fuzzing support              : NO
+    Audio drivers                : coreaudio
+    Trace backends               : log
+    D-Bus display                : NO
+    QOM debugging                : NO
+    vhost-kernel support         : NO
+    vhost-net support            : NO
+    vhost-crypto support         : NO
+    vhost-scsi support           : NO
+    vhost-vsock support          : NO
+    vhost-user support           : NO
+    vhost-user-blk server support: NO
+    vhost-user-fs support        : NO
+    vhost-vdpa support           : NO
+    build guest agent            : NO
+
+  Compilation
+    host CPU                     : x86_64
+    host endianness              : little
+    C compiler                   : clang -m64 -mcx16
+    Host C compiler              : clang -m64 -mcx16
+    C++ compiler                 : clang++ -m64 -mcx16
+    Objective-C compiler         : clang -m64 -mcx16
+    CFLAGS                       : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -O2 -g
+    CXXFLAGS                     : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -O2 -g
+    OBJCFLAGS                    : -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -O2 -g
+    LDFLAGS                      : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -L/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/lib -O2 -v -Wl,-macosx_version_min,10.13 -Wl,-headerpad_max_install_names -Wl,-dead_strip -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include
+    QEMU_CFLAGS                  : -DOS_OBJECT_USE_OBJC=0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-initializer-overrides -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-string-plus-int -Wno-typedef-redefinition -Wno-tautological-type-limit-compare -Wno-psabi -fstack-protector-strong
+    QEMU_CXXFLAGS                : -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -DOS_OBJECT_USE_OBJC=0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wundef -Wwrite-strings -fno-strict-aliasing -fno-common -fwrapv -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-initializer-overrides -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-string-plus-int -Wno-typedef-redefinition -Wno-tautological-type-limit-compare -Wno-psabi -fstack-protector-strong
+    QEMU_OBJCFLAGS               : -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wno-initializer-overrides -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-string-plus-int -Wno-typedef-redefinition -Wno-tautological-type-limit-compare -Wno-psabi
+    QEMU_LDFLAGS                 : -fstack-protector-strong
+    profiler                     : NO
+    link-time optimization (LTO) : NO
+    PIE                          : YES
+    static build                 : NO
+    malloc trim support          : NO
+    membarrier                   : NO
+    debug stack usage            : NO
+    mutex debugging              : NO
+    memory allocator             : system
+    avx2 optimization            : NO
+    avx512f optimization         : NO
+    gprof enabled                : NO
+    gcov                         : NO
+    thread sanitizer             : NO
+    CFI support                  : NO
+    strip binaries               : NO
+    sparse                       : NO
+    mingw32 support              : NO
+
+  Targets and accelerators
+    KVM support                  : NO
+    HAX support                  : NO
+    HVF support                  : NO
+    WHPX support                 : NO
+    NVMM support                 : NO
+    Xen support                  : NO
+    TCG support                  : YES
+    TCG backend                  : native (x86_64)
+    TCG plugins                  : YES
+    TCG debug enabled            : NO
+    target list                  : riscv32-softmmu riscv64-softmmu
+    default devices              : YES
+    out of process emulation     : NO
+
+  Block layer support
+    coroutine backend            : sigaltstack
+    coroutine pool               : YES
+    Block whitelist (rw)         :
+    Block whitelist (ro)         :
+    Use block whitelist in tools : NO
+    VirtFS support               : YES
+    build virtiofs daemon        : NO
+    Live block migration         : YES
+    replication support          : YES
+    bochs support                : YES
+    cloop support                : YES
+    dmg support                  : YES
+    qcow v1 support              : YES
+    vdi support                  : YES
+    vvfat support                : YES
+    qed support                  : YES
+    parallels support            : YES
+    FUSE exports                 : NO
+
+  Crypto
+    TLS priority                 : "NORMAL"
+    GNUTLS support               : NO
+    libgcrypt                    : NO
+    nettle                       : YES 3.7.3
+      XTS                        : YES
+    AF_ALG support               : NO
+    rng-none                     : NO
+    Linux keyring                : NO
+
+  Dependencies
+    Cocoa support                : YES
+    SDL support                  : NO
+    SDL image support            : NO
+    GTK support                  : NO
+    pixman                       : YES 0.40.0
+    VTE support                  : NO
+    slirp support                : internal
+    libtasn1                     : NO
+    PAM                          : YES
+    iconv support                : YES
+    curses support               : YES
+    virgl support                : NO
+    curl support                 : NO
+    Multipath support            : NO
+    VNC support                  : YES
+    VNC SASL support             : YES
+    VNC JPEG support             : YES 9.5.0
+    VNC PNG support              : YES 1.6.37
+    CoreAudio support            : YES
+    JACK support                 : NO
+    brlapi support               : NO
+    vde support                  : YES
+    netmap support               : NO
+    l2tpv3 support               : NO
+    Linux AIO support            : NO
+    Linux io_uring support       : NO
+    ATTR/XATTR support           : NO
+    RDMA support                 : NO
+    PVRDMA support               : NO
+    fdt support                  : internal
+    libcap-ng support            : NO
+    bpf support                  : NO
+    spice protocol support       : NO
+    rbd support                  : NO
+    smartcard support            : NO
+    U2F support                  : NO
+    libusb                       : YES 1.0.26
+    usb net redir                : NO
+    OpenGL support               : NO
+    GBM                          : NO
+    libiscsi support             : NO
+    libnfs support               : NO
+    seccomp support              : NO
+    GlusterFS support            : NO
+    TPM support                  : YES
+    libssh support               : YES 0.9.6
+    lzo support                  : YES
+    snappy support               : NO
+    bzip2 support                : YES
+    lzfse support                : NO
+    zstd support                 : YES 1.5.2
+    NUMA host support            : NO
+    capstone                     : internal
+    libpmem support              : NO
+    libdaxctl support            : NO
+    libudev                      : NO
+    FUSE lseek                   : NO
+    selinux                      : NO
+
+  User defined options
+    Native files                 : config-meson.cross
+    bindir                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/bin
+    datadir                      : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share
+    debug                        : true
+    includedir                   : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/include
+    libdir                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/lib
+    libexecdir                   : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/libexec
+    localedir                    : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/locale
+    localstatedir                : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/var
+    mandir                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/man
+    optimization                 : 2
+    prefix                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv
+    sysconfdir                   : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/etc
+    werror                       : false
+    b_coverage                   : false
+    b_lto                        : false
+    b_pie                        : true
+    audio_drv_list               : default
+    capstone                     : auto
+    cfi                          : false
+    cocoa                        : enabled
+    curses                       : enabled
+    default_devices              : true
+    docdir                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/doc
+    fdt                          : auto
+    gtk                          : disabled
+    guest_agent                  : disabled
+    hvf                          : disabled
+    iasl                         :
+    libssh                       : enabled
+    lzo                          : enabled
+    nettle                       : enabled
+    qemu_firmwarepath            : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/qemu-firmware
+    qemu_suffix                  : qemu
+    sdl                          : disabled
+    slirp                        : auto
+    smbd                         :
+    sphinx_build                 :
+    tcg                          : enabled
+    tools                        : disabled
+    trace_file                   : trace
+    vde                          : enabled
+    xen                          : disabled
 ```
 
 ## Testing
@@ -433,7 +666,9 @@ program from there. For example on macOS the output should
 look like:
 
 ```console
-$ ...
+$ .../bin/qemu-system-riscv32 --version
+xPack QEMU emulator version 7.0.0 (v7.0.0)
+Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
 ```
 
 ## Installed folders
@@ -442,7 +677,50 @@ After install, the package should create a structure like this (macOS files;
 only the first two depth levels are shown):
 
 ```console
-$ tree -L 2 ...
+$ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-arm/7.0.0-1.1/.content
+/Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-arm/7.0.0-1.1/.content
+├── README.md
+├── bin
+│   ├── qemu-system-riscv32
+│   └── qemu-system-riscv64
+├── distro-info
+│   ├── CHANGELOG.md
+│   ├── licenses
+│   ├── patches
+│   └── scripts
+├── include
+│   └── qemu-plugin.h
+├── libexec
+│   ├── libcrypto.1.1.dylib
+│   ├── libffi.8.dylib
+│   ├── libgio-2.0.0.dylib
+│   ├── libglib-2.0.0.dylib
+│   ├── libgmodule-2.0.0.dylib
+│   ├── libgobject-2.0.0.dylib
+│   ├── libiconv.2.dylib
+│   ├── libintl.8.dylib
+│   ├── libjpeg.9.dylib
+│   ├── liblzo2.2.dylib
+│   ├── libncursesw.6.dylib
+│   ├── libnettle.8.4.dylib
+│   ├── libnettle.8.dylib -> libnettle.8.4.dylib
+│   ├── libpixman-1.0.40.0.dylib
+│   ├── libpixman-1.0.dylib -> libpixman-1.0.40.0.dylib
+│   ├── libpng16.16.dylib
+│   ├── libssh.4.8.7.dylib
+│   ├── libssh.4.dylib -> libssh.4.8.7.dylib
+│   ├── libusb-1.0.0.dylib
+│   ├── libvdeplug.3.dylib
+│   ├── libz.1.2.12.dylib
+│   ├── libz.1.dylib -> libz.1.2.12.dylib
+│   ├── libzstd.1.5.2.dylib
+│   └── libzstd.1.dylib -> libzstd.1.5.2.dylib
+└── share
+    ├── applications
+    ├── icons
+    └── qemu
+
+11 directories, 29 files
 ```
 
 ## Uninstall

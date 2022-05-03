@@ -128,7 +128,7 @@ be added only as pre-release strings, separated by a dash,
 like `7.0.0-1`. When published as a npm package, the version gets
 a fifth number, like `7.0.0-1.1`.
 
-Since adherance of third party packages to semver is not guaranteed,
+Since adherence of third party packages to semver is not guaranteed,
 it is recommended to use semver expressions like `^7.0.0` and `~7.0.0`
 with caution, and prefer exact matches, like `7.0.0-1.1`.
 

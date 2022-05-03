@@ -64,11 +64,7 @@ recreate the archives with the correct file.
 
 ### Update qemu.git
 
-In the qemu.git fork:
-
-- TODO
-- update the `xpack-riscv-develop` branch
-- add a `v7.0.0-1-xpack-riscv` tag
+Currently not necessary.
 
 ### Update the version specific code
 
