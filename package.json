@@ -1,6 +1,6 @@
 {
   "name": "@xpack-dev-tools/qemu-riscv",
-  "version": "6.1.0-1.1",
+  "version": "7.0.0-1.1",
   "description": "A binary xPack with QEMU RISC-V executables",
   "main": "",
   "scripts": {
