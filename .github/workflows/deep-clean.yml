@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 
 
-name: 'Build xPack QEMU'
+name: 'Deep clean xPack QEMU'
 
 on:
   workflow_dispatch:
