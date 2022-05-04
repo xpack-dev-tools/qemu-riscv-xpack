@@ -62,9 +62,18 @@ Note: if you missed to update the `CHANGELOG.md` before starting the build,
 edit the file and rerun the build, it should take only a few minutes to
 recreate the archives with the correct file.
 
-### Update qemu.git
+### Update qemu.git for development builds
 
-Currently not necessary.
+In the `xpack-dev-tools/qemu` git repo:
+
+- checkout the `master` branch
+- merge the `v7.0.0` tag into current
+- push `master`
+- checkout the `xpack-develop` branch
+- merge `master` into current
+- push `xpack-develop`
+- add a `v7.0.0-tag` tag
+- push tag to `origin`
 
 ### Update the version specific code
 
@@ -111,6 +120,14 @@ bash ${HOME}/Work/qemu-riscv-xpack.git/scripts/helper/build.sh --develop --arm32
 ```
 
 Work on the scripts until all platforms pass the build.
+
+### Update qemu.git for release builds
+
+In the `xpack-dev-tools/qemu` git repo:
+
+- checkout the `xpack` branch
+- merge `xpack-develop` into current
+- push `xpack`
 
 ## Push the build scripts
 
