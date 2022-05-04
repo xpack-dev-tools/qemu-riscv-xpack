@@ -158,7 +158,7 @@ caffeinate ssh xbbla32
 Start the runner on all three machines:
 
 ```sh
-~/actions-runner/run.sh
+~/actions-runners/xpack-dev-tools/run.sh &
 ```
 
 Check that both the project Git and the submodule are pushed to GitHub.
@@ -178,7 +178,13 @@ in the environment.
 
 This command uses the `xpack-develop` branch of this repo.
 
-The builds take about 45 minutes to complete.
+The builds may take about one hour to complete:
+
+- `xbbmi`: 35 min
+- `xbbma`: 23 min
+- `xbbli`: 24 min
+- `xbbla64`: 60 min
+- `xbbla32`: 60 min
 
 The workflow result and logs are available from the
 [Actions](https://github.com/xpack-dev-tools/qemu-riscv-xpack/actions/) page.
@@ -191,6 +197,20 @@ The resulting binaries are available for testing from
 ### CI tests
 
 The automation is provided by GitHub Actions.
+
+On the macOS machine (`xbbmi`) open a ssh sessions to the Arm/Linux
+test machine `xbbla`:
+
+```sh
+caffeinate ssh xbbla
+```
+
+Start both runners (to allow the 32/64-bit tests to run in parallel):
+
+```sh
+~/actions-runners/xpack-dev-tools/1/run.sh &
+~/actions-runners/xpack-dev-tools/2/run.sh &
+```
 
 To trigger the GitHub Actions tests, use the xPack actions:
 
@@ -251,6 +271,21 @@ curl -L https://www.qemu-advent-calendar.org/2018/download/day24.tar.xz \
 (cd ${HOME}/Downloads; tar xvf day24.tar.xz)
 export PATH=${HOME}/Downloads/xpack-qemu-riscv-7.0.0-1/bin:$PATH
 bash ${HOME}/Downloads/day24/run.sh
+```
+
+Note: not functional, on macOS there is no alsa-utils, and on Ubuntu
+it complains:
+
+```console
+qemu-system-riscv64: Some ROM regions are overlapping
+These ROM regions might have been loaded by direct user request or by default.
+They could be BIOS/firmware images, a guest kernel, initrd or some other file loaded into guest memory.
+Check whether you intended to load all this guest code, and whether it has been built to load to the correct addresses.
+
+The following two regions overlap (in the memory address space):
+  /home/ilg/Downloads/xpack-qemu-riscv-7.0.0-1/bin/../share/qemu/opensbi-riscv64-generic-fw_dynamic.bin (addresses 0x0000000080000000 - 0x0000000080019b50)
+  /home/ilg/Downloads/day24/risk-v.elf ELF program header segment 0 (addresses 0x0000000080000000 - 0x000000008005d348)
+aplay: read_header:2861: read error
 ```
 
 ## Create a new GitHub pre-release draft
