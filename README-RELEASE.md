@@ -182,7 +182,7 @@ The builds may take about one hour to complete:
 
 - `xbbmi`: 35 min
 - `xbbma`: 23 min
-- `xbbli`: 24 min
+- `xbbli`: 24 min (Windows included)
 - `xbbla64`: 60 min
 - `xbbla32`: 60 min
 
@@ -262,6 +262,12 @@ functional.
 
 Download the platform specific archive from
 <https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/>.
+
+On macOS, remove the `com.apple.quarantine` flag:
+
+```sh
+xattr -dr com.apple.quarantine ${HOME}/Downloads/xpack-qemu-arm-*
+```
 
 To test graphical mode, use Thomas Huth's presentation:
 
