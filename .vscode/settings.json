@@ -60,6 +60,7 @@
     "runpath",
     "sifive",
     "virt",
+    "xattr",
     "xbbla",
     "xbbla32",
     "xbbla64",
