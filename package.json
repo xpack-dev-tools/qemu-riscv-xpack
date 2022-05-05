@@ -70,7 +70,7 @@
       "qemu-system-riscv64": "./.content/bin/qemu-system-riscv64"
     },
     "properties": {
-      "appName": "QEMU",
+      "appName": "QEMU RISC-V",
       "appLCName": "qemu-riscv",
       "platforms": "all",
       "LIQUIDJS": "liquidjs '{ \"APP_NAME\": \"{{ properties.appName }}\", \"APP_LC_NAME\": \"{{ properties.appLCName }}\", \"platforms\": \"{{ properties.platforms }}\" }'"
