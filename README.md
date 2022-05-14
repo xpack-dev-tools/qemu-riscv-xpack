@@ -2,7 +2,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/xpack-dev-tools/qemu-riscv-xpack)](https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases)
 [![npm (scoped)](https://img.shields.io/npm/v/@xpack-dev-tools/qemu-riscv.svg)](https://www.npmjs.com/package/@xpack-dev-tools/qemu-riscv)
 
-# The xPack QEMU RISC-V - not yet released!
+# The xPack QEMU RISC-V
 
 A standalone cross-platform (Windows/macOS/Linux) **QEMU RISC-V**
 binary distribution, intended for reproducible builds.
@@ -121,7 +121,7 @@ For more details please read the
 
 ### Versioning
 
-The version strings used by the GCC project are three number string
+The version strings used by the GCC project are three number strings
 like `7.0.0`; to this string the xPack distribution adds a four number,
 but since semver allows only three numbers, all additional ones can
 be added only as pre-release strings, separated by a dash,
@@ -138,18 +138,10 @@ with caution, and prefer exact matches, like `7.0.0-1.1`.
 - [How to make new releases](https://github.com/xpack-dev-tools/qemu-riscv-xpack/blob/xpack/README-RELEASE.md)
 - [Developer info](https://github.com/xpack-dev-tools/qemu-riscv-xpack/blob/xpack/README-DEVELOP.md)
 
-## Apple Silicon notice
-
-Due to the major changes in macOS for Apple Silicon,
-the current xPack QEMU sources cannot be used and an Apple Silicon
-binary will not be initially available. A major update for xPack QEMU is
-planned for 2022, which will also address this issue.
-
 ## Support
 
-The quick answer is to use the
-[xPack forums](https://www.tapatalk.com/groups/xpack/);
-please select the correct forum.
+The quick answer is to use the GitHub
+[Discussions](https://github.com/xpack-dev-tools/qemu-riscv-xpack/discussions/).
 
 For more details please read the
 [Support](https://xpack.github.io/qemu-riscv/support/) page.
