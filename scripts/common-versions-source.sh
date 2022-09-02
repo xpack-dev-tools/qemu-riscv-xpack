@@ -86,9 +86,16 @@ function build_versions()
       # https://ftp.gnu.org/pub/gnu/gettext/
       build_gettext "0.21"
 
-      # TODO "2.72.1" (meson)
+      # required by pcre2
+      # https://ftp.gnu.org/gnu/readline/
+      build_readline "8.1.2"
+
+      # https://github.com/PCRE2Project/pcre2/releases
+      build_pcre2 "10.40"
+
       # https://download.gnome.org/sources/glib/
-      build_glib "2.73.3" # "2.56.4"
+      # ERROR: glib-2.56 gthread-2.0 is required to compile QEMU
+      build_glib "2.56.4"
 
       # Not toghether with nettle.
       # build_libgpg_error "1.43"
