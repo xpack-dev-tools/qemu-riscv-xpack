@@ -18,6 +18,10 @@ In the `xpack-dev-tools/qemu-riscv-xpack` Git repo:
 
 No need to add a tag here, it'll be added when the release is created.
 
+### Update helper
+
+With a git client, go to the helper repo and update to the latest master commit.
+
 ### Check the latest upstream release
 
 Identify the latest stable [tag](https://gitlab.com/qemu-project/qemu/-/tags),
@@ -67,7 +71,8 @@ recreate the archives with the correct file.
 
 ### Update qemu.git for development builds
 
-In the `xpack-dev-tools/qemu` git repo:
+In the <https://github.com/xpack-dev-tools/qemu.git> repo, with
+<https://gitlab.com/qemu-project/qemu.git> as `upstream`:
 
 - checkout the `master` branch
 - merge the `v7.1.0` tag into current
@@ -75,19 +80,18 @@ In the `xpack-dev-tools/qemu` git repo:
 - checkout the `xpack-develop` branch
 - merge `master` into current
 - push `xpack-develop`
-- add a `v7.1.0-tag` tag
+- checkout the `xpack` branch
+- merge `xpack-develop` into current
+- add a `v7.1.0-xpack` tag
 - push tag to `origin`
 
 ### Update the version specific code
 
 - open the `common-versions-source.sh` file
 - add a new `if` with the new version before the existing code
-- check if `QEMU_GIT_BRANCH=xpack`
-- update the `QEMU_GIT_COMMIT` to latest Git commit ID
+- check if `QEMU_GIT_BRANCH=xpack` (or `xpack-develop`)
+- update the `QEMU_GIT_COMMIT` to latest Git commit ID (`v${QEMU_VERSION}-xpack`)
 
-### Update helper
-
-With a git client, go to the helper repo and update to the latest master commit.
 
 ## Build
 
