@@ -92,7 +92,6 @@ In the <https://github.com/xpack-dev-tools/qemu.git> repo, with
 - check if `QEMU_GIT_BRANCH=xpack` (or `xpack-develop`)
 - update the `QEMU_GIT_COMMIT` to latest Git commit ID (`v${QEMU_VERSION}-xpack`)
 
-
 ## Build
 
 ### Development run the build scripts
