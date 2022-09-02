@@ -117,7 +117,7 @@ not be accepted by bash.
 
 ## Versioning
 
-The version string is an extension to semver, the format looks like `7.0.0-1`.
+The version string is an extension to semver, the format looks like `7.1.0-1`.
 It includes the three digits with the original QEMU version and a fourth
 digit with the xPack release number.
 
@@ -217,10 +217,10 @@ archives and their SHA signatures, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 37100
--rw-rw-r-- 1 ilg ilg  8796275 Oct 14 21:38 xpack-qemu-riscv-7.0.0-1-linux-x64.tar.gz
--rw-rw-r-- 1 ilg ilg      107 Oct 14 21:38 xpack-qemu-riscv-7.0.0-1-linux-x64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 10393964 Oct 14 21:44 xpack-qemu-riscv-7.0.0-1-win32-x64.zip
--rw-rw-r-- 1 ilg ilg      104 Oct 14 21:44 xpack-qemu-riscv-7.0.0-1-win32-x64.zip.sha
+-rw-rw-r-- 1 ilg ilg  8796275 Oct 14 21:38 xpack-qemu-riscv-7.1.0-1-linux-x64.tar.gz
+-rw-rw-r-- 1 ilg ilg      107 Oct 14 21:38 xpack-qemu-riscv-7.1.0-1-linux-x64.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 10393964 Oct 14 21:44 xpack-qemu-riscv-7.1.0-1-win32-x64.zip
+-rw-rw-r-- 1 ilg ilg      104 Oct 14 21:44 xpack-qemu-riscv-7.1.0-1-win32-x64.zip.sha
 ```
 
 ### Build the Arm GNU/Linux binaries
@@ -289,10 +289,10 @@ archives and their SHA signatures, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 16856
--rw-rw-r-- 1 ilg ilg 8777442 Oct 14 18:58 xpack-qemu-riscv-7.0.0-1-linux-arm64.tar.gz
--rw-rw-r-- 1 ilg ilg     109 Oct 14 18:58 xpack-qemu-riscv-7.0.0-1-linux-arm64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 8472838 Oct 14 19:22 xpack-qemu-riscv-7.0.0-1-linux-arm.tar.gz
--rw-rw-r-- 1 ilg ilg     107 Oct 14 19:22 xpack-qemu-riscv-7.0.0-1-linux-arm.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 8777442 Oct 14 18:58 xpack-qemu-riscv-7.1.0-1-linux-arm64.tar.gz
+-rw-rw-r-- 1 ilg ilg     109 Oct 14 18:58 xpack-qemu-riscv-7.1.0-1-linux-arm64.tar.gz.sha
+-rw-rw-r-- 1 ilg ilg 8472838 Oct 14 19:22 xpack-qemu-riscv-7.1.0-1-linux-arm.tar.gz
+-rw-rw-r-- 1 ilg ilg     107 Oct 14 19:22 xpack-qemu-riscv-7.1.0-1-linux-arm.tar.gz.sha
 ```
 
 ### Build the macOS binaries
@@ -336,8 +336,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
 total 15120
--rw-r--r--  1 ilg  staff  7735782 Oct 14 20:24 xpack-qemu-riscv-7.0.0-1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff      108 Oct 14 20:24 xpack-qemu-riscv-7.0.0-1-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  7735782 Oct 14 20:24 xpack-qemu-riscv-7.1.0-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff      108 Oct 14 20:24 xpack-qemu-riscv-7.1.0-1-darwin-x64.tar.gz.sha
 ```
 
 ## Subsequent runs
@@ -419,23 +419,23 @@ The result of the `configure` step, is:
 
 ```console
 
-qemu 7.0.0
+qemu 7.1.0
 
   Directories
-    Install prefix               : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv
+    Install prefix               : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv
     BIOS directory               : share/qemu
-    firmware path                : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/qemu-firmware
+    firmware path                : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/qemu-firmware
     binary directory             : bin
     library directory            : lib
     module directory             : lib/qemu
     libexec directory            : libexec
     include directory            : include
-    config directory             : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/etc
-    local state directory        : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/var
+    config directory             : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/etc
+    local state directory        : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/var
     Manual directory             : share/man
-    Doc directory                : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/doc
-    Build directory              : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/build/qemu-7.0.0
-    Source path                  : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/sources/qemu-7.0.0.git
+    Doc directory                : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/doc
+    Build directory              : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/build/qemu-7.1.0
+    Source path                  : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/sources/qemu-7.1.0.git
     GIT submodules               : ui/keycodemapdb tests/fp/berkeley-testfloat-3 tests/fp/berkeley-softfloat-3 dtc capstone slirp
 
   Host binaries
@@ -477,10 +477,10 @@ qemu 7.0.0
     Host C compiler              : clang -m64 -mcx16
     C++ compiler                 : clang++ -m64 -mcx16
     Objective-C compiler         : clang -m64 -mcx16
-    CFLAGS                       : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -O2 -g
-    CXXFLAGS                     : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -O2 -g
-    OBJCFLAGS                    : -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -O2 -g
-    LDFLAGS                      : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -L/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/lib -O2 -v -Wl,-macosx_version_min,10.13 -Wl,-headerpad_max_install_names -Wl,-dead_strip -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include -I/Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/libs/include
+    CFLAGS                       : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -I/Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/libs/include -O2 -g
+    CXXFLAGS                     : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -I/Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/libs/include -I/Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/libs/include -O2 -g
+    OBJCFLAGS                    : -I/Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/libs/include -O2 -g
+    LDFLAGS                      : -ffunction-sections -fdata-sections -pipe -m64 -O2 -mmacosx-version-min=10.13 -w -L/Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/libs/lib -O2 -v -Wl,-macosx_version_min,10.13 -Wl,-headerpad_max_install_names -Wl,-dead_strip -I/Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/libs/include -I/Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/libs/include
     QEMU_CFLAGS                  : -DOS_OBJECT_USE_OBJC=0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-initializer-overrides -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-string-plus-int -Wno-typedef-redefinition -Wno-tautological-type-limit-compare -Wno-psabi -fstack-protector-strong
     QEMU_CXXFLAGS                : -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -DOS_OBJECT_USE_OBJC=0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wundef -Wwrite-strings -fno-strict-aliasing -fno-common -fwrapv -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-initializer-overrides -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-string-plus-int -Wno-typedef-redefinition -Wno-tautological-type-limit-compare -Wno-psabi -fstack-protector-strong
     QEMU_OBJCFLAGS               : -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wno-initializer-overrides -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-string-plus-int -Wno-typedef-redefinition -Wno-tautological-type-limit-compare -Wno-psabi
@@ -611,18 +611,18 @@ qemu 7.0.0
 
   User defined options
     Native files                 : config-meson.cross
-    bindir                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/bin
-    datadir                      : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share
+    bindir                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/bin
+    datadir                      : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share
     debug                        : true
-    includedir                   : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/include
-    libdir                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/lib
-    libexecdir                   : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/libexec
-    localedir                    : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/locale
-    localstatedir                : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/var
-    mandir                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/man
+    includedir                   : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/include
+    libdir                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/lib
+    libexecdir                   : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/libexec
+    localedir                    : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/locale
+    localstatedir                : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/var
+    mandir                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/man
     optimization                 : 2
-    prefix                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv
-    sysconfdir                   : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/etc
+    prefix                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv
+    sysconfdir                   : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/etc
     werror                       : false
     b_coverage                   : false
     b_lto                        : false
@@ -633,7 +633,7 @@ qemu 7.0.0
     cocoa                        : enabled
     curses                       : enabled
     default_devices              : true
-    docdir                       : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/doc
+    docdir                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/doc
     fdt                          : auto
     gtk                          : disabled
     guest_agent                  : disabled
@@ -642,7 +642,7 @@ qemu 7.0.0
     libssh                       : enabled
     lzo                          : enabled
     nettle                       : enabled
-    qemu_firmwarepath            : /Users/ilg/Work/qemu-riscv-7.0.0-1/darwin-x64/install/qemu-riscv/share/qemu-firmware
+    qemu_firmwarepath            : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/qemu-firmware
     qemu_suffix                  : qemu
     sdl                          : disabled
     slirp                        : auto
@@ -667,7 +667,7 @@ look like:
 
 ```console
 $ .../bin/qemu-system-riscv32 --version
-xPack QEMU emulator version 7.0.0 (v7.0.0)
+xPack QEMU emulator version 7.1.0 (v7.1.0)
 Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
 ```
 
@@ -677,8 +677,8 @@ After install, the package should create a structure like this (macOS files;
 only the first two depth levels are shown):
 
 ```console
-$ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-arm/7.0.0-1.1/.content
-/Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-arm/7.0.0-1.1/.content
+$ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-arm/7.1.0-1.1/.content
+/Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-arm/7.1.0-1.1/.content
 ├── README.md
 ├── bin
 │   ├── qemu-system-riscv32
