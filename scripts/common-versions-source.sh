@@ -86,12 +86,16 @@ function build_versions()
       # https://ftp.gnu.org/pub/gnu/gettext/
       build_gettext "0.21"
 
-      # required by pcre2
-      # https://ftp.gnu.org/gnu/readline/
-      build_readline "8.1.2"
+      # Experimental, when a newer glib was tested.
+      if false # [ "${TARGET_PLATFORM}" != "win32" ]
+      then
+        # required by pcre2
+        # https://ftp.gnu.org/gnu/readline/
+        build_readline "8.1.2"
 
-      # https://github.com/PCRE2Project/pcre2/releases
-      build_pcre2 "10.40"
+        # https://github.com/PCRE2Project/pcre2/releases
+        build_pcre2 "10.40"
+      fi
 
       # https://download.gnome.org/sources/glib/
       # ERROR: glib-2.56 gthread-2.0 is required to compile QEMU
