@@ -12,10 +12,14 @@
   "cSpell.ignoreWords": [
     "Bellard",
     "Fabrice",
+    "Huth",
+    "Ionescu",
     "LIQUIDJS",
     "LLDB",
+    "Liviu",
     "RPATH",
     "Somsubhra",
+    "UCRT",
     "USERPROFILE",
     "aarch64",
     "alsa",
@@ -50,6 +54,7 @@
     "libz",
     "libzstd",
     "lowrisc",
+    "mkdir",
     "npmignore",
     "npmjs",
     "opensbi",
@@ -59,6 +64,7 @@
     "riscv",
     "runpath",
     "sifive",
+    "ungit",
     "virt",
     "wksi",
     "xattr",
@@ -67,6 +73,8 @@
     "xbbla64",
     "xbbli",
     "xbbma",
-    "xbbmi"
+    "xbbmi",
+    "xpack",
+    "xpacks"
   ]
 }
