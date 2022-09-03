@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 
 
-name: 'Build xPack QEMU xbbli'
+name: 'Build xPack QEMU RISC-V xbbli'
 
 on:
   workflow_dispatch:
@@ -32,12 +32,15 @@ on:
 jobs:
 
   linux-x64:
-    name: 'Linux Intel - QEMU ${{ github.event.inputs.version }} build'
+    name: 'Linux Intel - QEMU RISC-V ${{ github.event.inputs.version }} build'
     timeout-minutes: 5760 # 4 days
     runs-on: [self-hosted, linux, x64]
     steps:
       - name: 'Machine'
-        run: uname -a
+        run: |
+          uname -a
+          node --version
+          npm --version
 
       - name: 'Checkout'
         uses: actions/checkout@v2
