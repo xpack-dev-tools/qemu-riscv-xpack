@@ -39,11 +39,8 @@ function build_versions()
       # http://zlib.net/fossils/
       build_zlib "1.2.12"
 
-      if [ "${TARGET_PLATFORM}" != "win32" ]
-      then
-        # https://sourceware.org/pub/bzip2/
-        build_bzip2 "1.0.8"
-      fi
+      # https://sourceware.org/pub/bzip2/
+      build_bzip2 "1.0.8"
 
       # # https://github.com/facebook/zstd/releases
       build_zstd "1.5.2"
@@ -58,11 +55,8 @@ function build_versions()
       # http://www.ijg.org/files/
       build_jpeg "9e"
 
-      if [ "${TARGET_PLATFORM}" != "win32" ]
-      then
-        # https://gitlab.gnome.org/GNOME/libxml2/-/releases
-        build_libxml2 "2.10.2" # "2.9.14"
-      fi
+      # https://gitlab.gnome.org/GNOME/libxml2/-/releases
+      build_libxml2 "2.10.2" # "2.9.14"
 
       # required by glib
       # https://ftp.gnu.org/pub/gnu/libiconv/
