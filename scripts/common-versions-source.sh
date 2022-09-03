@@ -80,16 +80,20 @@ function build_versions()
       # https://ftp.gnu.org/pub/gnu/gettext/
       build_gettext "0.21"
 
-      # Experimental, when a newer glib was tested.
-      if false # [ "${TARGET_PLATFORM}" != "win32" ]
+      if [ "${TARGET_PLATFORM}" == "win32" ]
       then
-        # required by pcre2
-        # https://ftp.gnu.org/gnu/readline/
-        build_readline "8.1.2"
-
-        # https://github.com/PCRE2Project/pcre2/releases
-        build_pcre2 "10.40"
+        # required by readline
+        # https://ftp.gnu.org/gnu/termcap/
+        build_termcap "1.3.1"
       fi
+
+      # required by pcre2
+      # https://ftp.gnu.org/gnu/readline/
+      # x86_64-w64-mingw32/bin/ld: cannot find -ltermcap
+      build_readline "8.1.2"
+
+      # https://github.com/PCRE2Project/pcre2/releases
+      build_pcre2 "10.40"
 
       # https://download.gnome.org/sources/glib/
       # ERROR: glib-2.56 gthread-2.0 is required to compile QEMU
