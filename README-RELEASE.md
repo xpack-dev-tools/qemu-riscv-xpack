@@ -9,6 +9,26 @@ and do not have a fixed schedule.
 
 Before starting the build, perform some checks and tweaks.
 
+### Download the build scripts
+
+The build scripts are available in the `scripts` folder of the
+[`xpack-dev-tools/qemu-riscv-xpack`](https://github.com/xpack-dev-tools/qemu-riscv-xpack)
+Git repo.
+
+To download them on a new machine, clone the `xpack-develop` branch:
+
+```sh
+rm -rf ${HOME}/Work/qemu-riscv-xpack.git; \
+git clone \
+  --branch xpack-develop \
+  https://github.com/xpack-dev-tools/qemu-riscv-xpack.git \
+  ${HOME}/Work/qemu-riscv-xpack.git; \
+git -C ${HOME}/Work/qemu-riscv-xpack.git submodule update --init --recursive
+```
+
+> Note: the repository uses submodules; for a successful build it is
+> mandatory to recurse the submodules.
+
 ### Check Git
 
 In the `xpack-dev-tools/qemu-riscv-xpack` Git repo:
