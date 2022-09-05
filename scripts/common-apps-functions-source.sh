@@ -39,6 +39,28 @@ function test_qemu_riscv()
   run_app "${TEST_BIN_PATH}/qemu-system-riscv64" --version
 
   run_app "${TEST_BIN_PATH}/qemu-system-riscv32" --help
+
+  pwd
+  env | sort
+
+  run_app "${TEST_BIN_PATH}/qemu-system-riscv32" \
+    --machine virt \
+    --kernel "${tests_folder_path}/assets/hello-world-rv32imac.elf" \
+    -smp 1 \
+    -bios none \
+    --nographic \
+    -d unimp,guest_errors \
+    --semihosting-config enable=on,target=native,arg=hello-world,arg=RV32
+
+  run_app "${TEST_BIN_PATH}/qemu-system-riscv64" \
+    --machine virt \
+    --kernel "${tests_folder_path}/assets/hello-world-rv64imafdc.elf" \
+    -smp 1 \
+    -bios none \
+    --nographic \
+    -d unimp,guest_errors \
+    --semihosting-config enable=on,target=native,arg=hello-world,arg=RV64
+
 }
 
 # -----------------------------------------------------------------------------
