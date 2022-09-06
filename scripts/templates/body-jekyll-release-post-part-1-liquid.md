@@ -7,6 +7,11 @@ summary: "Version **{{ RELEASE_VERSION }}** is a new release; it follows the ups
 
 version: "{{ RELEASE_VERSION }}"
 npm_subversion: 1
+qemu_version: "7.1.0"
+qemu_short_commit: "621da7789"
+qemu_long_commit: "621da7789083b80d6f1ff1c0fb499334007b4f51"
+qemu_date: "30 August 2022"
+
 download_url: https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/tag/v{{ RELEASE_VERSION }}/
 
 date:   {{ RELEASE_DATE }}
@@ -124,8 +129,9 @@ with major changes.
 
 The current version is based on:
 
-- QEMU version 7.0.0, commit [823a3f1](https://github.com/xpack-dev-tools/qemu/commit/823a3f11fb8f04c3c3cc0f95f968fef1bfc6534f)
-  from Apr 19th, 2022.
+- QEMU version {% raw %}{{ page.qemu_version }}{% endraw %},
+  commit [{% raw %}{{ page.qemu_short_commit }}{% endraw %}](https://github.com/xpack-dev-tools/qemu/commit/{% raw %}{{ page.qemu_long_commit }}{% endraw %})
+  from {% raw %}{{ page.qemu_date }}{% endraw %}.
 
 ## Changes
 
