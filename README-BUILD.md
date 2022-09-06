@@ -215,11 +215,11 @@ archives and their SHA signatures, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
-total 37100
--rw-rw-r-- 1 ilg ilg  8796275 Oct 14 21:38 xpack-qemu-riscv-7.1.0-1-linux-x64.tar.gz
--rw-rw-r-- 1 ilg ilg      107 Oct 14 21:38 xpack-qemu-riscv-7.1.0-1-linux-x64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 10393964 Oct 14 21:44 xpack-qemu-riscv-7.1.0-1-win32-x64.zip
--rw-rw-r-- 1 ilg ilg      104 Oct 14 21:44 xpack-qemu-riscv-7.1.0-1-win32-x64.zip.sha
+total 50104
+-rw-rw-rw- 1 ilg ilg 20723673 Sep  6 17:32 xpack-qemu-riscv-7.1.0-1-linux-x64.tar.gz
+-rw-rw-rw- 1 ilg ilg      108 Sep  6 17:32 xpack-qemu-riscv-7.1.0-1-linux-x64.tar.gz.sha
+-rw-rw-rw- 1 ilg ilg 30569191 Sep  6 17:41 xpack-qemu-riscv-7.1.0-1-win32-x64.zip
+-rw-rw-rw- 1 ilg ilg      105 Sep  6 17:41 xpack-qemu-riscv-7.1.0-1-win32-x64.zip.sha
 ```
 
 ### Build the Arm GNU/Linux binaries
@@ -287,11 +287,18 @@ archives and their SHA signatures, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
-total 16856
--rw-rw-r-- 1 ilg ilg 8777442 Oct 14 18:58 xpack-qemu-riscv-7.1.0-1-linux-arm64.tar.gz
--rw-rw-r-- 1 ilg ilg     109 Oct 14 18:58 xpack-qemu-riscv-7.1.0-1-linux-arm64.tar.gz.sha
--rw-rw-r-- 1 ilg ilg 8472838 Oct 14 19:22 xpack-qemu-riscv-7.1.0-1-linux-arm.tar.gz
--rw-rw-r-- 1 ilg ilg     107 Oct 14 19:22 xpack-qemu-riscv-7.1.0-1-linux-arm.tar.gz.sha
+total 20068
+-rw-rw-rw- 1 ilg ilg 20542625 Sep  6 18:22 xpack-qemu-riscv-7.1.0-1-linux-arm64.tar.gz
+-rw-rw-rw- 1 ilg ilg      110 Sep  6 18:22 xpack-qemu-riscv-7.1.0-1-linux-arm64.tar.gz.sha
+```
+
+and
+
+```console
+$ ls -l ~/Work/qemu-riscv-*/deploy
+total 19132
+-rw-rw-rw- 1 ilg ilg 19586428 Sep  6 18:21 xpack-qemu-riscv-7.1.0-1-linux-arm.tar.gz
+-rw-rw-rw- 1 ilg ilg      108 Sep  6 18:21 xpack-qemu-riscv-7.1.0-1-linux-arm.tar.gz.sha
 ```
 
 ### Build the macOS binaries
@@ -334,9 +341,18 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-*/deploy
-total 15120
--rw-r--r--  1 ilg  staff  7735782 Oct 14 20:24 xpack-qemu-riscv-7.1.0-1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff      108 Oct 14 20:24 xpack-qemu-riscv-7.1.0-1-darwin-x64.tar.gz.sha
+total 34056
+-rw-r--r--  1 ilg  staff  17308653 Sep  6 17:44 xpack-qemu-riscv-7.1.0-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff       109 Sep  6 17:44 xpack-qemu-riscv-7.1.0-1-darwin-x64.tar.gz.sha
+```
+
+and
+
+```console
+$ ls -l ~/Work/qemu-riscv-*/deploy
+total 33672
+-rw-r--r--  1 ilg  staff  16460340 Sep  6 17:31 xpack-qemu-riscv-7.1.0-1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff       111 Sep  6 17:31 xpack-qemu-riscv-7.1.0-1-darwin-arm64.tar.gz.sha
 ```
 
 ## Subsequent runs
@@ -414,28 +430,27 @@ the build folder, it might be necessary to run a recursive `chown`.
 
 ## Actual configuration
 
-The result of the `configure` step, is:
+The result of the meson configuration is:
 
 ```console
-
 qemu 7.1.0
 
   Directories
     Install prefix               : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv
     BIOS directory               : share/qemu
-    firmware path                : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/qemu-firmware
-    binary directory             : bin
-    library directory            : lib
+    firmware path                : share/qemu-firmware
+    binary directory             : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/bin
+    library directory            : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/lib
     module directory             : lib/qemu
-    libexec directory            : libexec
-    include directory            : include
+    libexec directory            : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/libexec
+    include directory            : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/include
     config directory             : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/etc
     local state directory        : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/var
-    Manual directory             : share/man
+    Manual directory             : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/man
     Doc directory                : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/doc
     Build directory              : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/build/qemu-7.1.0
     Source path                  : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/sources/qemu-7.1.0.git
-    GIT submodules               : ui/keycodemapdb tests/fp/berkeley-testfloat-3 tests/fp/berkeley-softfloat-3 dtc capstone slirp
+    GIT submodules               : ui/keycodemapdb tests/fp/berkeley-testfloat-3 tests/fp/berkeley-softfloat-3 dtc slirp
 
   Host binaries
     git                          : git
@@ -460,12 +475,9 @@ qemu 7.1.0
     QOM debugging                : NO
     vhost-kernel support         : NO
     vhost-net support            : NO
-    vhost-crypto support         : NO
-    vhost-scsi support           : NO
-    vhost-vsock support          : NO
     vhost-user support           : NO
+    vhost-user-crypto support    : NO
     vhost-user-blk server support: NO
-    vhost-user-fs support        : NO
     vhost-vdpa support           : NO
     build guest agent            : NO
 
@@ -517,6 +529,7 @@ qemu 7.1.0
     target list                  : riscv32-softmmu riscv64-softmmu
     default devices              : YES
     out of process emulation     : NO
+    vfio-user server             : NO
 
   Block layer support
     coroutine backend            : sigaltstack
@@ -537,12 +550,13 @@ qemu 7.1.0
     qed support                  : YES
     parallels support            : YES
     FUSE exports                 : NO
+    VDUSE block exports          : NO
 
   Crypto
-    TLS priority                 : "NORMAL"
+    TLS priority                 : NORMAL
     GNUTLS support               : NO
     libgcrypt                    : NO
-    nettle                       : YES 3.7.3
+    nettle                       : YES 3.8.1
       XTS                        : YES
     AF_ALG support               : NO
     rng-none                     : NO
@@ -550,6 +564,7 @@ qemu 7.1.0
 
   Dependencies
     Cocoa support                : YES
+    vmnet.framework support      : YES
     SDL support                  : NO
     SDL image support            : NO
     GTK support                  : NO
@@ -563,10 +578,10 @@ qemu 7.1.0
     virgl support                : NO
     curl support                 : NO
     Multipath support            : NO
+    PNG support                  : YES 1.6.37
     VNC support                  : YES
     VNC SASL support             : YES
     VNC JPEG support             : YES 9.5.0
-    VNC PNG support              : YES 1.6.37
     CoreAudio support            : YES
     JACK support                 : NO
     brlapi support               : NO
@@ -587,21 +602,21 @@ qemu 7.1.0
     U2F support                  : NO
     libusb                       : YES 1.0.26
     usb net redir                : NO
-    OpenGL support               : NO
+    OpenGL support (epoxy)       : NO
     GBM                          : NO
     libiscsi support             : NO
     libnfs support               : NO
     seccomp support              : NO
     GlusterFS support            : NO
     TPM support                  : YES
-    libssh support               : YES 0.9.6
+    libssh support               : YES 0.10.1
     lzo support                  : YES
     snappy support               : NO
     bzip2 support                : YES
     lzfse support                : NO
     zstd support                 : YES 1.5.2
     NUMA host support            : NO
-    capstone                     : internal
+    capstone                     : NO
     libpmem support              : NO
     libdaxctl support            : NO
     libudev                      : NO
@@ -611,47 +626,20 @@ qemu 7.1.0
   User defined options
     Native files                 : config-meson.cross
     bindir                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/bin
-    datadir                      : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share
-    debug                        : true
-    includedir                   : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/include
-    libdir                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/lib
-    libexecdir                   : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/libexec
-    localedir                    : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/locale
-    localstatedir                : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/var
-    mandir                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/man
-    optimization                 : 2
     prefix                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv
-    sysconfdir                   : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/etc
-    werror                       : false
-    b_coverage                   : false
-    b_lto                        : false
-    b_pie                        : true
-    audio_drv_list               : default
-    capstone                     : auto
-    cfi                          : false
     cocoa                        : enabled
     curses                       : enabled
-    default_devices              : true
-    docdir                       : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/doc
-    fdt                          : auto
     gtk                          : disabled
     guest_agent                  : disabled
     hvf                          : disabled
-    iasl                         :
     libssh                       : enabled
     lzo                          : enabled
     nettle                       : enabled
-    qemu_firmwarepath            : /Users/ilg/Work/qemu-riscv-7.1.0-1/darwin-x64/install/qemu-riscv/share/qemu-firmware
-    qemu_suffix                  : qemu
+    pkgversion                   : v7.1.0-xpack
     sdl                          : disabled
-    slirp                        : auto
-    smbd                         :
-    sphinx_build                 :
-    tcg                          : enabled
     tools                        : disabled
-    trace_file                   : trace
     vde                          : enabled
-    xen                          : disabled
+    vfio_user_server             : disabled
 ```
 
 ## Testing
@@ -666,7 +654,7 @@ look like:
 
 ```console
 $ .../bin/qemu-system-riscv32 --version
-xPack QEMU emulator version 7.1.0 (v7.1.0)
+xPack QEMU emulator version 7.1.0 (v7.1.0-xpack)
 Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
 ```
 
@@ -695,19 +683,23 @@ $ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-arm/7.1.0-1.1/.conte
 │   ├── libgio-2.0.0.dylib
 │   ├── libglib-2.0.0.dylib
 │   ├── libgmodule-2.0.0.dylib
+│   ├── libgmp.10.dylib
 │   ├── libgobject-2.0.0.dylib
+│   ├── libhogweed.6.6.dylib
+│   ├── libhogweed.6.dylib -> libhogweed.6.6.dylib
 │   ├── libiconv.2.dylib
 │   ├── libintl.8.dylib
 │   ├── libjpeg.9.dylib
 │   ├── liblzo2.2.dylib
 │   ├── libncursesw.6.dylib
-│   ├── libnettle.8.4.dylib
-│   ├── libnettle.8.dylib -> libnettle.8.4.dylib
+│   ├── libnettle.8.6.dylib
+│   ├── libnettle.8.dylib -> libnettle.8.6.dylib
+│   ├── libpcre2-8.dylib
 │   ├── libpixman-1.0.40.0.dylib
 │   ├── libpixman-1.0.dylib -> libpixman-1.0.40.0.dylib
 │   ├── libpng16.16.dylib
-│   ├── libssh.4.8.7.dylib
-│   ├── libssh.4.dylib -> libssh.4.8.7.dylib
+│   ├── libssh.4.9.1.dylib
+│   ├── libssh.4.dylib -> libssh.4.9.1.dylib
 │   ├── libusb-1.0.0.dylib
 │   ├── libvdeplug.3.dylib
 │   ├── libz.1.2.12.dylib
@@ -719,7 +711,7 @@ $ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-arm/7.1.0-1.1/.conte
     ├── icons
     └── qemu
 
-11 directories, 29 files
+11 directories, 33 files
 ```
 
 ## Uninstall
