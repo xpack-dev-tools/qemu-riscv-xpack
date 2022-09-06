@@ -37,13 +37,13 @@ function build_versions()
       xbb_activate
 
       # http://zlib.net/fossils/
-      build_zlib "1.2.12"
+      build_zlib "1.2.12" # "1.2.11"
 
       # https://sourceware.org/pub/bzip2/
       build_bzip2 "1.0.8"
 
       # # https://github.com/facebook/zstd/releases
-      build_zstd "1.5.2"
+      build_zstd "1.5.2" # "1.5.0"
 
       # required by nettle
       # https://gmplib.org/download/gmp/
@@ -53,7 +53,7 @@ function build_versions()
       build_libpng "1.6.37"
 
       # http://www.ijg.org/files/
-      build_jpeg "9e"
+      build_jpeg "9e" # "9d"
 
       # https://gitlab.gnome.org/GNOME/libxml2/-/releases
       build_libxml2 "2.10.2" # "2.9.14"
@@ -132,7 +132,7 @@ function build_versions()
         build_libusb_w32 "1.2.6.0"
       else
         # https://github.com/libusb/libusb/releases/
-        build_libusb "1.0.26"
+        build_libusb "1.0.26" # "1.0.24"
       fi
 
       # https://www.oberhumer.com/opensource/lzo/
