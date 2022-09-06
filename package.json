@@ -36,32 +36,32 @@
     "minimumXpmRequired": "0.10.2",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/download/v7.0.0-1",
+      "baseUrl": "https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/download/v7.1.0-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "xpack-qemu-riscv-7.0.0-1-darwin-arm64.tar.gz",
-          "sha256": "96dcff3cdae3955c6d102e090857c5235746fa8aad3faa2db7b613efba525801"
+          "fileName": "xpack-qemu-riscv-7.1.0-1-darwin-arm64.tar.gz",
+          "sha256": "5c10c218413ba593443f049f469449492f730dba3479e384a0b033dae5266dc7"
         },
         "darwin-x64": {
-          "fileName": "xpack-qemu-riscv-7.0.0-1-darwin-x64.tar.gz",
-          "sha256": "dfee271fc3f6dfe9a1bcdd77e39eaadd7646ccb91e2f2d14e7696948b599aad2"
+          "fileName": "xpack-qemu-riscv-7.1.0-1-darwin-x64.tar.gz",
+          "sha256": "89188dabcc4f72be930ff45db4493e00fe9637f5a688b35d38ff6a66f4c1f423"
         },
         "linux-arm64": {
-          "fileName": "xpack-qemu-riscv-7.0.0-1-linux-arm64.tar.gz",
-          "sha256": "aa16326eb00e0800d7883d6c165ab5b174352dcf7ae652b718c8c5b457e093dc"
+          "fileName": "xpack-qemu-riscv-7.1.0-1-linux-arm64.tar.gz",
+          "sha256": "4a1383ea15c601f3d2778ee8d5799d19b37576962d8f25b54aecdf5cd9341daf"
         },
         "linux-arm": {
-          "fileName": "xpack-qemu-riscv-7.0.0-1-linux-arm.tar.gz",
-          "sha256": "946789cdd17a42d1fc25461a64582f0d2bf448d138619cff3e8335362a97e556"
+          "fileName": "xpack-qemu-riscv-7.1.0-1-linux-arm.tar.gz",
+          "sha256": "ad6e632aa82d6f2e273e4bde807c8f64ef679a59321f48d6fdfa4d82e907752b"
         },
         "linux-x64": {
-          "fileName": "xpack-qemu-riscv-7.0.0-1-linux-x64.tar.gz",
-          "sha256": "c11bd7d14a4235e4613c8e3caf5fb0a87c82936dc6af56524c07645fa5b9d9da"
+          "fileName": "xpack-qemu-riscv-7.1.0-1-linux-x64.tar.gz",
+          "sha256": "295f916f3fefc950bf4d6f401f969e314bc0b26938efc9d4a643d54cf9055be5"
         },
         "win32-x64": {
-          "fileName": "xpack-qemu-riscv-7.0.0-1-win32-x64.zip",
-          "sha256": "616a51403f2e9416d9383cbf1874ec693c83cf8b7258dfcec86ff6a215ed871e"
+          "fileName": "xpack-qemu-riscv-7.1.0-1-win32-x64.zip",
+          "sha256": "880f4602db6f6185457b3c6314f822619d3a184aecdead7574578137fd461e03"
         }
       }
     },
