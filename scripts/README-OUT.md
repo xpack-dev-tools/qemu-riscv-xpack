@@ -1,6 +1,6 @@
 # The xPack QEMU RISC-V
 
-**The xPack QEMU RISC-V** (formerly GNU MCU Eclipse QEMU)
+**The xPack QEMU RISC-V** 
 is the **xPack** version of **QEMU**,
 an open source project.
 
