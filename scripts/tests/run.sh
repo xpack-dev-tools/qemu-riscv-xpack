@@ -13,7 +13,7 @@ function tests_run_all()
 {
   local test_bin_path="$1"
 
-  test_qemu_riscv "${test_bin_path}"
+  qemu_riscv_test "${test_bin_path}"
 }
 
 # -----------------------------------------------------------------------------

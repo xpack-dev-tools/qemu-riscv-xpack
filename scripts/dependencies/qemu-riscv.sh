@@ -9,7 +9,7 @@
 
 # -----------------------------------------------------------------------------
 
-function test_qemu_riscv()
+function qemu_riscv_test()
 {
   local test_bin_path="$1"
 
