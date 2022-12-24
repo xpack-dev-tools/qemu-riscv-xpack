@@ -105,9 +105,8 @@ $ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.con
 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.content/
 ├── README.md
 ├── bin
-│   ├── qemu-system-aarch64
-│   ├── qemu-system-arm
-│   └── qemu-system-gnuarmeclipse
+│   ├── qemu-system-riscv32
+│   └── qemu-system-riscv64
 ├── distro-info
 │   ├── CHANGELOG.md
 │   ├── licenses
@@ -116,8 +115,7 @@ $ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.con
 ├── include
 │   └── qemu-plugin.h
 ├── libexec
-│   ├── libSDL2-2.0.0.dylib
-│   ├── libSDL2_image-2.0.0.dylib
+│   ├── libbz2.1.0.8.dylib
 │   ├── libcrypto.1.1.dylib
 │   ├── libffi.8.dylib
 │   ├── libgio-2.0.0.dylib
@@ -125,7 +123,6 @@ $ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.con
 │   ├── libgmodule-2.0.0.dylib
 │   ├── libgmp.10.dylib
 │   ├── libgobject-2.0.0.dylib
-│   ├── libgthread-2.0.0.dylib
 │   ├── libhogweed.6.6.dylib
 │   ├── libhogweed.6.dylib -> libhogweed.6.6.dylib
 │   ├── libiconv.2.dylib
@@ -140,20 +137,17 @@ $ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.con
 │   ├── libpixman-1.0.dylib -> libpixman-1.0.40.0.dylib
 │   ├── libpng16.16.dylib
 │   ├── libssh.4.9.1.dylib
-│   ├── libssh.4.dylib -> libssh.4.9.1.dylib
 │   ├── libusb-1.0.0.dylib
 │   ├── libvdeplug.3.dylib
 │   ├── libz.1.2.12.dylib
 │   ├── libz.1.dylib -> libz.1.2.12.dylib
-│   ├── libzstd.1.5.2.dylib
-│   └── libzstd.1.dylib -> libzstd.1.5.2.dylib
+│   └── libzstd.1.5.2.dylib
 └── share
     ├── applications
     ├── icons
-    ├── legacy
     └── qemu
 
-12 directories, 37 files
+11 directories, 32 files
 ```
 
 No other files are installed in any system folders or other locations.
