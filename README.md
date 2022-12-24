@@ -101,8 +101,8 @@ After install, the package should create a structure like this (macOS files;
 only the first two depth levels are shown):
 
 ```console
-$ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.content
-/Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.content
+$ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.content/
+/Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.1.0-1.1/.content/
 ├── README.md
 ├── bin
 │   ├── qemu-system-aarch64
@@ -211,7 +211,7 @@ For maintainer info, please see the
 
 ## Support
 
-The quick answer is to use the GitHub
+The quick advice for getting support is to use the GitHub
 [Discussions](https://github.com/xpack-dev-tools/qemu-riscv-xpack/discussions/).
 
 For more details please read the
