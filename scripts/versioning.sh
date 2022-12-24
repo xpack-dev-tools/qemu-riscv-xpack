@@ -18,11 +18,11 @@ function application_build_versioned_components()
 
   if [[ "${XBB_RELEASE_VERSION}" =~ 7\.1\.0-1 ]]
   then
-    # -----------------------------------------------------------------------
-    # The application starts with a native target.
+    # -------------------------------------------------------------------------
+    # Build the native dependencies.
 
-    xbb_set_binaries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
-    xbb_set_libraries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
+    xbb_set_executables_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
+    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     # https://ftp.gnu.org/pub/gnu/libiconv/
     libiconv_build "1.17" # "1.16"
@@ -46,10 +46,11 @@ function application_build_versioned_components()
     # -----------------------------------------------------------------------
     # Revert to requested target.
 
+    xbb_reset_env
     xbb_set_target "requested"
 
-    xbb_set_binaries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
-    xbb_set_libraries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
+    xbb_set_executables_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
+    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     # required by glib
     # https://ftp.gnu.org/pub/gnu/libiconv/
@@ -179,10 +180,10 @@ function application_build_versioned_components()
     fi
 
     # -------------------------------------------------------------------------
-    # Application binaries.
+    # Build the application binaries.
 
-    xbb_set_binaries_install "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
-    xbb_set_binaries_install "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
+    xbb_set_executables_install_path "${XBB_APPLICATION_INSTALL_FOLDER_PATH}"
+    xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     # Stick to upstream as long as possible.
     # https://github.com/qemu/qemu/tags
@@ -200,7 +201,7 @@ function application_build_versioned_components()
 
   # ---------------------------------------------------------------------------
   else
-    echo "Unsupported version ${XBB_RELEASE_VERSION}."
+    echo "Unsupported ${XBB_APPLICATION_LOWER_CASE_NAME} version ${XBB_RELEASE_VERSION}"
     exit 1
   fi
 

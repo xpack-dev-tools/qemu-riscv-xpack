@@ -15,17 +15,17 @@ function qemu_riscv_test()
 
   echo
   echo "Checking the qemu shared libraries..."
-  show_libs "${test_bin_path}/qemu-system-riscv32"
-  show_libs "${test_bin_path}/qemu-system-riscv64"
+  show_host_libs "${test_bin_path}/qemu-system-riscv32"
+  show_host_libs "${test_bin_path}/qemu-system-riscv64"
 
   echo
   echo "Checking if qemu starts..."
-  run_app "${test_bin_path}/qemu-system-riscv32" --version
-  run_app "${test_bin_path}/qemu-system-riscv64" --version
+  run_host_app_verbose "${test_bin_path}/qemu-system-riscv32" --version
+  run_host_app_verbose "${test_bin_path}/qemu-system-riscv64" --version
 
-  run_app "${test_bin_path}/qemu-system-riscv32" --help
+  run_host_app_verbose "${test_bin_path}/qemu-system-riscv32" --help
 
-  run_app "${test_bin_path}/qemu-system-riscv32" \
+  run_host_app_verbose "${test_bin_path}/qemu-system-riscv32" \
     --machine virt \
     --kernel "${project_folder_path}/tests/assets/hello-world-rv32imac.elf" \
     -smp 1 \
@@ -34,7 +34,7 @@ function qemu_riscv_test()
     -d unimp,guest_errors \
     --semihosting-config enable=on,target=native,arg=hello-world,arg=RV32
 
-  run_app "${test_bin_path}/qemu-system-riscv64" \
+  run_host_app_verbose "${test_bin_path}/qemu-system-riscv64" \
     --machine virt \
     --kernel "${project_folder_path}/tests/assets/hello-world-rv64imafdc.elf" \
     -smp 1 \
