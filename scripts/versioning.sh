@@ -16,7 +16,7 @@ function application_build_versioned_components()
   # Keep them in sync with combo archive content.
   # ---------------------------------------------------------------------------
 
-  if [[ "${XBB_RELEASE_VERSION}" =~ 7\.1\.0-1 ]]
+  if [[ "${XBB_RELEASE_VERSION}" =~ 7[.]1[.]0-1 ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.
