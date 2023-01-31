@@ -70,7 +70,7 @@
       "qemu-system-riscv64": "./.content/bin/qemu-system-riscv64"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^1.4.2"
+      "@xpack-dev-tools/xbb-helper": "^1.4.3"
     },
     "properties": {
       "appName": "QEMU RISC-V",
