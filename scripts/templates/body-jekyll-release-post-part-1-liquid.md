@@ -7,10 +7,10 @@ summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the
 
 version: "{{ XBB_RELEASE_VERSION }}"
 npm_subversion: 1
-qemu_version: "7.1.0"
-qemu_short_commit: "621da7789"
-qemu_long_commit: "621da7789083b80d6f1ff1c0fb499334007b4f51"
-qemu_date: "30 August 2022"
+qemu_version: "7.2.0"
+qemu_short_commit: "b67b00e"
+qemu_long_commit: "b67b00e6b4c7831a3f5bc684bc0df7a9bfd1bd56"
+qemu_date: "Dec 13, 2022"
 
 download_url: https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
 
@@ -171,6 +171,7 @@ rv64
 shakti-c
 sifive-e51
 sifive-u54
+x-rv128
 ```
 
 ## Bug fixes
@@ -183,7 +184,8 @@ sifive-u54
 
 ## Known problems
 
-- none
+- in order to build on macOS 10.13, the Intel macOS version has
+  some functionality related to bridged virtual interfaces disabled.
 
 ## Shared libraries
 
