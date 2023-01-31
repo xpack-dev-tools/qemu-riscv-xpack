@@ -509,9 +509,9 @@ The builds may take about one hour to complete:
 
 - `xbbmi`: 0h23
 - `xbbma`: 0h11
-- `xbbli`: 0h21 (0h11 Linux, 0h09m Windows)
-- `xbbla64`: 1h02
-- `xbbla32`: 1h02
+- `xbbli`: 0h13 (0h11 Linux, 0h13 Windows)
+- `xbbla64`: 1h00
+- `xbbla32`: 1h00
 
 The workflow result and logs are available from the
 [Actions](https://github.com/xpack-dev-tools/qemu-riscv-xpack/actions/) page.
