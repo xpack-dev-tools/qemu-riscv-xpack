@@ -248,9 +248,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-xpack.git/build/darwin-x64/deploy
-total 65392
--rw-r--r--  1 ilg  staff  32955568 Nov  2 08:47 xpack-qemu-riscv-7.2.0-1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff       107 Nov  2 08:47 xpack-qemu-riscv-7.2.0-1-darwin-x64.tar.gz.sha
+total 35008
+-rw-r--r--  1 ilg  staff  17458565 Jan 31 10:56 xpack-qemu-riscv-7.2.0-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff       109 Jan 31 10:56 xpack-qemu-riscv-7.2.0-1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -276,14 +276,14 @@ xpm install --config darwin-arm64 -C ~/Work/qemu-riscv-xpack.git
 xpm run build-develop --config darwin-arm64 -C ~/Work/qemu-riscv-xpack.git
 ```
 
-About 15 minutes later, the output of the build script is a compressed
+About 10 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-xpack.git/build/darwin-arm64/deploy
-total 53040
--rw-r--r--  1 ilg  staff  27124079 Nov  2 08:38 xpack-qemu-riscv-7.2.0-1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff       109 Nov  2 08:38 xpack-qemu-riscv-7.2.0-1-darwin-arm64.tar.gz.sha
+total 34480
+-rw-r--r--  1 ilg  staff  17129362 Jan 31 10:41 xpack-qemu-riscv-7.2.0-1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff       111 Jan 31 10:41 xpack-qemu-riscv-7.2.0-1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -316,9 +316,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-xpack.git/build/linux-x64/deploy
-total 34664
--rw-r--r-- 1 ilg ilg 35491744 Nov  2 07:02 xpack-qemu-riscv-7.2.0-1-linux-x64.tar.gz
--rw-r--r-- 1 ilg ilg      106 Nov  2 07:02 xpack-qemu-riscv-7.2.0-1-linux-x64.tar.gz.sha
+total 19292
+-rw-r--r-- 1 ilg ilg 19747356 Jan 31 08:44 xpack-qemu-riscv-7.2.0-1-linux-x64.tar.gz
+-rw-r--r-- 1 ilg ilg      108 Jan 31 08:44 xpack-qemu-riscv-7.2.0-1-linux-x64.tar.gz.sha
 ```
 
 ##### Build the Windows binaries
@@ -342,9 +342,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-xpack.git/build/win32-x64/deploy
-total 41300
--rw-r--r-- 1 ilg ilg 42284069 Nov  2 07:24 xpack-qemu-riscv-7.2.0-1-win32-x64.zip
--rw-r--r-- 1 ilg ilg      103 Nov  2 07:24 xpack-qemu-riscv-7.2.0-1-win32-x64.zip.sha
+total 21980
+-rw-r--r-- 1 ilg ilg 22501694 Jan 31 08:41 xpack-qemu-riscv-7.2.0-1-win32-x64.zip
+-rw-r--r-- 1 ilg ilg      105 Jan 31 08:41 xpack-qemu-riscv-7.2.0-1-win32-x64.zip.sha
 ```
 
 #### Arm GNU/Linux 64-bit
@@ -370,14 +370,14 @@ xpm run docker-link-deps --config linux-arm64 -C ~/Work/qemu-riscv-xpack.git
 xpm run docker-build-develop --config linux-arm64 -C ~/Work/qemu-riscv-xpack.git
 ```
 
-About 1h00 later, the output of the build script is a compressed
+About 55 min later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-xpack.git/build/linux-arm64/deploy
-total 33940
--rw-r--r-- 1 ilg ilg 34746510 Nov  2 16:10 xpack-qemu-riscv-7.2.0-1-linux-arm64.tar.gz
--rw-r--r-- 1 ilg ilg      108 Nov  2 16:10 xpack-qemu-riscv-7.2.0-1-linux-arm64.tar.gz.sha
+total 18660
+-rw-r--r-- 1 ilg ilg 19099789 Jan 30 22:57 xpack-qemu-riscv-7.2.0-1-linux-arm64.tar.gz
+-rw-r--r-- 1 ilg ilg      110 Jan 30 22:57 xpack-qemu-riscv-7.2.0-1-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -403,14 +403,14 @@ xpm run docker-link-deps --config linux-arm -C ~/Work/qemu-riscv-xpack.git
 xpm run docker-build-develop --config linux-arm -C ~/Work/qemu-riscv-xpack.git
 ```
 
-About 55 minutes later, the output of the build script is a compressed
+About 50 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/qemu-riscv-xpack.git/build/linux-arm/deploy
-total 32688
--rw-r--r-- 1 ilg ilg 33466799 Nov  2 17:21 xpack-qemu-riscv-7.2.0-1-linux-arm.tar.gz
--rw-r--r-- 1 ilg ilg      106 Nov  2 17:21 xpack-qemu-riscv-7.2.0-1-linux-arm.tar.gz.sha
+total 17636
+-rw-r--r-- 1 ilg ilg 18051448 Jan 30 22:54 xpack-qemu-riscv-7.2.0-1-linux-arm.tar.gz
+-rw-r--r-- 1 ilg ilg      108 Jan 30 22:54 xpack-qemu-riscv-7.2.0-1-linux-arm.tar.gz.sha
 ```
 
 ### Files cache
