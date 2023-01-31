@@ -37,7 +37,7 @@ function application_build_versioned_components()
     libiconv_build "1.17"
 
     # http://zlib.net/fossils/
-    zlib_build "1.2.12" # "1.2.13"
+    zlib_build "1.2.13" # "1.2.12"
 
     # https://sourceware.org/pub/bzip2/
     bzip2_build "1.0.8"
@@ -50,7 +50,7 @@ function application_build_versioned_components()
     gmp_build "6.2.1"
 
     # https://sourceforge.net/projects/libpng/files/libpng16/
-    libpng_build "1.6.39"
+    libpng_build "1.6.39" # "1.6.37"
 
     # http://www.ijg.org/files/
     jpeg_build "9e"
