@@ -2,9 +2,111 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-01-31
+
+* 592c9b2 package.json: bump deps
+* 73fa3ec versioning.sh: zlib 1.2.13
+* 9865320 README update
+* 7049da7 versioning.sh: revert to readline "8.1.2"
+
+## 2023-01-30
+
+* 08922c6 prepare v7.2.0-1
+* 39b0047 templates updates
+* f773960 re-generate workflows
+* c61a842 package.json: bump deps
+
+## 2023-01-28
+
+* 1f50650 versioning.sh: use versioning functions
+* 210566b README-MAINTAINER remove caffeinate xpm
+
+## 2023-01-27
+
+* 87e4d7f package.json: reorder scripts
+
+## 2023-01-24
+
+* cee157c README updates
+
+## 2023-01-22
+
+* faa974e README update
+
+## 2023-01-09
+
+* 2a00e42 package.json: bump deps
+* 0a4664a package.json: loglevel info
+* fae9418 versioning.sh: add comment before *_installed_bin
+
+## 2023-01-02
+
+* c6296f2 package.json: reformat
+
+## 2023-01-01
+
+* 706b4e1 package.json: pass xpm version & loglevel
+* f39351b README update
+
+## 2022-12-30
+
+* ed12c04 README-MAINTAINER: xpm run install
+* e7c1e96 package.json: bump deps
+* 09ef445 versioning.sh: regexp
+
+## 2022-12-27
+
+* f6f6b36 README update
+* 5005b1e use autotools_build
+* 1a18b99 re-generate from templates
+
+## 2022-12-26
+
+* d46c2ba README updates
+
+## 2022-12-25
+
+* e4881d1 README update
+* e71de0d versioning.sh: remove explicit xbb_set_executables_install_path
+* 783419e versioning.sh: add comment M4
+
+## 2022-12-24
+
+* e89e030 README update
+* d8b959b README updates
+* cfb0122 updates for xbb v5.x
+* 1c86e44 package.json: update
+* e12689f package.json: bump deps
+* 2a31231 re-generate from templates
+* 45f9b03 rename functions
+
+## 2022-12-12
+
+* 9d293e9 package.json: add caffeinate builds for macOS
+* 1a013e1 versioning.sh: use XBB_REQUESTED_*
+
+## 2022-11-18
+
+* a279699 .vscode/settings.json: watcherExclude
+
 ## 2022-11-03
 
-* update for XBB v5.0.0
+* 08f6803 versioning.sh: build_glib "2.74.1"
+* 9ba4bd8 update for XBB v5.0.0
+* 2e83e79 remove submodule
+
+## 2022-10-04
+
+* 59b96fb README update
+* e0424a7 README-RELEASE update for bullet lists in CHANGELOG
+
+## 2022-09-25
+
+* 6c206f0 README-RELEASE update
+
+## 2022-09-17
+
+* f7c2b3f README-BUILD update
 
 ## 2022-09-06
 
