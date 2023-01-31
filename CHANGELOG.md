@@ -4,6 +4,13 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-01-31
 
+* v7.2.0-1 released
+* 991c82f README update
+* dcc816a regenerate workflows
+* 402b901 build-xbbli.yml: fetch-depth 3
+* cca313f add tests/update.sh
+* c8dd61e CHANGELOG update
+* 18e251a .vscode/settings.json: ignoreWords
 * 592c9b2 package.json: bump deps
 * 73fa3ec versioning.sh: zlib 1.2.13
 * 9865320 README update
