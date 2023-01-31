@@ -86,7 +86,7 @@ function application_build_versioned_components()
     # required by pcre2
     # https://ftp.gnu.org/gnu/readline/
     # x86_64-w64-mingw32/bin/ld: cannot find -ltermcap
-    readline_build "8.2" # "8.1.2"
+    readline_build "8.1.2" # "8.2" fails on mingw
 
     # https://github.com/PCRE2Project/pcre2/releases
     pcre2_build "10.42" # "10.40"
