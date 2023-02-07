@@ -14,26 +14,26 @@ To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
 
 ```sh
-rm -rf ~/Work/qemu-riscv-xpack.git && \
+rm -rf ~/Work/xpacks/qemu-riscv-xpack.git && \
 git clone https://github.com/xpack-dev-tools/qemu-riscv-xpack.git \
-  ~/Work/qemu-riscv-xpack.git
+  ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 For development purposes, clone the `xpack-develop` branch:
 
 ```sh
-rm -rf ~/Work/qemu-riscv-xpack.git && \
-mkdir -p ~/Work && \
+rm -rf ~/Work/xpacks/qemu-riscv-xpack.git && \
+mkdir -p ~/Work/xpacks && \
 git clone \
   --branch xpack-develop \
   https://github.com/xpack-dev-tools/qemu-riscv-xpack.git \
-  ~/Work/qemu-riscv-xpack.git
+  ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 Or, if the repo was already cloned:
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull
 ```
 
 ## Get helper sources
@@ -42,20 +42,20 @@ The project has a dependency to a common **helper**; clone the
 `xpack-develop` branch and link it to the central xPacks store:
 
 ```sh
-rm -rf ~/Work/xbb-helper-xpack.git && \
-mkdir -p ~/Work && \
+rm -rf ~/Work/xpacks/xbb-helper-xpack.git && \
+mkdir -p ~/Work/xpacks && \
 git clone \
   --branch xpack-develop \
   https://github.com/xpack-dev-tools/xbb-helper-xpack.git \
-  ~/Work/xbb-helper-xpack.git && \
-xpm link -C ~/Work/xbb-helper-xpack.git
+  ~/Work/xpacks/xbb-helper-xpack.git && \
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git
 ```
 
 Or, if the repo was already cloned:
 
 ```sh
-git -C ~/Work/xbb-helper-xpack.git pull
-xpm link -C ~/Work/xbb-helper-xpack.git
+git -C ~/Work/xpacks/xbb-helper-xpack.git pull
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git
 ```
 
 ## Prerequisites
@@ -176,46 +176,46 @@ For Intel macOS, first run the build on the development machine
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull
 
-xpm run deep-clean -C ~/Work/qemu-riscv-xpack.git
+xpm run deep-clean -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 If the helper is also under development and needs changes,
 update it too:
 
 ```sh
-git -C ~/Work/xbb-helper-xpack.git pull
+git -C ~/Work/xpacks/xbb-helper-xpack.git pull
 ```
 
 Install project dependencies:
 
 ```sh
-xpm run install -C ~/Work/qemu-riscv-xpack.git
+xpm run install -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 If the writable helper is used,
 link it in the place of the read-only package:
 
 ```sh
-xpm link -C ~/Work/xbb-helper-xpack.git
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git
 
-xpm run link-deps -C ~/Work/qemu-riscv-xpack.git
+xpm run link-deps -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 For repeated builds, clean the build folder and install de
 build configuration dependencies:
 
 ```sh
-xpm run deep-clean --config darwin-x64  -C ~/Work/qemu-riscv-xpack.git
+xpm run deep-clean --config darwin-x64  -C ~/Work/xpacks/qemu-riscv-xpack.git
 
-xpm install --config darwin-x64 -C ~/Work/qemu-riscv-xpack.git
+xpm install --config darwin-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 Run the native build:
 
 ```sh
-xpm run build-develop --config darwin-x64 -C ~/Work/qemu-riscv-xpack.git
+xpm run build-develop --config darwin-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 The build takes about 30 minutes.
@@ -233,21 +233,21 @@ caffeinate ssh xbbmi
 Repeat the same steps as before.
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull && \
-xpm run install -C ~/Work/qemu-riscv-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm link -C ~/Work/xbb-helper-xpack.git && \
-xpm run link-deps -C ~/Work/qemu-riscv-xpack.git && \
-xpm run deep-clean --config darwin-x64  -C ~/Work/qemu-riscv-xpack.git && \
-xpm install --config darwin-x64 -C ~/Work/qemu-riscv-xpack.git
-xpm run build-develop --config darwin-x64 -C ~/Work/qemu-riscv-xpack.git
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull && \
+xpm run install -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+git -C ~/Work/xpacks/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run deep-clean --config darwin-x64  -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm install --config darwin-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git
+xpm run build-develop --config darwin-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 About 25 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/qemu-riscv-xpack.git/build/darwin-x64/deploy
+$ ls -l ~/Work/xpacks/qemu-riscv-xpack.git/build/darwin-x64/deploy
 total 35008
 -rw-r--r--  1 ilg  staff  17458565 Jan 31 10:56 xpack-qemu-riscv-7.2.0-1-darwin-x64.tar.gz
 -rw-r--r--  1 ilg  staff       109 Jan 31 10:56 xpack-qemu-riscv-7.2.0-1-darwin-x64.tar.gz.sha
@@ -266,21 +266,21 @@ caffeinate ssh xbbma
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull && \
-xpm run install -C ~/Work/qemu-riscv-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm link -C ~/Work/xbb-helper-xpack.git && \
-xpm run link-deps -C ~/Work/qemu-riscv-xpack.git && \
-xpm run deep-clean --config darwin-arm64  -C ~/Work/qemu-riscv-xpack.git && \
-xpm install --config darwin-arm64 -C ~/Work/qemu-riscv-xpack.git
-xpm run build-develop --config darwin-arm64 -C ~/Work/qemu-riscv-xpack.git
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull && \
+xpm run install -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+git -C ~/Work/xpacks/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run deep-clean --config darwin-arm64  -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm install --config darwin-arm64 -C ~/Work/xpacks/qemu-riscv-xpack.git
+xpm run build-develop --config darwin-arm64 -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 About 10 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/qemu-riscv-xpack.git/build/darwin-arm64/deploy
+$ ls -l ~/Work/xpacks/qemu-riscv-xpack.git/build/darwin-arm64/deploy
 total 34480
 -rw-r--r--  1 ilg  staff  17129362 Jan 31 10:41 xpack-qemu-riscv-7.2.0-1-darwin-arm64.tar.gz
 -rw-r--r--  1 ilg  staff       111 Jan 31 10:41 xpack-qemu-riscv-7.2.0-1-darwin-arm64.tar.gz.sha
@@ -300,22 +300,22 @@ caffeinate ssh xbbli
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull && \
-xpm run install -C ~/Work/qemu-riscv-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm link -C ~/Work/xbb-helper-xpack.git && \
-xpm run link-deps -C ~/Work/qemu-riscv-xpack.git && \
-xpm run deep-clean --config linux-x64 -C ~/Work/qemu-riscv-xpack.git && \
-xpm run docker-prepare --config linux-x64 -C ~/Work/qemu-riscv-xpack.git && \
-xpm run docker-link-deps --config linux-x64 -C ~/Work/qemu-riscv-xpack.git
-xpm run docker-build-develop --config linux-x64 -C ~/Work/qemu-riscv-xpack.git
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull && \
+xpm run install -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+git -C ~/Work/xpacks/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run deep-clean --config linux-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run docker-prepare --config linux-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run docker-link-deps --config linux-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git
+xpm run docker-build-develop --config linux-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 About 15 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/qemu-riscv-xpack.git/build/linux-x64/deploy
+$ ls -l ~/Work/xpacks/qemu-riscv-xpack.git/build/linux-x64/deploy
 total 19292
 -rw-r--r-- 1 ilg ilg 19747356 Jan 31 08:44 xpack-qemu-riscv-7.2.0-1-linux-x64.tar.gz
 -rw-r--r-- 1 ilg ilg      108 Jan 31 08:44 xpack-qemu-riscv-7.2.0-1-linux-x64.tar.gz.sha
@@ -326,22 +326,22 @@ total 19292
 Clean the build folder and prepare the docker container:
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull && \
-xpm run install -C ~/Work/qemu-riscv-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm link -C ~/Work/xbb-helper-xpack.git && \
-xpm run link-deps -C ~/Work/qemu-riscv-xpack.git && \
-xpm run deep-clean --config win32-x64 -C ~/Work/qemu-riscv-xpack.git && \
-xpm run docker-prepare --config win32-x64 -C ~/Work/qemu-riscv-xpack.git && \
-xpm run docker-link-deps --config win32-x64 -C ~/Work/qemu-riscv-xpack.git
-xpm run docker-build-develop --config win32-x64 -C ~/Work/qemu-riscv-xpack.git
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull && \
+xpm run install -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+git -C ~/Work/xpacks/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run deep-clean --config win32-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run docker-prepare --config win32-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run docker-link-deps --config win32-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git
+xpm run docker-build-develop --config win32-x64 -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 About 15 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/qemu-riscv-xpack.git/build/win32-x64/deploy
+$ ls -l ~/Work/xpacks/qemu-riscv-xpack.git/build/win32-x64/deploy
 total 21980
 -rw-r--r-- 1 ilg ilg 22501694 Jan 31 08:41 xpack-qemu-riscv-7.2.0-1-win32-x64.zip
 -rw-r--r-- 1 ilg ilg      105 Jan 31 08:41 xpack-qemu-riscv-7.2.0-1-win32-x64.zip.sha
@@ -359,22 +359,22 @@ caffeinate ssh xbbla64
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull && \
-xpm run install -C ~/Work/qemu-riscv-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm link -C ~/Work/xbb-helper-xpack.git && \
-xpm run link-deps -C ~/Work/qemu-riscv-xpack.git && \
-xpm run deep-clean --config linux-arm64 -C ~/Work/qemu-riscv-xpack.git && \
-xpm run docker-prepare --config linux-arm64 -C ~/Work/qemu-riscv-xpack.git && \
-xpm run docker-link-deps --config linux-arm64 -C ~/Work/qemu-riscv-xpack.git
-xpm run docker-build-develop --config linux-arm64 -C ~/Work/qemu-riscv-xpack.git
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull && \
+xpm run install -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+git -C ~/Work/xpacks/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run deep-clean --config linux-arm64 -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run docker-prepare --config linux-arm64 -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run docker-link-deps --config linux-arm64 -C ~/Work/xpacks/qemu-riscv-xpack.git
+xpm run docker-build-develop --config linux-arm64 -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 About 55 min later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/qemu-riscv-xpack.git/build/linux-arm64/deploy
+$ ls -l ~/Work/xpacks/qemu-riscv-xpack.git/build/linux-arm64/deploy
 total 18660
 -rw-r--r-- 1 ilg ilg 19099789 Jan 30 22:57 xpack-qemu-riscv-7.2.0-1-linux-arm64.tar.gz
 -rw-r--r-- 1 ilg ilg      110 Jan 30 22:57 xpack-qemu-riscv-7.2.0-1-linux-arm64.tar.gz.sha
@@ -392,22 +392,22 @@ caffeinate ssh xbbla32
 Update the build scripts (or clone them at the first use):
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull && \
-xpm run install -C ~/Work/qemu-riscv-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
-xpm link -C ~/Work/xbb-helper-xpack.git && \
-xpm run link-deps -C ~/Work/qemu-riscv-xpack.git && \
-xpm run deep-clean --config linux-arm -C ~/Work/qemu-riscv-xpack.git && \
-xpm run docker-prepare --config linux-arm -C ~/Work/qemu-riscv-xpack.git && \
-xpm run docker-link-deps --config linux-arm -C ~/Work/qemu-riscv-xpack.git
-xpm run docker-build-develop --config linux-arm -C ~/Work/qemu-riscv-xpack.git
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull && \
+xpm run install -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+git -C ~/Work/xpacks/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xpacks/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run deep-clean --config linux-arm -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run docker-prepare --config linux-arm -C ~/Work/xpacks/qemu-riscv-xpack.git && \
+xpm run docker-link-deps --config linux-arm -C ~/Work/xpacks/qemu-riscv-xpack.git
+xpm run docker-build-develop --config linux-arm -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 About 50 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
-$ ls -l ~/Work/qemu-riscv-xpack.git/build/linux-arm/deploy
+$ ls -l ~/Work/xpacks/qemu-riscv-xpack.git/build/linux-arm/deploy
 total 17636
 -rw-r--r-- 1 ilg ilg 18051448 Jan 30 22:54 xpack-qemu-riscv-7.2.0-1-linux-arm.tar.gz
 -rw-r--r-- 1 ilg ilg      108 Jan 30 22:54 xpack-qemu-riscv-7.2.0-1-linux-arm.tar.gz.sha
@@ -434,23 +434,18 @@ In the `xpack-dev-tools/qemu` git repo:
 - merge `xpack-develop` into current
 - push `xpack`
 
-## Push the build scripts
-
-In this Git repo:
-
-- push the `xpack-develop` branch to GitHub
-- possibly push the helper project too
-
-From here it'll be cloned on the production machines.
-
 ## Run the CI build
 
 The automation is provided by GitHub Actions and three self-hosted runners.
 
+### Generate the GitHub workflows
+
 Run the `generate-workflows` to re-generate the
 GitHub workflow files; commit and push if necessary.
 
-- on a permanently running machine (`berry`) open ssh sessions to the build
+### Start the self-hosted runners
+
+- on the development machine (`wksi`) open ssh sessions to the build
 machines (`xbbma`, `xbbli`, `xbbla64` and `xbbla32`):
 
 ```sh
@@ -477,7 +472,19 @@ For `xbbli` & `xbbla64` start two runners:
 ~/actions-runners/xpack-dev-tools/2/run.sh &
 ```
 
-Check that the project is pushed to GitHub.
+### Push the build scripts
+
+- push the `xpack-develop` branch to GitHub
+- possibly push the helper project too
+
+From here it'll be cloned on the production machines.
+
+### Check for disk space
+
+Check if the build machines have enough free space and eventually
+do some cleanups.
+
+### Manually trigger the build GitHub Actions
 
 To trigger the GitHub Actions build, use the xPack action:
 
@@ -490,11 +497,11 @@ To trigger the GitHub Actions build, use the xPack action:
 This is equivalent to:
 
 ```sh
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbli
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbla64
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbla32
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbmi
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbma
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbli
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbla64
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbla32
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbmi
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbma
 ```
 
 These scripts require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
@@ -503,9 +510,11 @@ Settings → Action →
 [Secrets](https://github.com/xpack-dev-tools/qemu-riscv-xpack/settings/secrets/actions)
 page.
 
-This command uses the `xpack-develop` branch of this repo.
+These commands use the `xpack-develop` branch of this repo.
 
-The builds may take about one hour to complete:
+## Durations & results
+
+The  builds may take about one hour to complete:
 
 - `xbbmi`: 0h23
 - `xbbma`: 0h11
@@ -534,9 +543,9 @@ To trigger the GitHub Actions tests, use the xPack actions:
 These are equivalent to:
 
 ```sh
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-prime.sh
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-docker-linux-intel.sh
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-docker-linux-arm.sh
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-prime.sh
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-docker-linux-intel.sh
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-docker-linux-arm.sh
 ```
 
 These scripts require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
@@ -559,7 +568,7 @@ To trigger the Travis test, use the xPack action:
 This is equivalent to:
 
 ```sh
-bash ~/Work/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-travis-macos.sh
+bash ~/Work/xpacks/qemu-riscv-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-travis-macos.sh
 ```
 
 This script requires the `TRAVIS_COM_TOKEN` variable to be present
@@ -574,9 +583,9 @@ To download the pre-released archive for the specific platform
 and run the tests, use:
 
 ```sh
-git -C ~/Work/qemu-riscv-xpack.git pull
-xpm run install -C ~/Work/qemu-riscv-xpack.git
-xpm run test-pre-release -C ~/Work/qemu-riscv-xpack.git
+git -C ~/Work/xpacks/qemu-riscv-xpack.git pull
+xpm run install -C ~/Work/xpacks/qemu-riscv-xpack.git
+xpm run test-pre-release -C ~/Work/xpacks/qemu-riscv-xpack.git
 ```
 
 For even more tests, on each platform (MacOS, GNU/Linux, Windows),

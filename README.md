@@ -66,7 +66,7 @@ a dependency for a project is quite easy:
 cd my-project
 xpm init # Only at first use.
 
-xpm install @xpack-dev-tools/qemu-riscv@latest
+xpm install @xpack-dev-tools/qemu-riscv@latest --verbose
 
 ls -l xpacks/.bin
 ```
@@ -90,7 +90,7 @@ For xPacks aware tools, like the **Eclipse Embedded C/C++ plug-ins**,
 it is also possible to install QEMU globally, in the user home folder:
 
 ```sh
-xpm install --global @xpack-dev-tools/qemu-riscv@latest
+xpm install --global @xpack-dev-tools/qemu-riscv@latest --verbose
 ```
 
 Eclipse will automatically
