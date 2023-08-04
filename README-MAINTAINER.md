@@ -248,6 +248,12 @@ Run the native build:
 xpm run build-develop --config darwin-x64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 ```
 
+For a debug build:
+
+```sh
+xpm run build-develop-debug --config darwin-x64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
+```
+
 The build takes about 30 minutes.
 
 When functional, push the `xpack-develop` branch to GitHub.
