@@ -535,6 +535,10 @@ screen -S ga
 
 From here it'll be cloned on the production machines.
 
+### Publish helper
+
+Publish a new release of the helper and update the reference in `package.json`.
+
 ### Check for disk space
 
 Check if the build machines have enough free space and eventually
@@ -572,7 +576,7 @@ These commands use the `xpack-develop` branch of this repo.
 
 The  builds may take about one hour to complete:
 
-- `xbbmi`: 0h23
+- `xbbmi`: 0h23 (vm)
 - `xbbma`: 0h11
 - `xbbli`: 0h13 (0h11 Linux, 0h13 Windows)
 - `xbbla`: 1h00
