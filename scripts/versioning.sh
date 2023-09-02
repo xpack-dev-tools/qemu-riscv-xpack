@@ -255,6 +255,16 @@ function application_build_versioned_components()
     # https://github.com/libffi/libffi/releases
     libffi_build "3.4.4" # "3.4.2"
 
+    # Without it gettext fails:
+    # Undefined symbols for architecture x86_64:
+    #   "_gl_get_setlocale_null_lock", referenced from:
+    #       _libgettextpo_setlocale_null_r in setlocale_null.o
+    # ld: symbol(s) not found for architecture x86_64
+    # clang-16: error: linker command failed with exit code 1 (use -v to see invocation)
+
+    # https://ftp.gnu.org/gnu/libunistring/
+    libunistring_build "1.1"
+
     # required by glib
     # https://ftp.gnu.org/pub/gnu/gettext/
     gettext_build "0.21"
