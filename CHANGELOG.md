@@ -2,8 +2,28 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-08-28
+
+* v8.1.0-1 prepared
+* 267dd60 READMEs update
+* 1d73428 package.json: rm xpack-dev-tools-build/*
+* 886242b package.json: bump deps
+
+## 2023-08-21
+
+* 1485a45 READMEs update
+* 4140333 package.json: bump deps
+
+## 2023-08-19
+
+* 20484ba READMEs update
+* 5be0d36 package.json: bump deps
+
 ## 2023-08-15
 
+* 32b0ba0 CHANGELOG.update
+* 088b615 dot.*ignore update
+* 46712d9 re-generate workflows
 * 8dd711a .vscode/settings.json ignoreWords
 * bc8bf52 re-generate workflows
 * 1aa7f46 README-MAINTAINER rename xbbla
