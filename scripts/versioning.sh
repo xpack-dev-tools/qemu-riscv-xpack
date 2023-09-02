@@ -126,7 +126,7 @@ function application_build_versioned_components()
       # required by libssh
       # https://www.openssl.org/source/
       openssl_build "1.1.1v" # "1.1.1s"
-      
+
       # https://www.libssh.org/files/
       libssh_build "0.10.5" # "0.10.4"
 
@@ -194,12 +194,17 @@ function application_build_versioned_components()
 
     qemu_build "${XBB_QEMU_VERSION}" "riscv"
 
-  elif [[ "${XBB_RELEASE_VERSION}" =~ 7[.]2[.]0-.* ]]
+  elif [[ "${XBB_RELEASE_VERSION}" =~ 7[.]2[.][05]-.* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.
 
-    autotools_build
+    # No longer needed with recent libxml2.
+    if false
+    then
+      # autoreconf required by libxml2.
+      autotools_build
+    fi
 
     # -----------------------------------------------------------------------
     # Revert to requested target.
@@ -347,11 +352,16 @@ function application_build_versioned_components()
     # https://github.com/qemu/qemu/tags
 
     XBB_QEMU_GIT_URL="https://github.com/xpack-dev-tools/qemu.git"
-    if [ "${XBB_IS_DEVELOP}" == "y" ]
+    if [[ "${XBB_RELEASE_VERSION}" =~ 7[.]2[.]5-.* ]]
     then
-      XBB_QEMU_GIT_BRANCH="xpack-develop"
+      XBB_QEMU_GIT_BRANCH="v7.2.5-xpack"
     else
-      XBB_QEMU_GIT_BRANCH="xpack"
+      if [ "${XBB_IS_DEVELOP}" == "y" ]
+      then
+        XBB_QEMU_GIT_BRANCH="xpack-develop"
+      else
+        XBB_QEMU_GIT_BRANCH="xpack"
+      fi
     fi
     XBB_QEMU_GIT_COMMIT="v${XBB_QEMU_VERSION}-xpack"
 
