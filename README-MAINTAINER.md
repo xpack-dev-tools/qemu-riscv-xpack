@@ -570,11 +570,11 @@ These commands use the `xpack-develop` branch of this repo.
 
 The  builds may take about one hour to complete:
 
-- `xbbmi`: 0h23 (vm)
-- `xbbma`: 0h11
-- `xbbli`: 0h13 (0h11 Linux, 0h13 Windows)
-- `xbbla`: 1h00
-- `xbbla32`: 1h00
+- `xbbmi`: 0h17 (nuc)
+- `xbbma`: 0h15
+- `xbbli`: 0h13 Linux, 0h11 Windows
+- `xbbla`: 1h12
+- `xbbla32`: 1h03
 
 The workflow result and logs are available from the
 [Actions](https://github.com/xpack-dev-tools/qemu-riscv-xpack/actions/) page.
