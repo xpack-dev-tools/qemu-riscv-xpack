@@ -4,7 +4,10 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-09-03
 
-* v7.2.5-1 prepared
+* v7.2.5-1 released
+* ae95367 template/jekyll update
+* edeb9fd .vscode/settings: ignoreWords
+* 5ce314e prepare v7.2.5-1
 
 ## 2023-09-02
 
