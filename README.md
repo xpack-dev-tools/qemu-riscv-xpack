@@ -137,21 +137,21 @@ $ tree -L 2 /Users/ilg/Library/xPacks/@xpack-dev-tools/qemu-riscv/7.2.5-1.1/.con
 │   ├── libnettle.8.6.dylib
 │   ├── libnettle.8.dylib -> libnettle.8.6.dylib
 │   ├── libpcre2-8.0.dylib
-│   ├── libpixman-1.0.40.0.dylib
-│   ├── libpixman-1.0.dylib -> libpixman-1.0.40.0.dylib
+│   ├── libpixman-1.0.42.2.dylib
+│   ├── libpixman-1.0.dylib -> libpixman-1.0.42.2.dylib
 │   ├── libpng16.16.dylib
-│   ├── libssh.4.9.1.dylib
+│   ├── libssh.4.9.4.dylib
 │   ├── libusb-1.0.0.dylib
 │   ├── libvdeplug.3.dylib
-│   ├── libz.1.2.12.dylib
-│   ├── libz.1.dylib -> libz.1.2.12.dylib
+│   ├── libz.1.2.13.dylib
+│   ├── libz.1.dylib -> libz.1.2.13.dylib
 │   └── libzstd.1.5.2.dylib
 └── share
     ├── applications
     ├── icons
     └── qemu
 
-11 directories, 32 files
+12 directories, 32 files
 ```
 
 No other files are installed in any system folders or other locations.
