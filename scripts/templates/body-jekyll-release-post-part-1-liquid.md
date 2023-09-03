@@ -143,7 +143,7 @@ Compared to the master `qemu-system-riscv*`, there are no major changes.
 The supported boards and CPUs are:
 
 ```console
-$ .../xpack-qemu-riscv-7.0.0-1/bin/qemu-system-riscv32 -machine help
+$ .../xpack-qemu-riscv-{{ XBB_RELEASE_VERSION }}/bin/qemu-system-riscv32 -machine help
 Supported machines are:
 none                 empty machine
 opentitan            RISC-V Board compatible with OpenTitan
@@ -151,7 +151,7 @@ sifive_e             RISC-V Board compatible with SiFive E SDK
 sifive_u             RISC-V Board compatible with SiFive U SDK
 spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
-$ .../xpack-qemu-riscv-7.0.0-1/bin/qemu-system-riscv32 -cpu help
+$ .../xpack-qemu-riscv-{{ XBB_RELEASE_VERSION }}/bin/qemu-system-riscv32 -cpu help
 any
 lowrisc-ibex
 rv32
@@ -159,7 +159,7 @@ sifive-e31
 sifive-e34
 sifive-u34
 
-$ .../xpack-qemu-riscv-7.0.0-1/bin/qemu-system-riscv64 -machine help
+$ .../xpack-qemu-riscv-{{ XBB_RELEASE_VERSION }}/bin/qemu-system-riscv64 -machine help
 Supported machines are:
 microchip-icicle-kit Microchip PolarFire SoC Icicle Kit
 none                 empty machine
