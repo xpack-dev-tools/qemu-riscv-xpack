@@ -844,3 +844,16 @@ will remove the build folders on all supported platforms.
 
 The results are available from the
 [Actions](https://github.com/xpack-dev-tools/qemu-riscv-xpack/actions/) page.
+
+## Announce to RISC-V community
+
+Add a new topic in the **Announcements** category of the
+[RISC-V forums]<https://groups.google.com/a/groups.riscv.org/g/sw-dev>).
+
+```console
+Subject: xPack QEMU RISC-V v7.2.5-1 released
+
+Version 7.2.5-1 is a new release of the xPack QEMU RISC-V; it follows the QEMU release.
+
+https://xpack.github.io/dev-tools/qemu-riscv/releases/
+```
