@@ -2,6 +2,25 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-09-03
+
+* v7.2.5-1 prepared
+
+## 2023-09-02
+
+* 354b2f0 versioning.sh: add libunistring for 7.2.*
+* f12dcf2 VERSION 7.2.5-1
+* bb0ea5e versioning.sh: add 7.2.5
+* 5e4fb2a package.json: bump gcc 13.2
+* 072e28e package.json: docker xbb 5.1.0
+* bd81fb7 versioning.sh cosmetics
+* 2cb9e83 application.sh: update deps
+* 36f6b35 versioning.sh: add libunistring_build
+* 06dbd92 versioning.sh: autotools no longer needed
+* ee7254d package-lock.json update
+* 0824f75 dot.*ignore update
+* 96910b5 prepare v8.1.0-1
+
 ## 2023-08-28
 
 * v8.1.0-1 prepared
