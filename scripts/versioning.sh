@@ -21,12 +21,7 @@ function application_build_versioned_components()
     # -------------------------------------------------------------------------
     # Build the native dependencies.
 
-    # No longer needed with recent libxml2.
-    if false
-    then
-      # autoreconf required by libxml2.
-      autotools_build
-    fi
+    # None
 
     # -----------------------------------------------------------------------
     # Revert to requested target.
@@ -199,13 +194,8 @@ function application_build_versioned_components()
     # -------------------------------------------------------------------------
     # Build the native dependencies.
 
-    # No longer needed with recent libxml2.
-    if false
-    then
-      # autoreconf required by libxml2.
-      autotools_build
-    fi
-
+    # None
+    
     # -----------------------------------------------------------------------
     # Revert to requested target.
 
