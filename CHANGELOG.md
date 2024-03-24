@@ -2,9 +2,83 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2024-03-24
+
+* v8.2.2-1 prepared
+
+## 2024-03-22
+
+* 8bd664d package.json: xpm-version 0.18.0
+
+## 2024-03-08
+
+* 2b1e282 package.json: xpm-version 0.18.0
+
+## 2024-03-07
+
+* 897c688 package.json: xpm-version 0.18.0
+* c725af7 package.json: bump deps
+
+## 2024-03-06
+
+* 019171e body-jekyll update
+* 546b83b package.json: bump deps
+
+## 2024-02-07
+
+* ab38ce4 READMEs update
+* db9a913 package.json: bump deps
+
+## 2023-12-03
+
+* 360f498 package.json: bump deps
+* e5d3b5f re-generate workflows
+
+## 2023-11-12
+
+* b5749d5 package.json: bump deps
+
+## 2023-09-25
+
+* 8bf53b6 body-jekyll update
+
+## 2023-09-20
+
+* 87f7d71 package.json: bump deps
+
+## 2023-09-16
+
+* f60cfef package.json: add linux32
+* 97faacd body-jekyll update
+
+## 2023-09-11
+
+* 0b2137a package.json: bump deps
+
+## 2023-09-08
+
+* ba93cb0 package.json: bump deps
+* 9f05ea8 versioning.sh: call libiconv for autotools
+* 5cc261f versioning.sh: cleanups
+
+## 2023-09-06
+
+* 56ea2cc package.json: bump deps
+* cd1aecf READMEs update
+* 399663e body-jekyll update
+
+## 2023-09-05
+
+* 8b69f50 re-generate workflows
+* fdd7760 READMEs update
+* ac7d82c package.json: bump deps
+
 ## 2023-09-03
 
-* v7.2.5-1.1 published on npmjs.com
+* 3af2ae9 README update
+* 0395ffc templates/jekyll update
+* 90bfe6b 7.2.5-1.1
+* eeb1005 CHANGELOG: publish npm v7.2.5-1.1
 * 53e48b6 package.json: update urls for 7.2.5-1.1 release
 * 3f41f5d README updates
 * 35e9ae7 templates/jekyll update

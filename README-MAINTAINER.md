@@ -102,15 +102,15 @@ update the dependencies in `package.json`.
 ### Check the latest upstream release
 
 Identify the latest stable [tag](https://gitlab.com/qemu-project/qemu/-/tags),
-like `v7.2.5`.
+like `v8.2.2`.
 
 Also check the very latest
 [VERSION](https://gitlab.com/qemu-project/qemu/-/blob/master/VERSION) file.
 
 ### Increase the version
 
-Determine the version (like `7.2.5`) and update the `scripts/VERSION`
-file; the format is `7.2.5-1`. The fourth number is the xPack release number
+Determine the version (like `8.2.2`) and update the `scripts/VERSION`
+file; the format is `8.2.2-1`. The fourth number is the xPack release number
 of this version. A fifth number will be added when publishing
 the package on the `npm` server.
 
@@ -121,7 +121,7 @@ Check GitHub issues and pull requests:
 - <https://github.com/xpack-dev-tools/qemu-riscv-xpack/issues/>
 - <https://github.com/xpack-dev-tools/qemu/issues/>
 
-and fix them; assign them to a milestone (like `7.2.5-1`).
+and fix them; assign them to a milestone (like `8.2.2-1`).
 
 ### Check `README.md`
 
@@ -136,26 +136,26 @@ but in the version specific release page.
 
 ### Update version in `package.json` to a pre-release
 
-Use the new version, suffixed by `pre`, like `7.2.5-1.pre`.
+Use the new version, suffixed by `pre`, like `8.2.2-1.pre`.
 
 ### Update `CHANGELOG.md`
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _* v7.2.5-1 prepared_
-- commit with a message like _prepare v7.2.5-1_
+- add a new entry like _* v8.2.2-1 prepared_
+- commit with a message like _prepare v8.2.2-1_
 
 ### Update qemu.git for development builds
 
 - checkout the `master` branch
-- merge the upstream `v7.2.5` tag into current
+- merge the upstream `v8.2.2` tag into current
 - push `master`
 - checkout the `xpack-develop` branch
 - merge `master` into current
 - push `xpack-develop`
 - checkout the `xpack` branch
 - merge `xpack-develop` into current
-- add a `v7.2.5-xpack` tag
+- add a `v8.2.2-xpack` tag
 - push tag to `origin`
 
 ### Update the version specific code
@@ -187,6 +187,7 @@ For Intel macOS, first run the build on the development machine
 
 ```sh
 # Update the build scripts.
+rm -f ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/package-lock.json
 git -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git pull
 
 xpm run install -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
@@ -222,6 +223,7 @@ caffeinate ssh xbbmi
 Repeat the same steps as before.
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -239,8 +241,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/darwin-x64/deploy
 total 34456
--rw-r--r--  1 ilg  staff  17202461 Sep  2 23:26 xpack-qemu-riscv-7.2.5-1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff       109 Sep  2 23:26 xpack-qemu-riscv-7.2.5-1-darwin-x64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  17202461 Sep  2 23:26 xpack-qemu-riscv-8.2.2-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff       109 Sep  2 23:26 xpack-qemu-riscv-8.2.2-1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -256,6 +258,7 @@ caffeinate ssh xbbma
 Update the build scripts (or clone them at the first use):
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -273,8 +276,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/darwin-arm64/deploy
 total 32792
--rw-r--r--  1 ilg  staff  16331374 Sep  2 23:19 xpack-qemu-riscv-7.2.5-1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff       111 Sep  2 23:19 xpack-qemu-riscv-7.2.5-1-darwin-arm64.tar.gz.sha
+-rw-r--r--  1 ilg  staff  16331374 Sep  2 23:19 xpack-qemu-riscv-8.2.2-1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff       111 Sep  2 23:19 xpack-qemu-riscv-8.2.2-1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -291,6 +294,7 @@ caffeinate ssh xbbli
 Update the build scripts (or clone them at the first use):
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -309,8 +313,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-x64/deploy
 total 19124
--rw-r--r-- 1 ilg ilg 19577701 Sep  2 19:37 xpack-qemu-riscv-7.2.5-1-linux-x64.tar.gz
--rw-r--r-- 1 ilg ilg      108 Sep  2 19:37 xpack-qemu-riscv-7.2.5-1-linux-x64.tar.gz.sha
+-rw-r--r-- 1 ilg ilg 19577701 Sep  2 19:37 xpack-qemu-riscv-8.2.2-1-linux-x64.tar.gz
+-rw-r--r-- 1 ilg ilg      108 Sep  2 19:37 xpack-qemu-riscv-8.2.2-1-linux-x64.tar.gz.sha
 ```
 
 ##### Build the Intel Windows binaries
@@ -318,6 +322,7 @@ total 19124
 Clean the build folder and prepare the docker container:
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -336,8 +341,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/win32-x64/deploy
 total 21824
--rw-r--r-- 1 ilg ilg 22342128 Sep  2 19:48 xpack-qemu-riscv-7.2.5-1-win32-x64.zip
--rw-r--r-- 1 ilg ilg      105 Sep  2 19:48 xpack-qemu-riscv-7.2.5-1-win32-x64.zip.sha
+-rw-r--r-- 1 ilg ilg 22342128 Sep  2 19:48 xpack-qemu-riscv-8.2.2-1-win32-x64.zip
+-rw-r--r-- 1 ilg ilg      105 Sep  2 19:48 xpack-qemu-riscv-8.2.2-1-win32-x64.zip.sha
 ```
 
 #### Arm GNU/Linux 64-bit
@@ -352,6 +357,7 @@ caffeinate ssh xbbla
 Update the build scripts (or clone them at the first use):
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -370,8 +376,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-arm64/deploy
 total 18440
--rw-r--r-- 1 ilg ilg 18874437 Sep  2 21:01 xpack-qemu-riscv-7.2.5-1-linux-arm64.tar.gz
--rw-r--r-- 1 ilg ilg      110 Sep  2 21:01 xpack-qemu-riscv-7.2.5-1-linux-arm64.tar.gz.sha
+-rw-r--r-- 1 ilg ilg 18874437 Sep  2 21:01 xpack-qemu-riscv-8.2.2-1-linux-arm64.tar.gz
+-rw-r--r-- 1 ilg ilg      110 Sep  2 21:01 xpack-qemu-riscv-8.2.2-1-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -386,6 +392,7 @@ caffeinate ssh xbbla32
 Update the build scripts (or clone them at the first use):
 
 ```sh
+rm -f ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/package-lock.json && \
 git -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git pull && \
 xpm run install -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
@@ -404,8 +411,8 @@ archive and its SHA signature, created in the `deploy` folder:
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-arm/deploy
 total 17456
--rw-r--r-- 1 ilg ilg 17869389 Sep  2 20:52 xpack-qemu-riscv-7.2.5-1-linux-arm.tar.gz
--rw-r--r-- 1 ilg ilg      108 Sep  2 20:52 xpack-qemu-riscv-7.2.5-1-linux-arm.tar.gz.sha
+-rw-r--r-- 1 ilg ilg 17869389 Sep  2 20:52 xpack-qemu-riscv-8.2.2-1-linux-arm.tar.gz
+-rw-r--r-- 1 ilg ilg      108 Sep  2 20:52 xpack-qemu-riscv-8.2.2-1-linux-arm.tar.gz.sha
 ```
 
 ### Update README-MAINTAINER listing output
@@ -637,7 +644,7 @@ To test graphical mode, use Thomas Huth's presentation:
 curl -L https://www.qemu-advent-calendar.org/2018/download/day24.tar.xz \
   -o ${HOME}/Downloads/day24.tar.xz
 (cd ${HOME}/Downloads; tar xvf day24.tar.xz)
-export PATH=${HOME}/Downloads/xpack-qemu-riscv-7.2.5-1/bin:$PATH
+export PATH=${HOME}/Downloads/xpack-qemu-riscv-8.2.2-1/bin:$PATH
 bash ${HOME}/Downloads/day24/run.sh
 ```
 
@@ -651,14 +658,14 @@ They could be BIOS/firmware images, a guest kernel, initrd or some other file lo
 Check whether you intended to load all this guest code, and whether it has been built to load to the correct addresses.
 
 The following two regions overlap (in the memory address space):
-  /home/ilg/Downloads/xpack-qemu-riscv-7.2.5-1/bin/../share/qemu/opensbi-riscv64-generic-fw_dynamic.bin (addresses 0x0000000080000000 - 0x0000000080019b50)
+  /home/ilg/Downloads/xpack-qemu-riscv-8.2.2-1/bin/../share/qemu/opensbi-riscv64-generic-fw_dynamic.bin (addresses 0x0000000080000000 - 0x0000000080019b50)
   /home/ilg/Downloads/day24/risk-v.elf ELF program header segment 0 (addresses 0x0000000080000000 - 0x000000008005d348)
 aplay: read_header:2861: read error
 ```
 
 ## Create a new GitHub pre-release draft
 
-- in `CHANGELOG.md`, add the release date and a message like _* v7.2.5-1 released_
+- in `CHANGELOG.md`, add the release date and a message like _* v8.2.2-1 released_
 - commit with _CHANGELOG update_
 - check and possibly update the `templates/body-github-release-liquid.md`
 - push the `xpack-develop` branch
@@ -669,8 +676,8 @@ The workflow result and logs are available from the
 
 The result is a
 [draft pre-release](https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/)
-tagged like **v7.2.5-1** (mind the dash in the middle!) and
-named like **xPack QEMU RISC-V v7.2.5-1** (mind the dash),
+tagged like **v8.2.2-1** (mind the dash in the middle!) and
+named like **xPack QEMU RISC-V v8.2.2-1** (mind the dash),
 with all binaries attached.
 
 - edit the draft and attach it to the `xpack-develop` branch (important!)
@@ -693,7 +700,7 @@ If any, refer to closed
 ## Update the preview Web
 
 - commit the `develop` branch of `xpack/web-jekyll` GitHub repo;
-  use a message like _xPack QEMU RISC-V v7.2.5-1 released_
+  use a message like _xPack QEMU RISC-V v8.2.2-1 released_
 - push to GitHub
 - wait for the GitHub Pages build to complete
 - the preview web is <https://xpack.github.io/web-preview/news/>
@@ -734,18 +741,18 @@ watching this project.
 - compare the SHA sums with those shown by `cat *.sha`
 - check the executable names
 - commit all changes, use a message like
-  _package.json: update urls for 7.2.5-1.1 release_ (without _v_)
+  _package.json: update urls for 8.2.2-1.1 release_ (without _v_)
 
 ## Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
 - check the latest commits `npm run git-log`
-- update `CHANGELOG.md`, add a line like _* v7.2.5-1.1 published on npmjs.com_
-- commit with a message like _CHANGELOG: publish npm v7.2.5-1.1_
+- update `CHANGELOG.md`, add a line like _* v8.2.2-1.1 published on npmjs.com_
+- commit with a message like _CHANGELOG: publish npm v8.2.2-1.1_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
-- `npm version 7.2.5-1.1`; the first 4 numbers are the same as the
+- `npm version 8.2.2-1.1`; the first 4 numbers are the same as the
   GitHub release; the fifth number is the npm specific version
 - the commits and the tag should have been pushed by the `postversion` script;
   if not, push them with `git push origin --tags`
@@ -774,12 +781,12 @@ The tests results are available from the
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-dev-tools/qemu-riscv`
-- `npm dist-tag add @xpack-dev-tools/qemu-riscv@7.2.5-1.1 latest`
+- `npm dist-tag add @xpack-dev-tools/qemu-riscv@8.2.2-1.1 latest`
 - `npm dist-tag ls @xpack-dev-tools/qemu-riscv`
 
 In case the previous version is not functional and needs to be unpublished:
 
-- `npm unpublish @xpack-dev-tools/qemu-riscv@7.2.5-1.1`
+- `npm unpublish @xpack-dev-tools/qemu-riscv@8.2.2-1.1`
 
 ## Update the Web
 
@@ -801,7 +808,7 @@ In case the previous version is not functional and needs to be unpublished:
 
 - in a separate browser windows, open [X/Twitter](https://twitter.com)
 - using the `@xpack_project` account
-- paste the release name like **xPack QEMU RISC-V v7.2.5-1 released**
+- paste the release name like **xPack QEMU RISC-V v8.2.2-1 released**
 - paste the link to the Web page
   [release](https://xpack.github.io/qemu-riscv/releases/)
 - click the **Tweet** button
@@ -829,9 +836,9 @@ Add a new topic in the **Announcements** category of the
 [RISC-V forums]<https://groups.google.com/a/groups.riscv.org/g/sw-dev>).
 
 ```console
-Subject: xPack QEMU RISC-V v7.2.5-1 released
+Subject: xPack QEMU RISC-V v8.2.2-1 released
 
-Version 7.2.5-1 is a new release of the xPack QEMU RISC-V; it follows the QEMU release.
+Version 8.2.2-1 is a new release of the xPack QEMU RISC-V; it follows the QEMU release.
 
 https://xpack.github.io/dev-tools/qemu-riscv/releases/
 ```
