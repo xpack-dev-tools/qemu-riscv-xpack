@@ -102,7 +102,8 @@ function application_build_versioned_components()
 
     # https://download.gnome.org/sources/glib/
     # ERROR: glib-2.56 gthread-2.0 is required to compile QEMU
-    glib_build "2.80.0" # "2.77.3"
+    # "2.80.0" requires meson >= 1.2.0
+    glib_build "2.80.0"
 
     # Not toghether with nettle.
     # libgpg_error_build "1.43"
