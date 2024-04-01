@@ -120,7 +120,8 @@ function application_build_versioned_components()
     then
       # required by libssh
       # https://www.openssl.org/source/
-      openssl_build "1.1.1w" # "1.1.1v" ? 3.x
+      # with "3.2.1" it fails in libssh
+      openssl_build "1.1.1w" # "1.1.1v"
 
       # https://www.libssh.org/files/
       libssh_build "0.10.6" # "0.10.5"
