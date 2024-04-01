@@ -208,7 +208,7 @@ For a debug build:
 xpm run build-develop-debug --config darwin-x64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 ```
 
-The build takes about 30 minutes.
+The build takes about 33 minutes.
 
 When functional, push the `xpack-develop` branch to GitHub.
 
@@ -240,9 +240,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/darwin-x64/deploy
-total 34456
--rw-r--r--  1 ilg  staff  17202461 Sep  2 23:26 xpack-qemu-riscv-8.2.2-1-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff       109 Sep  2 23:26 xpack-qemu-riscv-8.2.2-1-darwin-x64.tar.gz.sha
+total 36064
+-rw-r--r--  1 ilg  staff  17606504 Apr  1 21:32 xpack-qemu-riscv-8.2.2-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff       109 Apr  1 21:32 xpack-qemu-riscv-8.2.2-1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -270,14 +270,14 @@ xpm install --config darwin-arm64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 xpm run build-develop --config darwin-arm64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 ```
 
-About 14 minutes later, the output of the build script is a compressed
+About 15 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/darwin-arm64/deploy
-total 32792
--rw-r--r--  1 ilg  staff  16331374 Sep  2 23:19 xpack-qemu-riscv-8.2.2-1-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff       111 Sep  2 23:19 xpack-qemu-riscv-8.2.2-1-darwin-arm64.tar.gz.sha
+total 34720
+-rw-r--r--  1 ilg  staff  16730956 Apr  1 21:26 xpack-qemu-riscv-8.2.2-1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff       111 Apr  1 21:26 xpack-qemu-riscv-8.2.2-1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -307,14 +307,14 @@ xpm run docker-link-deps --config linux-x64 -C ~/Work/xpack-dev-tools/qemu-riscv
 xpm run docker-build-develop --config linux-x64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 ```
 
-About 11 minutes later, the output of the build script is a compressed
+About 13 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-x64/deploy
-total 19124
--rw-r--r-- 1 ilg ilg 19577701 Sep  2 19:37 xpack-qemu-riscv-8.2.2-1-linux-x64.tar.gz
--rw-r--r-- 1 ilg ilg      108 Sep  2 19:37 xpack-qemu-riscv-8.2.2-1-linux-x64.tar.gz.sha
+total 19732
+-rw-r--r-- 1 ilg ilg 20198662 Apr  1 18:25 xpack-qemu-riscv-8.2.2-1-linux-x64.tar.gz
+-rw-r--r-- 1 ilg ilg      108 Apr  1 18:25 xpack-qemu-riscv-8.2.2-1-linux-x64.tar.gz.sha
 ```
 
 ##### Build the Intel Windows binaries
@@ -335,14 +335,14 @@ xpm run docker-link-deps --config win32-x64 -C ~/Work/xpack-dev-tools/qemu-riscv
 xpm run docker-build-develop --config win32-x64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 ```
 
-About 10 minutes later, the output of the build script is a compressed
+About 11 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/win32-x64/deploy
-total 21824
--rw-r--r-- 1 ilg ilg 22342128 Sep  2 19:48 xpack-qemu-riscv-8.2.2-1-win32-x64.zip
--rw-r--r-- 1 ilg ilg      105 Sep  2 19:48 xpack-qemu-riscv-8.2.2-1-win32-x64.zip.sha
+total 22680
+-rw-r--r-- 1 ilg ilg 23218551 Apr  1 18:23 xpack-qemu-riscv-8.2.2-1-win32-x64.zip
+-rw-r--r-- 1 ilg ilg      105 Apr  1 18:23 xpack-qemu-riscv-8.2.2-1-win32-x64.zip.sha
 ```
 
 #### Arm GNU/Linux 64-bit
@@ -370,14 +370,14 @@ xpm run docker-link-deps --config linux-arm64 -C ~/Work/xpack-dev-tools/qemu-ris
 xpm run docker-build-develop --config linux-arm64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 ```
 
-About 1h07 later, the output of the build script is a compressed
+About 72 minutes later (25 on ampere), the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-arm64/deploy
-total 18440
--rw-r--r-- 1 ilg ilg 18874437 Sep  2 21:01 xpack-qemu-riscv-8.2.2-1-linux-arm64.tar.gz
--rw-r--r-- 1 ilg ilg      110 Sep  2 21:01 xpack-qemu-riscv-8.2.2-1-linux-arm64.tar.gz.sha
+total 19024
+-rw-r--r-- 1 ilg ilg 19472939 Apr  1 19:26 xpack-qemu-riscv-8.2.2-1-linux-arm64.tar.gz
+-rw-r--r-- 1 ilg ilg      110 Apr  1 19:26 xpack-qemu-riscv-8.2.2-1-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -405,14 +405,14 @@ xpm run docker-link-deps --config linux-arm -C ~/Work/xpack-dev-tools/qemu-riscv
 xpm run docker-build-develop --config linux-arm -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 ```
 
-About 58 minutes later, the output of the build script is a compressed
+About 65 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-arm/deploy
-total 17456
--rw-r--r-- 1 ilg ilg 17869389 Sep  2 20:52 xpack-qemu-riscv-8.2.2-1-linux-arm.tar.gz
--rw-r--r-- 1 ilg ilg      108 Sep  2 20:52 xpack-qemu-riscv-8.2.2-1-linux-arm.tar.gz.sha
+total 18032
+-rw-r--r-- 1 ilg ilg 18460431 Apr  1 19:19 xpack-qemu-riscv-8.2.2-1-linux-arm.tar.gz
+-rw-r--r-- 1 ilg ilg      108 Apr  1 19:19 xpack-qemu-riscv-8.2.2-1-linux-arm.tar.gz.sha
 ```
 
 ### Update README-MAINTAINER listing output
