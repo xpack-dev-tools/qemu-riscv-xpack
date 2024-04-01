@@ -37,6 +37,20 @@ function tests_update_system()
   echo
   echo "The system C/C++ libraries..."
   find /usr/lib* /lib -name 'libc.*' -o -name 'libstdc++.*' -o -name 'libgcc_s.*'
+
+  # build/linux-arm64/aarch64-unknown-linux-gnu/build/qemu-8.2.2/ui --interface-prefix org.qemu. --c-namespace QemuDBus --generate-c-code dbus-display1
+  # Traceback (most recent call last):
+  #   File "/home/ilg/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-arm64/aarch64-unknown-linux-gnu/install/bin/gdbus-codegen", line 53, in <module>
+  #     from codegen import codegen_main
+  #   File "/home/ilg/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-arm64/aarch64-unknown-linux-gnu/install/share/glib-2.0/codegen/codegen_main.py", line 30, in <module>
+  #     from . import dbustypes
+  #   File "/home/ilg/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-arm64/aarch64-unknown-linux-gnu/install/share/glib-2.0/codegen/dbustypes.py", line 22, in <module>
+  #     from . import utils
+  #   File "/home/ilg/Work/xpack-dev-tools/qemu-riscv-xpack.git/build/linux-arm64/aarch64-unknown-linux-gnu/install/share/glib-2.0/codegen/utils.py", line 22, in <module>
+  #     import packaging.version
+  # ModuleNotFoundError: No module named 'packaging'
+
+  python3 -m pip install packaging
 }
 
 # -----------------------------------------------------------------------------
