@@ -4,7 +4,14 @@ Entries in this file are in reverse chronological order.
 
 ## 2024-04-02
 
-* v8.2.2-1 released
+* v8.2.2-1.1 published on npmjs.com
+* 12dce75 package.json: update urls for 8.2.2-1.1 release
+* 7094832 README update
+* 9def8d5 body-jekyll update
+* 0c257e3 README update
+* 97e9313 CHANGELOG update
+* 7d40d9a re-generate workflows
+* 991ec03 CHANGELOG update
 * a647bd7 package.json: bump deps
 
 ## 2024-04-01
