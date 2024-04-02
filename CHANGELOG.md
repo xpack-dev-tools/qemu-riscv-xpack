@@ -2,9 +2,28 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2024-04-02
+
+* a647bd7 package.json: bump deps
+
+## 2024-04-01
+
+* 294766c README update
+* 502402d Revert "update.sh: pip install packaging"
+* 4ce4ccd update.sh: pip install packaging
+* 3296830 package.json: bump deps
+* 4d31526 versioning.sh: openssl comment
+
+## 2024-03-29
+
+* 5fcd1b9 package.json: re-enable meson dependency
+* 64b1502 package.json: bump deps
+* f4ed249 versioning.sh cosmetics
+
 ## 2024-03-24
 
-* v8.2.2-1 prepared
+* 23b5b6f package.json: revert to helper 2.0.6
+* 7182513 prepare v8.2.2-1
 
 ## 2024-03-22
 
