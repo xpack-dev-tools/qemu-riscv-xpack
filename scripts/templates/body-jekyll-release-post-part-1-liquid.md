@@ -156,6 +156,7 @@ virt                 RISC-V VirtIO board
 $ .../xpack-qemu-riscv-{{ XBB_RELEASE_VERSION }}/bin/qemu-system-riscv32 -cpu help
 any
 lowrisc-ibex
+max
 rv32
 sifive-e31
 sifive-e34
@@ -172,10 +173,13 @@ spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
 $ .../xpack-qemu-riscv-7.0.0-1/bin/qemu-system-riscv64 -cpu help
 any
+max
 rv64
 shakti-c
 sifive-e51
 sifive-u54
+thead-c906
+veyron-v1
 x-rv128
 ```
 
