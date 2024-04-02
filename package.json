@@ -31,32 +31,32 @@
     "minimumXpmRequired": "0.16.3",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/download/v7.2.5-1",
+      "baseUrl": "https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/download/v8.2.2-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "xpack-qemu-riscv-7.2.5-1-darwin-arm64.tar.gz",
-          "sha256": "a589460d65248ca64b8cf74204f75c18de179873d25dbcae0c83aeb845c2170a"
+          "fileName": "xpack-qemu-riscv-8.2.2-1-darwin-arm64.tar.gz",
+          "sha256": "bdd409d7200e1ea7852efc0ac03ac2a38892857714d9ffc8f47fc86bcc3a8730"
         },
         "darwin-x64": {
-          "fileName": "xpack-qemu-riscv-7.2.5-1-darwin-x64.tar.gz",
-          "sha256": "bf810abc8bec85579c4307105b5a85029708d3828d852fb62c3c9c7fff91b861"
+          "fileName": "xpack-qemu-riscv-8.2.2-1-darwin-x64.tar.gz",
+          "sha256": "d80c9abae88bcc52280b91e2d3921fa22aa6267614b6e627736ed4e02c3a91d1"
         },
         "linux-arm64": {
-          "fileName": "xpack-qemu-riscv-7.2.5-1-linux-arm64.tar.gz",
-          "sha256": "9e991c1686a048ebe95814261fde4cc4429454a0a375b3525f621212c4398c32"
+          "fileName": "xpack-qemu-riscv-8.2.2-1-linux-arm64.tar.gz",
+          "sha256": "765ac55d58adfb31e7a88baadc9a9cf46eb30e8030d437bdc076747d63f0474c"
         },
         "linux-arm": {
-          "fileName": "xpack-qemu-riscv-7.2.5-1-linux-arm.tar.gz",
-          "sha256": "4b578a831648a9bdb6dd38ce3a5f4be826f6b54d6d3a407b7b718a51c76a0425"
+          "fileName": "xpack-qemu-riscv-8.2.2-1-linux-arm.tar.gz",
+          "sha256": "d73bf3a4904e10b485d46adcd50c877cce13f9ac8d097b67e5643108d751172e"
         },
         "linux-x64": {
-          "fileName": "xpack-qemu-riscv-7.2.5-1-linux-x64.tar.gz",
-          "sha256": "cdbabf87429f2998db35c7f8116d5c992c56ad6123c224254564115c17524c34"
+          "fileName": "xpack-qemu-riscv-8.2.2-1-linux-x64.tar.gz",
+          "sha256": "d5b8f77cb3ad23b29421f7fdc5456866b1a10817efacb262bbda038ca1c5a5a5"
         },
         "win32-x64": {
-          "fileName": "xpack-qemu-riscv-7.2.5-1-win32-x64.zip",
-          "sha256": "0b9c8b39554154d25c96d842e685a9f620cdf7ec6e8aaff26201e63eaba29405"
+          "fileName": "xpack-qemu-riscv-8.2.2-1-win32-x64.zip",
+          "sha256": "c0d1febb95bb01e093dfd5d701eea825bdadc9009b5780eb5581186bd75c1f96"
         }
       }
     },
@@ -268,7 +268,7 @@
         "inherit": [
           "linux-x64"
         ],
-          "properties": {
+        "properties": {
           "dockerImage": "ilegeul/ubuntu:arm32v7-18.04-xbb-v5.1.1",
           "force32": "linux32"
         }
