@@ -4,6 +4,7 @@ Entries in this file are in reverse chronological order.
 
 ## 2024-04-02
 
+* v8.2.2-1 released
 * a647bd7 package.json: bump deps
 
 ## 2024-04-01
