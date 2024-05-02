@@ -370,7 +370,7 @@ xpm run docker-link-deps --config linux-arm64 -C ~/Work/xpack-dev-tools/qemu-ris
 xpm run docker-build-develop --config linux-arm64 -C ~/Work/xpack-dev-tools/qemu-riscv-xpack.git
 ```
 
-About 72 minutes later (25 on ampere), the output of the build script is a compressed
+About 72 minutes later (25 minutes on ampere), the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
