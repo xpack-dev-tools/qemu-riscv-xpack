@@ -179,7 +179,7 @@ function application_build_versioned_components()
     # https://github.com/qemu/qemu/tags
 
     XBB_QEMU_GIT_URL="https://github.com/xpack-dev-tools/qemu.git"
-    if is_develop
+    if is_development
     then
       XBB_QEMU_GIT_BRANCH="xpack-develop"
     else
@@ -352,7 +352,7 @@ function application_build_versioned_components()
     # https://github.com/qemu/qemu/tags
 
     XBB_QEMU_GIT_URL="https://github.com/xpack-dev-tools/qemu.git"
-    if is_develop
+    if is_development
     then
       XBB_QEMU_GIT_BRANCH="xpack-develop"
     else
@@ -528,7 +528,7 @@ function application_build_versioned_components()
     then
       XBB_QEMU_GIT_BRANCH="v7.2.5-xpack"
     else
-      if is_develop
+      if is_development
       then
         XBB_QEMU_GIT_BRANCH="xpack-develop"
       else
@@ -695,7 +695,7 @@ function application_build_versioned_components()
     # https://github.com/qemu/qemu/tags
 
     XBB_QEMU_GIT_URL="https://github.com/xpack-dev-tools/qemu.git"
-    if is_develop
+    if is_development
     then
       XBB_QEMU_GIT_BRANCH="xpack-develop"
     else
