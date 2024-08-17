@@ -7,12 +7,14 @@
   "xpack": {
     "minimumXpmRequired": "0.16.3",
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^3.0.7"
+      "@xpack-dev-tools/xbb-helper": "^3.0.10"
     },
     "properties": {
       "appName": "QEMU RISC-V",
       "appLcName": "qemu-riscv",
       "platforms": "all",
+      "customFields": {
+      },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
       "commandBashBuild": "bash {{ properties.dbg }} scripts/build.sh --target {{ configuration.name }} --build-folder {{ properties.buildFolderRelativePathPosix }}",
