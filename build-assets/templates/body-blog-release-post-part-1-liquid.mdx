@@ -1,23 +1,23 @@
 ---
-title:  xPack QEMU RISC-V v{{ XBB_RELEASE_VERSION }} released
+title:  xPack QEMU RISC-V v{{releaseVersion}} released
 
 TODO: select one summary
-summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fixes <...>."
-summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream QEMU release."
+summary: "Version **{{releaseVersion}}** is a maintenance release; it fixes ..."
+summary: "Version **{{releaseVersion}}** is a new release; it follows the upstream QEMU release."
 
 qemu_version: "8.2.2"
 qemu_short_commit: "11aa0b1f"
 qemu_long_commit: "11aa0b1ff115b86160c4d37e7c37e6a6b13b77ea"
 qemu_date: "4 Mar 2024"
 
-version: "{{ XBB_RELEASE_VERSION }}"
+version: "{{releaseVersion}}"
 npm_subversion: "1"
 
-download_url: https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
+download_url: https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/tag/v{{releaseVersion}}/
 
 comments: true
 
-date: {{ RELEASE_DATE }}
+date: {{releaseDate}}
 
 # For Jekyll releases selection.
 categories:
@@ -47,7 +47,7 @@ armv6 is not supported)." %}{% endraw %}
 
 ## Download
 
-The binary files are available from GitHub [Releases]({% raw %}{{ page.download_url }}{% endraw %}).
+The binary files are available from GitHub [Releases]({% raw %}{{page.download_url}}{% endraw %}).
 
 ## Prerequisites
 
@@ -71,12 +71,12 @@ distributions they must be installed explicitly.
 
 The full details of installing the **xPack QEMU RISC-V** on various platforms
 are presented in the separate
-[Install]({% raw %}{{ site.baseurl }}{% endraw %}/dev-tools/qemu-riscv/install/) page.
+[Install]({% raw %}{{site.baseurl}}{% endraw %}/dev-tools/qemu-riscv/install/) page.
 
 ### Easy install
 
 The easiest way to install QEMU RISC-V is with
-[`xpm`]({% raw %}{{ site.baseurl }}{% endraw %}/xpm/)
+[`xpm`]({% raw %}{{site.baseurl}}{% endraw %}/xpm/)
 by using the **binary xPack**, available as
 [`@xpack-dev-tools/qemu-riscv`](https://www.npmjs.com/package/@xpack-dev-tools/qemu-riscv)
 from the [`npmjs.com`](https://www.npmjs.com) registry.
@@ -97,7 +97,7 @@ ls -l xpacks/.bin
 To install this specific version, use:
 
 ```sh
-xpm install @xpack-dev-tools/qemu-riscv@{% raw %}{{ page.version }}.{{ page.npm_subversion }}{% endraw %} --verbose
+xpm install @xpack-dev-tools/qemu-riscv@{% raw %}{{page.version}}.{{page.npm_subversion}}{% endraw %} --verbose
 ```
 
 For xPacks aware tools, like the **Eclipse Embedded C/C++ plug-ins**,
@@ -134,9 +134,9 @@ with major changes.
 
 The current version is based on:
 
-- QEMU version {% raw %}{{ page.qemu_version }}{% endraw %},
-  commit [{% raw %}{{ page.qemu_short_commit }}{% endraw %}](https://github.com/xpack-dev-tools/qemu/commit/{% raw %}{{ page.qemu_long_commit }}{% endraw %})
-  from {% raw %}{{ page.qemu_date }}{% endraw %}.
+- QEMU version {% raw %}{{page.qemu_version}}{% endraw %},
+  commit [{% raw %}{{page.qemu_short_commit}}{% endraw %}](https://github.com/xpack-dev-tools/qemu/commit/{% raw %}{{page.qemu_long_commit}}{% endraw %})
+  from {% raw %}{{page.qemu_date}}{% endraw %}.
 
 ## Changes
 
@@ -145,7 +145,7 @@ Compared to the master `qemu-system-riscv*`, there are no major changes.
 The supported boards and CPUs are:
 
 ```console
-$ .../xpack-qemu-riscv-{{ XBB_RELEASE_VERSION }}/bin/qemu-system-riscv32 -machine help
+$ .../xpack-qemu-riscv-{{releaseVersion}}/bin/qemu-system-riscv32 -machine help
 Supported machines are:
 none                 empty machine
 opentitan            RISC-V Board compatible with OpenTitan
@@ -153,7 +153,7 @@ sifive_e             RISC-V Board compatible with SiFive E SDK
 sifive_u             RISC-V Board compatible with SiFive U SDK
 spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
-$ .../xpack-qemu-riscv-{{ XBB_RELEASE_VERSION }}/bin/qemu-system-riscv32 -cpu help
+$ .../xpack-qemu-riscv-{{releaseVersion}}/bin/qemu-system-riscv32 -cpu help
 any
 lowrisc-ibex
 max
@@ -162,7 +162,7 @@ sifive-e31
 sifive-e34
 sifive-u34
 
-$ .../xpack-qemu-riscv-{{ XBB_RELEASE_VERSION }}/bin/qemu-system-riscv64 -machine help
+$ .../xpack-qemu-riscv-{{releaseVersion}}/bin/qemu-system-riscv64 -machine help
 Supported machines are:
 microchip-icicle-kit Microchip PolarFire SoC Icicle Kit
 none                 empty machine
