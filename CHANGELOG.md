@@ -2,9 +2,121 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2024-09-11
+
+* v8.2.6-1 prepared
+* 3482f8d re-generate workflows
+
+## 2024-08-17
+
+* 63ff308 website remove preliminary
+* 7a82ef2 build-assets/package.json: updates
+* c02b536 templates/body-blog update
+* 82190e3 templates/body-github: update
+* 5338174 re-generate workflows
+
+## 2024-08-16
+
+* 395e3f4 templates/body-github: update
+
+## 2024-08-14
+
+* 8c31404 build-assets/package.json: updates
+
+## 2024-08-09
+
+* 32406be READMEs update
+* 8a6b6c2 build-assets/package.json: updates
+* ad5fea3 templates/body-blog update
+
+## 2024-08-07
+
+* 307b44c build-assets/package.json: updates
+* 3310fa2 build-assets/package.json: updates
+* 05943ba website: preliminary content
+* 47c7410 re-generate workflows
+* 7d6b676 move to build-assets
+
+## 2024-08-06
+
+* 4228fb2 package.json: bump deps
+
+## 2024-08-04
+
+* 7c7429f package.json: bump deps
+* 6c7204d package.json: update generate-workflows
+* 23944a1 templates/jekyll update
+* c61fad4 versioning.sh: use is_development
+* 53916f0 READMEs update
+* 13cd7f6 package.json: add actions, bump deps
+
+## 2024-07-27
+
+* 7214e21 package.json: add actions, bump deps
+* 60a46ed templates/jekyll update
+
+## 2024-07-23
+
+* c39a3f3 READMEs update
+* a934e3a .npmignore update
+* e43054a re-generate scripts
+* 3dbbaa1 body-jekyll update
+* c4c4069 re-generate workflows
+* c7cbb42 package.json: rework generate workflows
+* 9608eb4 package.json: loglevel info
+* 4738e78 package.json: bump deps
+
+## 2024-06-18
+
+* 2b6f56c scripts/tests/update.sh: simplify
+* be9ab98 READMEs update
+
+## 2024-06-17
+
+* b35a6d0 package.json: rework generate workflows
+* 75f08e8 package.json: bump deps
+* e1d99e1 application.sh: update
+
+## 2024-05-23
+
+* d22f660 package.json: clang 16.0.6-1.1
+
+## 2024-05-18
+
+* 423a1c1 READMEs update
+* 9a4da85 package.json: XBB_ENVIRONMENT_SKIP_CHECKS
+
+## 2024-05-16
+
+* 9a0af77 READMEs update
+* 26df02e versioning.sh: --enable-lib-suffixes
+
+## 2024-05-14
+
+* 1d03368 versioning.sh: do not add --disable-lib-suffixes
+
+## 2024-05-09
+
+* 28f5e4c use is_develop and with_strip
+
+## 2024-05-07
+
+* 9f082c1 versioning.sh: remove DISABLE_WIDEC
+
+## 2024-05-03
+
+* 7ef18fb package.json: add bison to deps
+
+## 2024-05-02
+
+* 0580b9b package.json: clang 17.0.6-1.1
+* 057394e README update
+
 ## 2024-04-02
 
-* v8.2.2-1.1 published on npmjs.com
+* d654a2c body-jekyll update
+* f90bc02 8.2.2-1.1
+* b8452ea CHANGELOG: publish npm v8.2.2-1.1
 * 12dce75 package.json: update urls for 8.2.2-1.1 release
 * 7094832 README update
 * 9def8d5 body-jekyll update

@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # This file is part of the xPacks distribution.
 #   (https://xpack.github.io)
-# Copyright (c) 2019 Liviu Ionescu.
+# Copyright (c) 2019 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -15,7 +15,7 @@ function application_build_versioned_components()
 
   # Keep them in sync with the combo archive content.
   # ---------------------------------------------------------------------------
-  if [[ "${XBB_RELEASE_VERSION}" =~ 8[.]2[.]2-.* ]]
+  if [[ "${XBB_RELEASE_VERSION}" =~ 8[.]2[.][0-9]*-[0-9]* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.
@@ -178,19 +178,21 @@ function application_build_versioned_components()
     # Stick to upstream as long as possible.
     # https://github.com/qemu/qemu/tags
 
-    XBB_QEMU_GIT_URL="https://github.com/xpack-dev-tools/qemu.git"
-    if is_development
+    if [[ "${XBB_RELEASE_VERSION}" =~ 8[.]2[.]2-[0-9]* ]]
     then
-      XBB_QEMU_GIT_BRANCH="xpack-develop"
-    else
-      XBB_QEMU_GIT_BRANCH="xpack"
+      XBB_QEMU_GIT_URL="https://github.com/xpack-dev-tools/qemu.git"
+      if is_development
+      then
+        XBB_QEMU_GIT_BRANCH="xpack-develop"
+      else
+        XBB_QEMU_GIT_BRANCH="xpack"
+      fi
+      XBB_QEMU_GIT_COMMIT="v${XBB_QEMU_VERSION}-xpack"
     fi
-    XBB_QEMU_GIT_COMMIT="v${XBB_QEMU_VERSION}-xpack"
 
     qemu_build "${XBB_QEMU_VERSION}" "riscv"
 
-
-  elif [[ "${XBB_RELEASE_VERSION}" =~ 8[.]1[.]0-.* ]]
+  elif [[ "${XBB_RELEASE_VERSION}" =~ 8[.]1[.][0-9]*-[0-9]* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.
@@ -362,7 +364,7 @@ function application_build_versioned_components()
 
     qemu_build "${XBB_QEMU_VERSION}" "riscv"
 
-  elif [[ "${XBB_RELEASE_VERSION}" =~ 7[.]2[.][05]-.* ]]
+  elif [[ "${XBB_RELEASE_VERSION}" =~ 7[.]2[.][0-9]*-[0-9]* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.
@@ -539,7 +541,7 @@ function application_build_versioned_components()
 
     qemu_build "${XBB_QEMU_VERSION}" "riscv"
 
-  elif [[ "${XBB_RELEASE_VERSION}" =~ 7[.]1[.]0-1 ]]
+  elif [[ "${XBB_RELEASE_VERSION}" =~ 7[.]1[.][0-9]*-[0-9]* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.

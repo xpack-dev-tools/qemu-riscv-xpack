@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # This file is part of the xPack distribution.
 #   (https://xpack.github.io)
-# Copyright (c) 2019 Liviu Ionescu.
+# Copyright (c) 2019 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -27,7 +27,7 @@ function qemu_riscv_test()
 
   run_host_app_verbose "${test_bin_path}/qemu-system-riscv32" \
     --machine virt \
-    --kernel "${project_folder_path}/tests/assets/hello-world-rv32imac.elf" \
+    --kernel "${root_folder_path}/test-assets/hello-world-rv32imac.elf" \
     -smp 1 \
     -bios none \
     --nographic \
@@ -36,7 +36,7 @@ function qemu_riscv_test()
 
   run_host_app_verbose "${test_bin_path}/qemu-system-riscv64" \
     --machine virt \
-    --kernel "${project_folder_path}/tests/assets/hello-world-rv64imafdc.elf" \
+    --kernel "${root_folder_path}/test-assets/hello-world-rv64imafdc.elf" \
     -smp 1 \
     -bios none \
     --nographic \
