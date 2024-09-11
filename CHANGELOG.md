@@ -4,7 +4,13 @@ Entries in this file are in reverse chronological order.
 
 ## 2024-09-11
 
-* v8.2.6-1 released
+* v8.2.6-1 published on npmjs.com
+* 3e9f3f1 package.json: update urls for 8.2.6-1.1 release
+* 5f57209 website/blog update
+* cbc3e28 build-assets/package.json: update customFields
+* d654830 build-assets/templates updates
+* 979bb51 qemu-riscv.sh: show machines/cpus
+* 0a28108 CHANGELOG update
 * eacd502 website update
 * 708a108 build-assets/package.json: bump deps
 * fa2bda4 website update
