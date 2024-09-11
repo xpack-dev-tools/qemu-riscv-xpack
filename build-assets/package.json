@@ -14,6 +14,8 @@
       "appLcName": "qemu-riscv",
       "platforms": "all",
       "customFields": {
+        "programName": "qemu-system-riscv32",
+        "branding": "xPack QEMU emulator version "
       },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
