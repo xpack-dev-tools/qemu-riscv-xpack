@@ -4,7 +4,14 @@ Entries in this file are in reverse chronological order.
 
 ## 2024-09-11
 
-* v8.2.6-1 prepared
+* v8.2.6-1 released
+* eacd502 website update
+* 708a108 build-assets/package.json: bump deps
+* fa2bda4 website update
+* 0f93b04 website update
+* 17bd82a add website
+* 8c82eb2 build-assets/package.json: add customFields
+* 564ac11 prepare v8.2.6-1
 * 3482f8d re-generate workflows
 
 ## 2024-08-17
