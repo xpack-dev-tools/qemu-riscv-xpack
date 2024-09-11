@@ -43,6 +43,19 @@ function qemu_riscv_test()
     -d unimp,guest_errors \
     --semihosting-config enable=on,target=native,arg=hello-world,arg=RV64
 
+  if [ "${XBB_IS_DEVELOP}" == "y" ]
+  then
+    echo
+    echo "Showing supported machines/cpus..."
+
+    run_host_app_verbose "${test_bin_path}/qemu-system-riscv32" -machine help
+    run_host_app_verbose "${test_bin_path}/qemu-system-riscv32" -cpu help
+
+    run_host_app_verbose "${test_bin_path}/qemu-system-riscv64" -machine help
+    run_host_app_verbose "${test_bin_path}/qemu-system-riscv64" -cpu help
+
+  fi
+
 }
 
 # -----------------------------------------------------------------------------
