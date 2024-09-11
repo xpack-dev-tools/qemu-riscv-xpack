@@ -1,0 +1,191 @@
+---
+title:  xPack QEMU RISC-V v8.2.6-1 released
+
+date: 2024-09-11 22:36:32 +0300
+
+authors: ilg-ul
+
+# To be listed in the Releases page.
+tags:
+  - releases
+
+# ----- Custom properties -----------------------------------------------------
+
+qemu_version: "8.2.6"
+qemu_commit: "v8.2.6"
+qemu_release_date: "16 July 2024"
+
+version: "8.2.6-1"
+npm_subversion: "1"
+
+download_url: https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/tag/v8.2.6-1/
+
+---
+
+TODO: select one summary
+
+Version **8.2.6-1** is a maintenance release; it fixes ...
+
+Version **8.2.6-1** is a new release; it follows the upstream QEMU release.
+
+<!-- truncate -->
+
+import Image from '@theme/IdealImage';
+import CodeBlock from '@theme/CodeBlock';
+
+import Prerequisites from './_common/_prerequisites-glib-2.27.mdx'
+import DeprecationNotices from './_common/_deprecation-notices-glib-2.27.mdx'
+import DownloadAnalytics from './_common/_download-analytics.mdx'
+
+The [xPack QEMU RISC-V](https://xpack-dev-tools.github.io/qemu-riscv-xpack/)
+is a standalone cross-platform binary distribution of
+[QEMU](https://www.qemu.org).
+
+There are separate binaries for **Windows** (x64),
+**macOS** (x64 and arm64)
+and **GNU/Linux** (x64, arm64 and arm).
+
+:::note Raspberry Pi
+
+The main targets for the GNU/Linux Arm
+binaries are the **Raspberry Pi** class devices (armv7l and aarch64;
+armv6 is not supported).
+
+:::
+
+## Download
+
+The binary files are available from <a href={frontMatter.download_url}>GitHub Releases</a>.
+
+<Prerequisites/>
+
+## Install
+
+The full details of installing the **xPack QEMU RISC-V** on various platforms
+are presented in the [Install Guide](/docs/install/).
+
+## Compliance
+
+The xPack QEMU RISC-V currently is based on the official [QEMU](https://www.qemu.org),
+with no major changes.
+
+The current version is based on:
+
+- QEMU version {frontMatter.qemu_version},
+  from {frontMatter.qemu_release_date}.
+
+## Changes
+
+Compared to the master `qemu-system-riscv*`, there are no major changes.
+
+The supported boards and CPUs are:
+
+```console
+$ .../xpack-qemu-riscv-8.2.6-1/bin/qemu-system-riscv32 -machine help
+Supported machines are:
+none                 empty machine
+opentitan            RISC-V Board compatible with OpenTitan
+sifive_e             RISC-V Board compatible with SiFive E SDK
+sifive_u             RISC-V Board compatible with SiFive U SDK
+spike                RISC-V Spike board (default)
+virt                 RISC-V VirtIO board
+$ .../xpack-qemu-riscv-8.2.6-1/bin/qemu-system-riscv32 -cpu help
+any
+lowrisc-ibex
+max
+rv32
+sifive-e31
+sifive-e34
+sifive-u34
+
+$ .../xpack-qemu-riscv-8.2.6-1/bin/qemu-system-riscv64 -machine help
+Supported machines are:
+microchip-icicle-kit Microchip PolarFire SoC Icicle Kit
+none                 empty machine
+shakti_c             RISC-V Board compatible with Shakti SDK
+sifive_e             RISC-V Board compatible with SiFive E SDK
+sifive_u             RISC-V Board compatible with SiFive U SDK
+spike                RISC-V Spike board (default)
+virt                 RISC-V VirtIO board
+$ .../xpack-qemu-riscv-8.2.6-1/bin/qemu-system-riscv64 -cpu help
+any
+max
+rv64
+shakti-c
+sifive-e51
+sifive-u54
+thead-c906
+veyron-v1
+x-rv128
+```
+
+## Bug fixes
+
+- none
+
+## Enhancements
+
+- none
+
+## Known problems
+
+- in order to build on macOS 10.13, the Intel macOS version has
+  some functionality related to bridged virtual interfaces disabled.
+
+## Documentation
+
+The original documentation is available on-line:
+
+- https://www.qemu.org/docs/master/
+
+## Build
+
+The binaries for all supported platforms
+(Windows, macOS and GNU/Linux) were built using the
+[xPack Build Box (XBB)](https://xpack.github.io/xbb/), a set
+of build environments based on slightly older distributions, that should be
+compatible with most recent systems.
+
+For the prerequisites and more details on the build procedure, please see the
+[Maintainer Info](/docs/maintainer/) page.
+
+## CI tests
+
+Before publishing, a set of simple tests were performed on an exhaustive
+set of platforms. The results are available from:
+
+- [GitHub Actions](https://github.com/xpack-dev-tools/qemu-riscv-xpack/actions/)
+- [Travis CI](https://app.travis-ci.com/github/xpack-dev-tools/qemu-riscv-xpack/builds/)
+
+## Tests
+
+TBD
+
+## Checksums
+
+The SHA-256 hashes for the files are:
+
+```txt
+22654422dd45a2eafa2d76f9e238e02b678dcb28dbd5d70fbfd55d569538d446
+xpack-qemu-riscv-8.2.6-1-darwin-arm64.tar.gz
+
+55a959a7a55406f8cc26903e00fb50c268689e64ebc6950760e42f1067765f96
+xpack-qemu-riscv-8.2.6-1-darwin-x64.tar.gz
+
+765e8f1069e328d01ec672da34a7b6302a492ee8c53ddf98a0991852bafcbfda
+xpack-qemu-riscv-8.2.6-1-linux-arm.tar.gz
+
+e5fc75bb3f1948dd1d0ca6c6561ae9353a1982254158f95c4668ea3fa618800d
+xpack-qemu-riscv-8.2.6-1-linux-arm64.tar.gz
+
+ffbc9a65c5cbc71f0a2cd80a230999c5abe0a101e6b091cb3a8b80031d44f65d
+xpack-qemu-riscv-8.2.6-1-linux-x64.tar.gz
+
+2e610c6238e23ce13f7a55701c8b8cd8ee780e9750d87efe336da2cfbfe211b2
+xpack-qemu-riscv-8.2.6-1-win32-x64.zip
+
+```
+
+<DeprecationNotices/>
+
+<DownloadAnalytics version={frontMatter.version}/>
