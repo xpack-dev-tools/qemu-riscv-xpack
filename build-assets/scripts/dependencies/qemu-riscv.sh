@@ -53,7 +53,6 @@ function qemu_riscv_test()
 
     run_host_app_verbose "${test_bin_path}/qemu-system-riscv64" -machine help
     run_host_app_verbose "${test_bin_path}/qemu-system-riscv64" -cpu help
-
   fi
 
 }
