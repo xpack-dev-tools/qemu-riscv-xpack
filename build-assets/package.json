@@ -16,8 +16,8 @@
       "customFields": {
         "programName": "qemu-system-riscv32",
         "branding": "xPack QEMU emulator version ",
-        "$link": "https://gitlab.com/qemu-project/qemu/-/tags",
-        "upstreamReleaseDate": "16 July 2024"
+        "$link": "https://gitlab.com/qemu-project/qemu/-/tags/",
+        "qemuReleaseDate": "16 Jul 2024"
       },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
