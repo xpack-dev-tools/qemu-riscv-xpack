@@ -43,7 +43,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Hello from xPack Binary Development Tools`}
-      description="A binary xPack with the QEMU RISC-V executables">
+      description="A binary package with the QEMU RISC-V executables">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
