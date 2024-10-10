@@ -41,9 +41,9 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from xPack Binary Development Tools`}
-      description="A binary package with the QEMU RISC-V executables">
+    <Layout 
+      title={`Hello from qemu-riscv`}
+      description="A binary package with the qemu-riscv executables">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
