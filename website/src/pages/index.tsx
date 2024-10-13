@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout 
-      title={`Hello from qemu-riscv`}
+      title={`Welcome to qemu-riscv`}
       description="A binary package with the qemu-riscv executables">
       <HomepageHeader />
       <main>
