@@ -1,0 +1,7 @@
+Sitemap: https://xpack-dev-tools.github.io/qemu-riscv-xpack/sitemap.xml
+
+User-agent: *
+Disallow: /qemu-riscv-xpack/blog/archive/
+Disallow: /qemu-riscv-xpack/blog/authors/
+Disallow: /qemu-riscv-xpack/blog/page/
+Disallow: /qemu-riscv-xpack/blog/tags/
