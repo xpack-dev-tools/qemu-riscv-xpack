@@ -5,8 +5,7 @@
 
 # The xPack QEMU RISC-V
 
-A standalone cross-platform (Windows, macOS, GNU/Linux)
-binary distribution of QEMU RISC-V,
+A standalone, cross-platform (Windows, macOS, GNU/Linux) binary distribution of QEMU RISC-V,
 intended for reproducible builds.
 
 ## Project documentation
