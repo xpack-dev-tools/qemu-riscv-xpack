@@ -1,7 +1,7 @@
 ---
-title: xPack {{packageConfig.longName}} v{{releaseVersion}} released
-seo_title: Version {{releaseVersion}} released
-description: Version {{releaseVersion}} is a TODO new/maintenance release.
+title: xPack {{packageConfig.longName}} v{{xpackVersion}} released
+seo_title: Version {{xpackVersion}} released
+description: Version {{xpackVersion}} is a TODO new/maintenance release.
 keywords:
   - xpack
   - {{packageConfig.shortName}}
@@ -23,7 +23,7 @@ qemu_release_date: "{{packageWebsiteConfig.qemuReleaseDate}}"
 version: "{{xpackVersion}}"
 npm_subversion: "1"
 
-download_url: https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/tag/v{{releaseVersion}}/
+download_url: https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/tag/v{{xpackVersion}}/
 
 ---
 
@@ -95,7 +95,7 @@ Compared to the master `qemu-system-riscv*`, there are no major changes.
 The supported boards and CPUs are:
 
 ```console
-$ .../xpack-qemu-riscv-{{releaseVersion}}/bin/qemu-system-riscv32 -machine help
+$ .../xpack-qemu-riscv-{{xpackVersion}}/bin/qemu-system-riscv32 -machine help
 Supported machines are:
 none                 empty machine
 opentitan            RISC-V Board compatible with OpenTitan
@@ -103,7 +103,7 @@ sifive_e             RISC-V Board compatible with SiFive E SDK
 sifive_u             RISC-V Board compatible with SiFive U SDK
 spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
-$ .../xpack-qemu-riscv-{{releaseVersion}}/bin/qemu-system-riscv32 -cpu help
+$ .../xpack-qemu-riscv-{{xpackVersion}}/bin/qemu-system-riscv32 -cpu help
 any
 lowrisc-ibex
 max
@@ -112,7 +112,7 @@ sifive-e31
 sifive-e34
 sifive-u34
 
-$ .../xpack-qemu-riscv-{{releaseVersion}}/bin/qemu-system-riscv64 -machine help
+$ .../xpack-qemu-riscv-{{xpackVersion}}/bin/qemu-system-riscv64 -machine help
 Supported machines are:
 microchip-icicle-kit Microchip PolarFire SoC Icicle Kit
 none                 empty machine
@@ -121,7 +121,7 @@ sifive_e             RISC-V Board compatible with SiFive E SDK
 sifive_u             RISC-V Board compatible with SiFive U SDK
 spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
-$ .../xpack-qemu-riscv-{{releaseVersion}}/bin/qemu-system-riscv64 -cpu help
+$ .../xpack-qemu-riscv-{{xpackVersion}}/bin/qemu-system-riscv64 -cpu help
 any
 max
 rv64
