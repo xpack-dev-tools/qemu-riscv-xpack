@@ -51,10 +51,6 @@
           "fileName": "xpack-qemu-riscv-8.2.6-1-linux-arm64.tar.gz",
           "sha256": "e5fc75bb3f1948dd1d0ca6c6561ae9353a1982254158f95c4668ea3fa618800d"
         },
-        "linux-arm": {
-          "fileName": "xpack-qemu-riscv-8.2.6-1-linux-arm.tar.gz",
-          "sha256": "765e8f1069e328d01ec672da34a7b6302a492ee8c53ddf98a0991852bafcbfda"
-        },
         "linux-x64": {
           "fileName": "xpack-qemu-riscv-8.2.6-1-linux-x64.tar.gz",
           "sha256": "ffbc9a65c5cbc71f0a2cd80a230999c5abe0a101e6b091cb3a8b80031d44f65d"
