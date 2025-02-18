@@ -33,7 +33,7 @@
   },
   "license": "MIT",
   "xpack": {
-    "minimumXpmRequired": "0.16.3",
+    "minimumXpmRequired": "0.20.5",
     "binaries": {
       "destination": "./.content",
       "baseUrl": "https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/download/v8.2.6-1",
@@ -61,7 +61,7 @@
         }
       }
     },
-    "bin": {
+    "executables": {
       "qemu-system-riscv32": "./.content/bin/qemu-system-riscv32",
       "qemu-system-riscv64": "./.content/bin/qemu-system-riscv64"
     }
