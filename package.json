@@ -72,8 +72,9 @@
     "liquidjs": "^10.19.1"
   },
   "topConfig": {
-    "longName": "QEMU RISC-V",
-    "shortName": "qemu-riscv"
+    "descriptiveName": "QEMU RISC-V",
+    "permalinkName": "qemu-riscv",
+    "useSelfHostedRunners": "true"
   },
   "engines": {
     "node": " >=18.0.0"
