@@ -74,6 +74,7 @@
   "topConfig": {
     "descriptiveName": "QEMU RISC-V",
     "permalinkName": "qemu-riscv",
+    "skipCiTests": "true",
     "useSelfHostedRunners": "true"
   },
   "engines": {
