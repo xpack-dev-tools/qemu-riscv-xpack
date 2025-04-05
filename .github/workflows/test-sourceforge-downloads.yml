@@ -47,17 +47,15 @@
             name="qemu-riscv"
             threshold=16383 # (50%)
 
+            # 2025
+            platforms="win32-x64,linux-x64,linux-arm64,darwin-x64,darwin-arm64"
+
             # 2024
             platforms="win32-x64,linux-x64,linux-arm64,linux-arm,darwin-x64,darwin-arm64"
+
             download_sourceforge "${name}" "8.2.6-1" ${threshold} "${platforms}"
             download_sourceforge "${name}" "8.2.2-1" ${threshold} "${platforms}"
-
-            # 2023
-            platforms="win32-x64,linux-x64,linux-arm64,linux-arm,darwin-x64,darwin-arm64"
             download_sourceforge "${name}" "7.2.5-1" ${threshold} "${platforms}"
             download_sourceforge "${name}" "7.2.0-1" ${threshold} "${platforms}"
-
-            # 2022
-            platforms="win32-x64,linux-x64,linux-arm64,linux-arm,darwin-x64,darwin-arm64"
             download_sourceforge "${name}" "7.1.0-1" ${threshold} "${platforms}"
             download_sourceforge "${name}" "7.0.0-1" ${threshold} "${platforms}"
