@@ -15,7 +15,7 @@
 
   on:
     schedule:
-      - cron: '16 4 * * 6' # every Sunday
+      - cron: '16 4 * * 6' # every Saturday
     workflow_dispatch:
 
   jobs:
