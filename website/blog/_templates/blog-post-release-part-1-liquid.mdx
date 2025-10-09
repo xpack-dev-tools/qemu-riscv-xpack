@@ -105,13 +105,15 @@ sifive_u             RISC-V Board compatible with SiFive U SDK
 spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
 $ .../xpack-qemu-riscv-{{xpackVersion}}/bin/qemu-system-riscv32 -cpu help
-any
-lowrisc-ibex
-max
-rv32
-sifive-e31
-sifive-e34
-sifive-u34
+Available CPUs:
+  lowrisc-ibex
+  max
+  rv32
+  rv32e
+  rv32i
+  sifive-e31
+  sifive-e34
+  sifive-u34
 
 $ .../xpack-qemu-riscv-{{xpackVersion}}/bin/qemu-system-riscv64 -machine help
 Supported machines are:
@@ -123,15 +125,27 @@ sifive_u             RISC-V Board compatible with SiFive U SDK
 spike                RISC-V Spike board (default)
 virt                 RISC-V VirtIO board
 $ .../xpack-qemu-riscv-{{xpackVersion}}/bin/qemu-system-riscv64 -cpu help
-any
-max
-rv64
-shakti-c
-sifive-e51
-sifive-u54
-thead-c906
-veyron-v1
-x-rv128
+Available CPUs:
+  lowrisc-ibex
+  max
+  max32
+  rv32
+  rv32e
+  rv32i
+  rv64
+  rv64e
+  rv64i
+  rva22s64
+  rva22u64
+  shakti-c
+  sifive-e31
+  sifive-e34
+  sifive-e51
+  sifive-u34
+  sifive-u54
+  thead-c906
+  veyron-v1
+  x-rv128
 ```
 
 ## Bug fixes
@@ -144,8 +158,7 @@ x-rv128
 
 ## Known problems
 
-- in order to build on macOS 10.13, the Intel macOS version has
-  some functionality related to bridged virtual interfaces disabled.
+- none
 
 ## Documentation
 
