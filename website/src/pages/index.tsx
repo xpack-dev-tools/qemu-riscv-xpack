@@ -38,7 +38,7 @@ function HomepageHeader() {
         </span>
         </p>
         <div className={styles.installWithCopy}>
-          <InstallWithCopy>xpm install @xpack-dev-tools/qemu-riscv@8.2.6-1.1 --verbose</InstallWithCopy>
+          <InstallWithCopy>xpm install @xpack-dev-tools/qemu-riscv@9.2.4-1.1 --verbose</InstallWithCopy>
         </div>
       </div>
     </header>
