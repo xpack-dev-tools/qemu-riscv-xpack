@@ -206,7 +206,7 @@ function application_build_versioned_components()
     # Stick to upstream as long as possible.
     # https://github.com/qemu/qemu/tags
 
-    qemu_build "${XBB_QEMU_VERSION}" "arm"
+    qemu_build "${XBB_QEMU_VERSION}" "riscv"
 
     # Legacy qemu-system-gnuarmeclipse is no longer available.
 
