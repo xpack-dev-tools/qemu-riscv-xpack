@@ -1,0 +1,211 @@
+---
+
+title: xPack xPack QEMU RISC-V v9.2.4-1 released
+seo_title: Version 9.2.4-1 released
+description: Version 9.2.4-1 is a new release.
+keywords:
+  - xpack
+  - qemu-riscv
+  - release
+
+date: 2025-10-09 18:42:58 +0300
+
+authors: ilg-ul
+
+# To be listed in the Releases page.
+tags:
+  - releases
+
+# ----- Custom properties -----------------------------------------------------
+
+qemu_version: "9.2.4"
+qemu_release_date: "28 May 2025"
+
+version: "9.2.4-1"
+npm_subversion: "1"
+
+download_url: https://github.com/xpack-dev-tools/qemu-riscv-xpack/releases/tag/v9.2.4-1/
+
+---
+
+import {PageMetadata} from '@docusaurus/theme-common';
+import Image from '@theme/IdealImage';
+import CodeBlock from '@theme/CodeBlock';
+
+import Prerequisites from './_common/_prerequisites-glib-2.28.mdx';
+import DeprecationNotices from './_common/_deprecation-notices-glib-2.28.mdx';
+import DownloadAnalytics from './_common/_download-analytics.mdx';
+
+Version **9.2.4-1.1** is a new release; it follows the upstream QEMU release.
+
+<!-- truncate -->
+
+<PageMetadata title={frontMatter.seo_title} />
+
+The [xPack QEMU RISC-V](https://xpack-dev-tools.github.io/qemu-riscv-xpack/)
+is a standalone cross-platform binary distribution of
+[QEMU](https://www.qemu.org).
+
+There are separate binaries for **Windows** (x64),
+**macOS** (x64 and arm64)
+and **GNU/Linux** (x64 and arm64).
+
+:::note Raspberry Pi
+
+The main targets for the GNU/Linux Arm
+binaries are the **Raspberry Pi** class devices (aarch64 only;
+armv6 and armv7l are no longer supported).
+
+:::
+
+## Download
+
+The binary files are available from <a href={frontMatter.download_url}>GitHub Releases</a>.
+
+<Prerequisites/>
+
+## Install
+
+The easiest way to install this specific version, is by using **xpm**:
+
+<CodeBlock language="console"> {
+`xpm install @xpack-dev-tools/qemu-riscv@${frontMatter.version}.${frontMatter.npm_subversion} -verbose
+`} </CodeBlock>
+
+Comprehensive instructions for installing **xPack xPack QEMU RISC-V** on different platforms
+can be found in the [Install Guide](/docs/install/).
+
+## Compliance
+
+The xPack QEMU RISC-V currently is based on the official [QEMU](https://www.qemu.org),
+with no major changes.
+
+The current version is based on:
+
+- QEMU version {frontMatter.qemu_version},
+  from {frontMatter.qemu_release_date}.
+
+## Changes
+
+Compared to the master `qemu-system-riscv*`, there are no major changes.
+
+The supported boards and CPUs are:
+
+```console
+$ .../xpack-qemu-riscv-9.2.4-1/bin/qemu-system-riscv32 -machine help
+Supported machines are:
+none                 empty machine
+opentitan            RISC-V Board compatible with OpenTitan
+sifive_e             RISC-V Board compatible with SiFive E SDK
+sifive_u             RISC-V Board compatible with SiFive U SDK
+spike                RISC-V Spike board (default)
+virt                 RISC-V VirtIO board
+$ .../xpack-qemu-riscv-9.2.4-1/bin/qemu-system-riscv32 -cpu help
+Available CPUs:
+  lowrisc-ibex
+  max
+  rv32
+  rv32e
+  rv32i
+  sifive-e31
+  sifive-e34
+  sifive-u34
+
+$ .../xpack-qemu-riscv-9.2.4-1/bin/qemu-system-riscv64 -machine help
+Supported machines are:
+microchip-icicle-kit Microchip PolarFire SoC Icicle Kit
+none                 empty machine
+shakti_c             RISC-V Board compatible with Shakti SDK
+sifive_e             RISC-V Board compatible with SiFive E SDK
+sifive_u             RISC-V Board compatible with SiFive U SDK
+spike                RISC-V Spike board (default)
+virt                 RISC-V VirtIO board
+$ .../xpack-qemu-riscv-9.2.4-1/bin/qemu-system-riscv64 -cpu help
+Available CPUs:
+  lowrisc-ibex
+  max
+  max32
+  rv32
+  rv32e
+  rv32i
+  rv64
+  rv64e
+  rv64i
+  rva22s64
+  rva22u64
+  shakti-c
+  sifive-e31
+  sifive-e34
+  sifive-e51
+  sifive-u34
+  sifive-u54
+  thead-c906
+  veyron-v1
+  x-rv128
+```
+
+## Bug fixes
+
+- none
+
+## Enhancements
+
+- none
+
+## Known problems
+
+- none
+
+## Documentation
+
+The original documentation is available on-line:
+
+- https://www.qemu.org/docs/master/
+
+## Build
+
+The binaries for all supported platforms
+(Windows, macOS and GNU/Linux) were built using the
+[xPack Build Box (XBB)](https://xpack.github.io/xbb/), a set
+of build environments based on slightly older distributions, that should be
+compatible with most recent systems.
+
+For the prerequisites and more details on the build procedure, please see the
+[Maintainer Info](/docs/maintainer/) page.
+
+## CI tests
+
+Before publishing, a set of simple tests were performed on an exhaustive
+set of platforms. The results are available from:
+
+- [GitHub Actions](https://github.com/xpack-dev-tools/qemu-riscv-xpack/actions/)
+
+## Tests
+
+TBD
+
+## Checksums
+
+The SHA-256 hashes for the files are:
+
+```txt
+afe4910a2ccf023fee1ce01fb3cf497563fd5e92d786b7fff08cb139da1ac281
+xpack-qemu-riscv-9.2.4-1-darwin-arm64.tar.gz
+
+138554dd3c18d0663deec33a548a3ea73387d3b46382049f03bbc397cbdfba00
+xpack-qemu-riscv-9.2.4-1-darwin-x64.tar.gz
+
+b90f76ebff7ecfa50e77c61a750534bdd0eb41deb793c0253fb3f583002a4aed
+xpack-qemu-riscv-9.2.4-1-linux-arm64.tar.gz
+
+7cd69277dcf32bb024351ea225d549577713302cc5141444bad12836d5967b8c
+xpack-qemu-riscv-9.2.4-1-linux-x64.tar.gz
+
+05df8a50c2109605c7ab382667aa4680d41cb262383053e5bb07d29de616eb1f
+xpack-qemu-riscv-9.2.4-1-win32-x64.zip
+
+```
+
+<DeprecationNotices/>
+
+<DownloadAnalytics version={frontMatter.version}/>
