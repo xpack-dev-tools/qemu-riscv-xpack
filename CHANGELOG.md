@@ -4,6 +4,16 @@ Entries in this file are in reverse chronological order.
 
 ## 2025-10-09
 
+* v9.2.4-1 released
+* 44030cd website update durations
+* 0e4f1da website blog template update
+* ffedf94 website: update folder hierarchies
+* 8efc610 website: update development durations
+* 9b2d65a package-lock.json update
+* 1c33943 versioning.sh fix qemu build target
+* a7e8931 package.json bump meson
+* 099b162 application.sh add icu4c
+* b5793e2 prepare v9.2.4-1
 * v9.2.4-1 prepared
 * 8b8daea re-generate website commons
 * 5a6fe8d re-generate top commons
