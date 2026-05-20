@@ -1,0 +1,8 @@
+{
+  "descriptiveName": "xPack QEMU RISC-V",
+  "permalinkName": "qemu-riscv",
+  "preferredName": "xPack QEMU RISC-V",
+  "upstreamDescriptiveName": "QEMU RISC-V",
+  "skipCiTests": true,
+  "useSelfHostedRunners": false
+}
