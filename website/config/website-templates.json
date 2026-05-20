@@ -1,0 +1,7 @@
+{
+  "branding": "xPack QEMU emulator version ",
+  "programName": "qemu-system-riscv32",
+  "qemuReleaseDate": "28 May 2025",
+  "$link": "https://gitlab.com/qemu-project/qemu/-/tags/",
+  "shareOnTwitter": true
+}
